@@ -51,7 +51,6 @@
     "wpackagist-plugin/custom-post-type-ui": "*",
     "wpackagist-plugin/wp-fail2ban": "*",
     "wpackagist-plugin/filenames-to-latin": "*",
-    "wpackagist-plugin/posts-to-posts": "*",
     "wpackagist-plugin/debug-bar": "*",
     "wpackagist-plugin/w3-total-cache": "*",
     "wpackagist-plugin/redirection": "*",

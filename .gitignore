@@ -33,3 +33,10 @@ node_modules
 # Vagrant
 bin
 .vagrant
+
+# OSX Stuff
+.DS_Store
+
+# IDE stuff
+.idea
+tags
