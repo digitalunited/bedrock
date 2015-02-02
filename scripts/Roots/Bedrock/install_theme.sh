@@ -6,3 +6,6 @@ unzip default.zip
 
 rm default.zip
 mv roots-master default
+cd default
+npm install
+grunt
