@@ -83,24 +83,6 @@ To skip the scripts completely, `create-project` can be run with `--no-scripts` 
 5. Access WP Admin at `http://example.com/wp/wp-admin`
 
 
-### Manually
-
-1. Clone/Fork repo
-2. Run `composer install`
-3. Copy `.env.example` to `.env` and update environment variables:
-  * `DB_NAME` - Database name
-  * `DB_USER` - Database user
-  * `DB_PASSWORD` - Database password
-  * `DB_HOST` - Database host (defaults to `localhost`)
-  * `WP_ENV` - Set to environment (`development`, `staging`, `production`, etc)
-  * `WP_HOME` - Full URL to WordPress home (http://example.com)
-  * `WP_SITEURL` - Full URL to WordPress including subdirectory (http://example.com/wp)
-4. Add theme(s)
-4. Set your Nginx or Apache vhost to `/path/to/site/web/` (`/path/to/site/current/web/` if using Capistrano)
-5. Access WP Admin at `http://example.com/wp/wp-admin`
-
-Using Capistrano for deploys?
-
 ### Deploying with Capistrano
 
 Required Gems:
@@ -178,14 +160,6 @@ Note: You can't re-define constants in PHP. So if you have a base setting in `ap
 * Remove the base option and be sure to define it in every environment it's needed
 * Only define the constant in `application.php` if it isn't already defined.
 
-#### Don't want it?
-
-You will lose the ability to define environment specific settings.
-
-* Move all configuration into `wp-config.php`
-* Manually deal with environment specific options
-* Remove `config` directory
-
 ### Environment Variables
 
 Bedrock tries to separate config from code as much as possible and environment variables are used to achieve this. The benefit is there's a single place (`.env`) to keep settings like database or other 3rd party credentials that isn't committed to your repository.
@@ -199,15 +173,6 @@ Currently, the following env vars are required:
 * `DB_PASSWORD`
 * `WP_HOME`
 * `WP_SITEURL`
-
-#### Don't want it?
-
-You will lose the separation between config and code and potentially put secure credentials at risk.
-
-* Remove `dotenv` from `composer.json` requires
-* Remove `.env.example` file from root
-* Remove `require_once('vendor/autoload.php');` from `wp-config.php`
-* Replace all `getenv` calls with whatever method you want to set those values
 
 ### Composer
 
@@ -242,21 +207,6 @@ Updating your WordPress version (or any plugin) is just a matter of changing the
 
 Then running `composer update` will pull down the new version.
 
-#### Themes
-
-Themes can also be managed by Composer but should only be done so under two conditions:
-
-1. You're using a parent theme that won't be modified at all
-2. You want to separate out your main theme and use that as a standalone package
-
-Under most circumstances we recommend NOT doing #2 and instead keeping your main theme as part of your app's repository.
-
-Just like plugins, WPackagist maintains a Composer mirror of the WP theme directory. To require a theme, just use the `wpackagist-theme` namespace.
-
-#### Don't want it?
-
-Composer integration is the biggest part of Bedrock, so if you were going to remove it there isn't much point in using Bedrock.
-
 ### Capistrano
 
 [Capistrano](http://www.capistranorb.com/) is a remote server automation and deployment tool. It will let you deploy or rollback your application in one command:
@@ -278,14 +228,6 @@ Bedrock doesn't come with anything by default to do DB syncing yet. The best opt
 
 * Sync DB: `cap production wpcli:db:push` and `cap production wpcli:db:pull`
 * Sync uploads: `cap production wpcli:uploads:rsync:push` and `cap production wpcli:uploads:rsync:pull`
-
-#### Don't want it?
-
-You will lose the one-command deploys and built-in integration with Composer. Another deploy method will be needed as well.
-
-* Remove `Capfile`, `Gemfile`, and `Gemfile.lock`
-* Remove `config/deploy.rb`
-* Remove `config/deploy/` directory
 
 ### wp-cron
 
