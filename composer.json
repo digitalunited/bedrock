@@ -1,5 +1,5 @@
 {
-  "name": "roots/bedrock",
+  "name": "digitalunited/hausrock",
   "type": "project",
   "license": "MIT",
   "description": "A modern WordPress stack",
@@ -31,7 +31,10 @@
     "psr-0": {"Roots\\Bedrock\\Installer": "scripts"}
   },
   "scripts": {
-    "post-root-package-install": ["Roots\\Bedrock\\Installer::addSalts"]
+    "post-root-package-install": [
+        "Roots\\Bedrock\\Installer::addSalts",
+        "scripts/Roots/Bedrock/install_theme.sh"
+    ]
   },
   "repositories": [
     {
@@ -43,7 +46,17 @@
     "php": ">=5.4",
     "johnpbloch/wordpress": "4.1",
     "composer/installers": "v1.0.12",
-    "vlucas/phpdotenv": "1.0.9"
+    "vlucas/phpdotenv": "1.0.9",
+    "wpackagist-plugin/wordpress-seo": "*",
+    "wpackagist-plugin/custom-post-type-ui": "*",
+    "wpackagist-plugin/wp-fail2ban": "*",
+    "wpackagist-plugin/filenames-to-latin": "*",
+    "wpackagist-plugin/posts-to-posts": "*",
+    "wpackagist-plugin/debug-bar": "*",
+    "wpackagist-plugin/w3-total-cache": "*",
+    "wpackagist-plugin/redirection": "*",
+    "wpackagist-plugin/disable-comments": "*",
+    "wpackagist-plugin/google-analytics-for-wordpress": "*"
   },
   "extra": {
     "installer-paths": {
