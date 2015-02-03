@@ -56,7 +56,8 @@
     "wpackagist-plugin/w3-total-cache": "*",
     "wpackagist-plugin/redirection": "*",
     "wpackagist-plugin/disable-comments": "*",
-    "wpackagist-plugin/google-analytics-for-wordpress": "*"
+    "wpackagist-plugin/google-analytics-for-wordpress": "*",
+    "digitalunited/components": "*"
   },
   "extra": {
     "installer-paths": {

@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fe877335ecc636212ce58ad7afc0906d",
+    "hash": "d5507283467fc93d377afd520ab54ba2",
     "packages": [
         {
             "name": "composer/installers",
@@ -89,6 +89,49 @@
                 "zikula"
             ],
             "time": "2014-02-24 04:21:34"
+        },
+        {
+            "name": "digitalunited/components",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/digitalunited/components.git",
+                "reference": "aed36e526dccfc08b9e68911039cafc48ab8b3dd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/digitalunited/components/zipball/aed36e526dccfc08b9e68911039cafc48ab8b3dd",
+                "reference": "aed36e526dccfc08b9e68911039cafc48ab8b3dd",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.4"
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "DigitalUnited\\Components\\": "src/Components"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mikael Engström",
+                    "email": "mikael.engstrom@careofhaus.se",
+                    "homepage": "http://careofhaus.se"
+                }
+            ],
+            "description": "Component manager",
+            "homepage": "https://github.com/digitalunited/components",
+            "keywords": [
+                "plugin",
+                "wordpress"
+            ],
+            "time": "2015-02-03 19:17:33"
         },
         {
             "name": "johnpbloch/wordpress",
