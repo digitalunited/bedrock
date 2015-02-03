@@ -33,7 +33,8 @@
   "scripts": {
     "post-root-package-install": [
         "Roots\\Bedrock\\Installer::addSalts",
-        "scripts/Roots/Bedrock/install_theme.sh"
+        "scripts/Roots/Bedrock/install_theme.sh",
+        "scripts/Roots/Bedrock/setup_rewrites.sh"
     ]
   },
   "repositories": [
