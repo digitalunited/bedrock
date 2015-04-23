@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d5507283467fc93d377afd520ab54ba2",
+    "hash": "fb3b0dc932866e794321aaf84e81cd13",
     "packages": [
         {
             "name": "composer/installers",
@@ -92,16 +92,16 @@
         },
         {
             "name": "digitalunited/components",
-            "version": "0.0.1",
+            "version": "0.1.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitalunited/components.git",
-                "reference": "aed36e526dccfc08b9e68911039cafc48ab8b3dd"
+                "reference": "d84209287423a920a8b1eb8a14cad7f70fbffc0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitalunited/components/zipball/aed36e526dccfc08b9e68911039cafc48ab8b3dd",
-                "reference": "aed36e526dccfc08b9e68911039cafc48ab8b3dd",
+                "url": "https://api.github.com/repos/digitalunited/components/zipball/d84209287423a920a8b1eb8a14cad7f70fbffc0c",
+                "reference": "d84209287423a920a8b1eb8a14cad7f70fbffc0c",
                 "shasum": ""
             },
             "require": {
@@ -131,7 +131,7 @@
                 "plugin",
                 "wordpress"
             ],
-            "time": "2015-02-03 19:17:33"
+            "time": "2015-04-21 08:55:25"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -268,15 +268,15 @@
         },
         {
             "name": "wpackagist-plugin/cms-tree-page-view",
-            "version": "1.2.30",
+            "version": "1.2.32",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/cms-tree-page-view/",
-                "reference": "tags/1.2.30"
+                "reference": "tags/1.2.32"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/cms-tree-page-view.1.2.30.zip",
+                "url": "https://downloads.wordpress.org/plugin/cms-tree-page-view.1.2.32.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -288,15 +288,15 @@
         },
         {
             "name": "wpackagist-plugin/custom-post-type-ui",
-            "version": "0.9.5",
+            "version": "1.0.7",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/custom-post-type-ui/",
-                "reference": "tags/0.9.5"
+                "reference": "tags/1.0.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/custom-post-type-ui.0.9.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.0.7.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -328,15 +328,15 @@
         },
         {
             "name": "wpackagist-plugin/disable-comments",
-            "version": "1.2",
+            "version": "1.3",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/disable-comments/",
-                "reference": "tags/1.2"
+                "reference": "tags/1.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/disable-comments.1.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -368,15 +368,15 @@
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
-            "version": "5.3",
+            "version": "5.4.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
-                "reference": "tags/5.3"
+                "reference": "tags/5.4.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.4.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -388,15 +388,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "2.3.13",
+            "version": "2.3.14",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/2.3.13"
+                "reference": "tags/2.3.14"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/redirection.2.3.13.zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.2.3.14.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -428,15 +428,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "1.7.1",
+            "version": "2.1.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/1.7.1"
+                "reference": "tags/2.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/wordpress-seo.1.7.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.2.1.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -472,6 +472,7 @@
     "minimum-stability": "stable",
     "stability-flags": [],
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": {
         "php": ">=5.4"
     },
