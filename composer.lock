@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fb3b0dc932866e794321aaf84e81cd13",
+    "hash": "0ea9e1e26928fc89a711ef7fa9c981a5",
     "packages": [
         {
             "name": "composer/installers",
@@ -134,17 +134,105 @@
             "time": "2015-04-21 08:55:25"
         },
         {
-            "name": "johnpbloch/wordpress",
-            "version": "4.1",
+            "name": "digitalunited/du-responsive-images",
+            "version": "0.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "fced41fbfeb6b6a1f48f505426da0cb392d44274"
+                "url": "https://github.com/digitalunited/du-responsive-images.git",
+                "reference": "62ee0b76a9d80736a004d03546adb8892eeecebd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/fced41fbfeb6b6a1f48f505426da0cb392d44274",
-                "reference": "fced41fbfeb6b6a1f48f505426da0cb392d44274",
+                "url": "https://api.github.com/repos/digitalunited/du-responsive-images/zipball/62ee0b76a9d80736a004d03546adb8892eeecebd",
+                "reference": "62ee0b76a9d80736a004d03546adb8892eeecebd",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.4"
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "DigitalUnited\\ResponsiveImages\\": "src/ResponsiveImages"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tim Samuelsson",
+                    "email": "tim@careofhaus.se",
+                    "homepage": "http://careofhaus.se"
+                }
+            ],
+            "description": "Responsive Images for Developers",
+            "homepage": "https://github.com/digitalunited/du-responsive-images",
+            "keywords": [
+                "Responsive Images",
+                "plugin",
+                "wordpress"
+            ],
+            "time": "2015-03-23 09:25:34"
+        },
+        {
+            "name": "digitalunited/vc-clean-up",
+            "version": "0.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/digitalunited/vc-clean-up.git",
+                "reference": "0eb1ed1c5ef7ac948e68bf27ed2fe099cb12ca66"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/digitalunited/vc-clean-up/zipball/0eb1ed1c5ef7ac948e68bf27ed2fe099cb12ca66",
+                "reference": "0eb1ed1c5ef7ac948e68bf27ed2fe099cb12ca66",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.4"
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "DigitalUnited\\VcCleanUp\\": "src/VcCleanUp"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tim Samuelsson",
+                    "email": "tim.samuelsson@careofhaus.se",
+                    "homepage": "http://careofhaus.se"
+                }
+            ],
+            "description": "Visual Composer CleanUp",
+            "homepage": "https://github.com/digitalunited/VisualComposerCleanUp",
+            "keywords": [
+                "VisualComposer",
+                "plugin",
+                "wordpress"
+            ],
+            "time": "2015-04-23 08:38:12"
+        },
+        {
+            "name": "johnpbloch/wordpress",
+            "version": "4.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/johnpbloch/wordpress.git",
+                "reference": "51483bcc2f2aadc3bb1f0df20060cdc00dda576e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/51483bcc2f2aadc3bb1f0df20060cdc00dda576e",
+                "reference": "51483bcc2f2aadc3bb1f0df20060cdc00dda576e",
                 "shasum": ""
             },
             "require": {
@@ -168,7 +256,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2014-12-18 18:31:41"
+            "time": "2015-04-21 14:31:05"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -285,26 +373,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/cms-tree-page-view/"
-        },
-        {
-            "name": "wpackagist-plugin/custom-post-type-ui",
-            "version": "1.0.7",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/custom-post-type-ui/",
-                "reference": "tags/1.0.7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.0.7.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/custom-post-type-ui/"
         },
         {
             "name": "wpackagist-plugin/debug-bar",

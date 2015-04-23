@@ -50,11 +50,10 @@
   ],
   "require": {
     "php": ">=5.4",
-    "johnpbloch/wordpress": "4.1",
+    "johnpbloch/wordpress": "*",
     "composer/installers": "v1.0.12",
     "vlucas/phpdotenv": "1.0.9",
     "wpackagist-plugin/wordpress-seo": "*",
-    "wpackagist-plugin/custom-post-type-ui": "*",
     "wpackagist-plugin/wp-fail2ban": "*",
     "wpackagist-plugin/filenames-to-latin": "*",
     "wpackagist-plugin/debug-bar": "*",
@@ -63,7 +62,9 @@
     "wpackagist-plugin/redirection": "*",
     "wpackagist-plugin/disable-comments": "*",
     "wpackagist-plugin/google-analytics-for-wordpress": "*",
-    "digitalunited/components": "*"
+    "digitalunited/components": "*",
+    "digitalunited/du-responsive-images": "*",
+    "digitalunited/vc-clean-up": "*"
   },
   "extra": {
     "installer-paths": {
