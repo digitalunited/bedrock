@@ -34,11 +34,6 @@
     "post-root-package-install": [
         "Roots\\Bedrock\\Installer::addSalts",
         "scripts/Roots/Bedrock/install_theme.sh",
-        "scripts/Roots/Bedrock/npm_install.sh",
-        "scripts/Roots/Bedrock/setup_rewrites.sh"
-    ],
-    "post-install-cmd": [
-        "scripts/Roots/Bedrock/setup_rewrites.sh",
         "scripts/Roots/Bedrock/npm_install.sh"
     ]
   },
@@ -64,7 +59,8 @@
     "wpackagist-plugin/google-analytics-for-wordpress": "*",
     "digitalunited/components": "*",
     "digitalunited/du-responsive-images": "*",
-    "digitalunited/vc-clean-up": "*"
+    "digitalunited/vc-clean-up": "*",
+    "roots/soil": "~3.3"
   },
   "extra": {
     "installer-paths": {
