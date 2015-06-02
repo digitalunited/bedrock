@@ -59,12 +59,11 @@
     "wpackagist-plugin/google-analytics-for-wordpress": "*",
     "digitalunited/components": "*",
     "digitalunited/du-responsive-images": "*",
-    "digitalunited/vc-clean-up": "*",
-    "roots/soil": "~3.3"
+    "digitalunited/vc-clean-up": "*"
   },
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "digitalunited/components"],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
     },
