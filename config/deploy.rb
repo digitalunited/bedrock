@@ -1,6 +1,9 @@
 set :application, 'my_app_name'
 set :repo_url, 'git@example.com:me/my_repo.git'
 
+set :wpcli_local_url, 'example.dev'
+#set :wpcli_args, "--network" # For multisites
+
 # Branch options
 # Prompts for the branch name (defaults to current branch)
 #ask :branch, -> { `git rev-parse --abbrev-ref HEAD`.chomp }
@@ -9,7 +12,7 @@ set :repo_url, 'git@example.com:me/my_repo.git'
 # This could be overridden in a stage config file
 set :branch, :master
 
-set :deploy_to, -> { "/srv/www/#{fetch(:application)}" }
+set :deploy_to, -> { "/var/www/#{fetch(:application)}" }
 
 # Use :debug for more verbose output when troubleshooting
 set :log_level, :info
@@ -61,3 +64,30 @@ end
 # Note that you need to have WP-CLI installed on your server
 # Uncomment the following line to run it on deploys if needed
 # after 'deploy:publishing', 'deploy:update_option_paths'
+
+
+# Gulp deploy
+set :theme_path, Pathname.new('web/app/themes/default')
+print Dir.pwd
+set :local_app_path, Pathname.new(Dir.pwd)
+set :local_theme_path, fetch(:local_app_path).join(fetch(:theme_path))
+
+namespace :assets do
+  task :compile do
+    run_locally do
+      within fetch(:local_theme_path) do
+        execute :gulp, '--production'
+      end
+    end
+  end
+
+  task :copy do
+    on roles(:web) do
+      upload! "#{fetch(:local_theme_path).join('dist')}/", release_path.join(fetch(:theme_path)), recursive: true
+    end
+  end
+
+  task deploy: %w(compile copy)
+end
+
+before 'deploy:updated', 'assets:deploy'
