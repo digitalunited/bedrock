@@ -1,5 +1,6 @@
 set :application, 'my_app_name'
 set :repo_url, 'git@example.com:me/my_repo.git'
+set :theme_name, 'default'
 
 set :wpcli_local_url, 'example.dev'
 #set :wpcli_args, "--network" # For multisites
@@ -66,13 +67,17 @@ end
 # after 'deploy:publishing', 'deploy:update_option_paths'
 
 
-# Gulp deploy
-set :theme_path, Pathname.new('web/app/themes/default')
-print Dir.pwd
-set :local_app_path, Pathname.new(Dir.pwd)
-set :local_theme_path, fetch(:local_app_path).join(fetch(:theme_path))
+# Gulp --production on localhost
 
-namespace :assets do
+namespace :deploy do
+
+  # Theme path
+  set :theme_path, Pathname.new('web/app/themes').join(fetch(:theme_name))
+
+  # Local Paths
+  set :local_theme_path, Pathname.new(File.dirname(__FILE__)).join('../').join(fetch(:theme_path))
+  set :local_dist_path, fetch(:local_theme_path).join('dist')
+
   task :compile do
     run_locally do
       within fetch(:local_theme_path) do
@@ -83,11 +88,19 @@ namespace :assets do
 
   task :copy do
     on roles(:web) do
-      upload! "#{fetch(:local_theme_path).join('dist')}/", release_path.join(fetch(:theme_path)), recursive: true
+
+      # Remote Paths (Lazy-load until actual deploy)
+      set :remote_dist_path, -> { release_path.join(fetch(:theme_path)).join('dist') }
+
+      info " Your local distribution path: #{fetch(:local_dist_path)} "
+      info " Your remote distribution path: #{fetch(:remote_dist_path)} "
+      info " Uploading files to remote "
+      upload! fetch(:local_dist_path).to_s, fetch(:remote_dist_path), recursive: true
+      info " DON'T FORGET TO EMPTY ALL CACHES AFTER DEPLOYING "
     end
   end
 
-  task deploy: %w(compile copy)
+  task assets: %w(compile copy)
 end
 
-before 'deploy:updated', 'assets:deploy'
+after 'deploy:updated', 'deploy:assets'
