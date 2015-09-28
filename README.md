@@ -29,7 +29,7 @@ Bedrock is a modern WordPress stack that helps you get started with the best dev
 
 Use [bedrock-ansible](https://github.com/roots/bedrock-ansible) to get started with a development VM customized for Bedrock.
 
-Or run `composer create-project roots/bedrock <path>` (see [Installation/Usage](#installationusage) for more details) to just get a new copy of Bedrock locally.
+Or run `composer create-project digitalunited/hausrock <path>` (see [Installation/Usage](#installationusage) for more details) to just get a new copy of Bedrock locally.
 
 ## Features
 
