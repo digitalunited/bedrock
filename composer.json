@@ -37,7 +37,6 @@
     ],
     "post-create-project-cmd": [
         "scripts/Roots/Bedrock/npm_install.sh",
-        "scripts/Roots/Bedrock/plugin_activate.sh",
         "scripts/Roots/Bedrock/setup_rewrites.sh"
     ]
   },
