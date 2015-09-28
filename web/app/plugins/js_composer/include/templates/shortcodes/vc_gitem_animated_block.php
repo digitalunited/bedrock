@@ -1,26 +1,26 @@
 <?php
 /**
- * @var string $el_class
- * @var string $width
- * @var string $is_end
- * @var array $atts ;
- * @var string $content ;
- * @var array $atts ;
- * @var string bgimage;
+ * Shortcode attributes
+ * @var $atts
+ * @var $css
+ * @var $animation
+ * @var $content - shortcode content
+ * Shortcode class
+ * @var $this WPBakeryShortCode_VC_Gitem_Animated_Block
  */
-$animation_attr = '';
+$css = $animation = $animation_attr = '';
+
 extract( shortcode_atts( array(
-	'css' => '',
+	'css' => '', // unmapped
 	'animation' => '',
-	'bgimage' => '',
 ), $atts ) );
 
 $css_style = '';
-$css_class = 'vc_gitem-animated-block' . vc_shortcode_custom_css_class( $css, ' ' );
-if ( !empty( $animation ) ) {
+$css_class = 'vc_gitem-animated-block ' . vc_shortcode_custom_css_class( $css, ' ' );
+if ( ! empty( $animation ) ) {
 	$css_class .= ' vc_gitem-animate vc_gitem-animate-' . $animation;
 	$animation_attr .= ' data-vc-animation="' . esc_attr( $animation ) . '"';
-} elseif( 'vc_gitem_preview' !== vc_request_param( 'action' )) {
+} elseif ( 'vc_gitem_preview' !== vc_request_param( 'action' ) ) {
 	$content = preg_replace( '/(?<=\[)(vc_gitem_zone_b\b)/', '$1 render="no"', $content );
 }
 ?>

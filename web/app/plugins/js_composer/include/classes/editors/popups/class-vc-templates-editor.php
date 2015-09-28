@@ -4,7 +4,7 @@
  * The templates manager for VC.
  *
  * The templates manager provides ability to copy and reuse existing pages. Save templates for later use.
- * @deprecated since 4.4 use Vc_Templates_Panel_Editor::_construct
+ * @deprecated 4.4 use Vc_Templates_Panel_Editor::_construct
  * @since 4.2
  */
 class Vc_Templates_Editor implements Vc_Render {
@@ -27,7 +27,7 @@ class Vc_Templates_Editor implements Vc_Render {
 
 	/**
 	 * Add ajax hooks.
-	 * @deprecated since 4.4 use Vc_Templates_Panel_Editor::init
+	 * @deprecated 4.4 use Vc_Templates_Panel_Editor::init
 	 */
 	public function init() {
 		if ( $this->initialized ) {
@@ -44,7 +44,7 @@ class Vc_Templates_Editor implements Vc_Render {
 
 	/**
 	 * Used in Vc_Frontend_Editor::loadShortcodes, action 'vc_frontend_template'
-	 * @deprecated since 4.4 will be removed, use action 'vc_frontend_template_panel'
+	 * @deprecated 4.4 will be removed, use action 'vc_frontend_template_panel'
 	 */
 	function renderFrontendTemplate() {
 		add_filter( 'vc_frontend_template_the_content', array( &$this, 'frontendDoTemplatesShortcodes' ) );
@@ -62,12 +62,12 @@ class Vc_Templates_Editor implements Vc_Render {
 	}
 
 	/**
-	 * @deprecated since 4.4 and will be removed, use Vc_Templates_Panel_Editor::save
+	 * @deprecated 4.4 and will be removed, use Vc_Templates_Panel_Editor::save
 	 */
 	public function save() {
 		$template_name = vc_post_param( 'template_name' );
 		$template = vc_post_param( 'template' );
-		if ( ! isset( $template_name ) || trim( $template_name ) == "" || ! isset( $template ) || trim( $template ) == "" ) {
+		if ( ! isset( $template_name ) || trim( $template_name ) === "" || ! isset( $template ) || trim( $template ) === "" ) {
 			echo 'Error: TPL-01';
 			die();
 		}
@@ -92,12 +92,12 @@ class Vc_Templates_Editor implements Vc_Render {
 	}
 
 	/**
-	 * @deprecated since 4.4 and will be removed, use Vc_Templates_Panel_Editor::renderBackendTemplate
+	 * @deprecated 4.4 and will be removed, use Vc_Templates_Panel_Editor::renderBackendTemplate
 	 */
 	public function load() {
 		$template_id = vc_post_param( 'template_id' );
 
-		if ( ! isset( $template_id ) || $template_id == "" ) {
+		if ( ! isset( $template_id ) || $template_id === "" ) {
 			echo 'Error: TPL-02';
 			die();
 		}
@@ -106,12 +106,9 @@ class Vc_Templates_Editor implements Vc_Render {
 
 		$content = trim( $saved_templates[ $template_id ]['template'] );
 		$content = str_replace( '\"', '"', $content ); // if not used causes a #1360 bug.
-		//echo $content;
 		$pattern = get_shortcode_regex();
 		$content = preg_replace_callback( "/{$pattern}/s", 'vc_convert_shortcode', $content );
 		echo $content;
-		//echo do_shortcode( $content );
-
 		die();
 	}
 
@@ -129,7 +126,7 @@ class Vc_Templates_Editor implements Vc_Render {
 	public function loadTemplateShortcodes() {
 		$template_id = vc_post_param( 'template_id' );
 
-		if ( ! isset( $template_id ) || $template_id == "" ) {
+		if ( ! isset( $template_id ) || $template_id === "" ) {
 			echo 'Error: TPL-02';
 			die();
 		}
@@ -145,12 +142,12 @@ class Vc_Templates_Editor implements Vc_Render {
 	}
 
 	/**
-	 * @deprecated since 4.4 and will be removed, use Vc_Templates_Panel_Editor::delete
+	 * @deprecated 4.4 and will be removed, use Vc_Templates_Panel_Editor::delete
 	 */
 	public function delete() {
 		$template_id = vc_post_param( 'template_id' );
 
-		if ( ! isset( $template_id ) || $template_id == "" ) {
+		if ( ! isset( $template_id ) || $template_id === "" ) {
 			echo 'Error: TPL-03';
 			die();
 		}
@@ -187,14 +184,17 @@ class Vc_Templates_Editor implements Vc_Render {
 	 *      array(
 	 *          array(
 	 *              'name'=>__('My custom template','my_plugin'),
-	 *              'image_path'=> preg_replace( '/\s/', '%20', plugins_url( 'images/my_image.png', __FILE__ ) ), // always use preg replace to be sure that "space" will not break logic
+	 *              'image_path'=> preg_replace( '/\s/', '%20', plugins_url( 'images/my_image.png', __FILE__ ) ), //
+	 * always use preg replace to be sure that "space" will not break logic
 	 *              'custom_class'=>'my_custom_class', // if needed
-	 *              'content'=>'[my_shortcode]yeah[/my_shortcode]', // Use HEREDoc better to escape all single-quotes and double quotes
+	 *              'content'=>'[my_shortcode]yeah[/my_shortcode]', // Use HEREDoc better to escape all single-quotes
+	 * and double quotes
 	 *          ),
 	 *          ...
 	 *      );
-	 * Also see filters 'vc_load_default_templates_panels' and 'vc_load_default_templates_welcome_block' to modify templates in panels tab and/or in welcome block.
-	 * @deprecated since 4.4 and moved to Vc_Templates_Panel_Editor::loadDefaultTemplates(), will be removed
+	 * Also see filters 'vc_load_default_templates_panels' and 'vc_load_default_templates_welcome_block' to modify
+	 * templates in panels tab and/or in welcome block.
+	 * @deprecated 4.4 and moved to Vc_Templates_Panel_Editor::loadDefaultTemplates(), will be removed
 	 * @moved to Vc_Templates_Panel_Editor
 	 * @return array
 	 */
@@ -204,7 +204,7 @@ class Vc_Templates_Editor implements Vc_Render {
 
 	/**
 	 * Alias for loadDefaultTemplates
-	 * @deprecated since 4.4 moved to Vc_Templates_Panel_Editor::getDefaultTemplates(), will be removed
+	 * @deprecated 4.4 moved to Vc_Templates_Panel_Editor::getDefaultTemplates(), will be removed
 	 * @moved to Vc_Templates_Panel_Editor
 	 * @return array - list of default templates
 	 */
@@ -215,7 +215,7 @@ class Vc_Templates_Editor implements Vc_Render {
 	/**
 	 * Get default template data by template index in array.
 	 *
-	 * @deprecated since 4.4 moved to Vc_Templates_Panel_Editor::getDefaultTemplate(), will be removed
+	 * @deprecated 4.4 moved to Vc_Templates_Panel_Editor::getDefaultTemplate(), will be removed
 	 * @moved to Vc_Templates_Panel_Editor
 	 *
 	 * @param number $template_index
@@ -228,7 +228,7 @@ class Vc_Templates_Editor implements Vc_Render {
 
 	/**
 	 * Load default template content by index from ajax
-	 * @deprecated since 4.4 moved to Vc_Templates_Panel_Editor::getBackendDefaultTemplate(), will be removed
+	 * @deprecated 4.4 moved to Vc_Templates_Panel_Editor::getBackendDefaultTemplate(), will be removed
 	 * @moved to Vc_Templates_Panel_Editor
 	 *
 	 * @param bool $return | should function return data or not
@@ -240,7 +240,7 @@ class Vc_Templates_Editor implements Vc_Render {
 	}
 
 	/**
-	 * @deprecated since 4.4 and will be removed, use Vc_Templates_Panel_Editor::render
+	 * @deprecated 4.4 use Vc_Templates_Panel_Editor::render
 	 */
 	public function render() {
 		vc_include_template( 'editors/popups/panel_templates_editor.tpl.php', array(
@@ -260,13 +260,13 @@ class Vc_Templates_Editor implements Vc_Render {
 		if ( empty( $params ) ) {
 			return '';
 		}
-		$output = '<li class="wpb_template_li"><a data-template_id="' . $id . '" href="#">' . htmlspecialchars( __( $params['name'], "js_composer" ) ) . '</a> <span class="wpb_remove_template" title="' . __( "Delete template", "js_composer" ) . '" rel="' . $id . '"><i class="icon wpb_template_delete_icon"> </i></span></li>';
+		$output = '<li data-vc-ui-element="template" class="wpb_template_li"><a data-template_id="' . $id . '" href="#" data-vc-ui-element="template-title">' . htmlspecialchars( $params['name'] ) . '</a> <span class="wpb_remove_template" title="' . __( "Delete template", "js_composer" ) . '" rel="' . $id . '"><i class="icon wpb_template_delete_icon"> </i></span></li>';
 
 		return $output;
 	}
 
 	/**
-	 * @deprecated since 4.4, and will not used anymore
+	 * @deprecated 4.4
 	 *
 	 * @param bool $only_list
 	 *
@@ -304,7 +304,6 @@ class Vc_Templates_Editor implements Vc_Render {
 				}
 			}
 		}
-		// $output .= '</ul></li>';
 		echo $output;
 
 		return '';
@@ -313,7 +312,8 @@ class Vc_Templates_Editor implements Vc_Render {
 	/**
 	 * Load frontend default template content by index
 	 * Used in Vc_Frontend_Editor::loadShortcodes action 'vc_frontend_default_template'
-	 * @deprecated since 4.4 and will be removed,  use action 'vc_frontend_default_template_panel' instead and Vc_Templates_Panel_Editor::renderFrontendDefaultTemplate
+	 * @deprecated 4.4 use action 'vc_frontend_default_template_panel' and
+	 *   Vc_Templates_Panel_Editor::renderFrontendDefaultTemplate
 	 */
 	public function renderFrontendDefaultTemplate() {
 		$template_index = vc_post_param( 'template_name' );

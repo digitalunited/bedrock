@@ -12,7 +12,8 @@
  *            'heading' => __( 'Icon', 'js_composer' ),
  *            'param_name' => 'icon_fontawesome',
  *            'settings' => array(
- *                'emptyIcon' => false, // default true, display an "EMPTY" icon? - if false it will display first icon from set as default.
+ *                'emptyIcon' => false, // default true, display an "EMPTY" icon? - if false it will display first icon
+ *     from set as default.
  *                'iconsPerPage' => 200, // default 100, how many icons per/page to display
  *            ),
  *            'dependency' => array(
@@ -20,8 +21,9 @@
  *                'value' => 'fontawesome',
  *            ),
  *        ),
- * vc_filter: vc_iconpicker-type-{your_icon_font_name} - filter to add new icon font type. see example for vc_iconpicker-type-fontawesome in bottom of this file
- * Also // SEE HOOKS FOLDER FOR FONTS REGISTERING/ENQUEUE IN BASE @path "/include/autoload/hook-vc-iconpicker-param.php"
+ * vc_filter: vc_iconpicker-type-{your_icon_font_name} - filter to add new icon font type. see example for
+ *     vc_iconpicker-type-fontawesome in bottom of this file Also // SEE HOOKS FOLDER FOR FONTS REGISTERING/ENQUEUE IN
+ *     BASE @path "/include/autoload/hook-vc-iconpicker-param.php"
  */
 class Vc_IconPicker {
 	/**
@@ -36,7 +38,8 @@ class Vc_IconPicker {
 	protected $value;
 	/**
 	 * @since 4.4
-	 * @var array - optional, can be used as self source from self array., you can pass it also with filter see Vc_IconPicker::setDefaults
+	 * @var array - optional, can be used as self source from self array., you can pass it also with filter see
+	 *     Vc_IconPicker::setDefaults
 	 */
 	protected $source = array();
 
@@ -55,8 +58,8 @@ class Vc_IconPicker {
 
 	/**
 	 * Set default function will extend current settings with defaults
-	 * It can be used in Vc_IconPicker::render, but also it is passed to input field and was hooked in composer-atts.js file
-	 * See vc.atts.iconpicker in wp-content/plugins/js_composer/assets/js/params/composer-atts.js init method
+	 * It can be used in Vc_IconPicker::render, but also it is passed to input field and was hooked in composer-atts.js
+	 * file See vc.atts.iconpicker in wp-content/plugins/js_composer/assets/js/params/composer-atts.js init method
 	 *  - it initializes javascript logic, you can provide ANY default param to it with 'settings' key
 	 * @since 4.4
 	 */
@@ -106,17 +109,19 @@ class Vc_IconPicker {
 
 		// call filter vc_iconpicker-type-{your_type}, e.g. vc_iconpicker-type-fontawesome with passed source from shortcode(default empty array). to get icons
 		$arr = apply_filters( 'vc_iconpicker-type-' . esc_attr( $this->settings['settings']['type'] ), $this->source );
-
+		if ( isset( $this->settings['settings'], $this->settings['settings']['emptyIcon'] ) && true === $this->settings['settings']['emptyIcon'] ) {
+			array_unshift( $arr, array() );
+		}
 		if ( ! empty( $arr ) ) {
 			foreach ( $arr as $group => $icons ) {
 				if ( ! is_array( $icons ) || ! is_array( current( $icons ) ) ) {
 					$class_key = key( $icons );
-					$output .= '<option value="' . esc_attr( $class_key ) . '" ' . ( strcmp( $class_key, $this->value ) === 0 ? 'selected="selected"' : '' ) . '>' . esc_html( current( $icons ) ) . '</option>' . "\n";
+					$output .= '<option value="' . esc_attr( $class_key ) . '" ' . ( strcmp( $class_key, $this->value ) === 0 ? 'selected' : '' ) . '>' . esc_html( current( $icons ) ) . '</option>' . "\n";
 				} else {
 					$output .= '<optgroup label="' . esc_attr( $group ) . '">' . "\n";
 					foreach ( $icons as $key => $label ) {
 						$class_key = key( $label );
-						$output .= '<option value="' . esc_attr( $class_key ) . '" ' . ( strcmp( $class_key, $this->value ) === 0 ? 'selected="selected"' : '' ) . '>' . esc_html( current( $label ) ) . '</option>' . "\n";
+						$output .= '<option value="' . esc_attr( $class_key ) . '" ' . ( strcmp( $class_key, $this->value ) === 0 ? 'selected' : '' ) . '>' . esc_html( current( $label ) ) . '</option>' . "\n";
 					}
 					$output .= '</optgroup>' . "\n";
 				}

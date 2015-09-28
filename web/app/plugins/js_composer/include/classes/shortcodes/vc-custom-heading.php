@@ -11,7 +11,6 @@ class WPBakeryShortCode_VC_Custom_heading extends WPBakeryShortCode {
 	 * @var array
 	 */
 	protected $fields = array(
-		//key(read only) => 'value'(changeable)
 		'google_fonts' => 'google_fonts',
 		'font_container' => 'font_container',
 		'el_class' => 'el_class',
@@ -33,6 +32,7 @@ class WPBakeryShortCode_VC_Custom_heading extends WPBakeryShortCode {
 
 	/**
 	 * Get param value by providing key
+	 *
 	 * @param $key
 	 *
 	 * @since 4.4
@@ -51,23 +51,24 @@ class WPBakeryShortCode_VC_Custom_heading extends WPBakeryShortCode {
 	 * @return array
 	 */
 	public function getAttributes( $atts ) {
-		$text = $google_fonts = $font_container = $el_class = $css = '';
+		/**
+		 * Shortcode attributes
+		 * @var $text
+		 * @var $google_fonts
+		 * @var $font_container
+		 * @var $el_class
+		 * @var $link
+		 * @var $css
+		 */
+		$atts = vc_map_get_attributes( $this->getShortcode(), $atts );
+		extract( $atts );
+
 		/**
 		 * Get default values from VC_MAP.
 		 **/
 		$google_fonts_field = $this->getParamData( 'google_fonts' );
 		$font_container_field = $this->getParamData( 'font_container' );
-		$el_class_field = $this->getParamData( 'el_class' );
-		$css_field = $this->getParamData( 'css' );
-		$text_field = $this->getParamData( 'text' );
 
-		extract( shortcode_atts( array(
-			'text' => $text_field && isset( $text_field['value'] ) ? $text_field['value'] : '',
-			'google_fonts' => $google_fonts_field && isset( $google_fonts_field['value'] ) ? $google_fonts_field['value'] : '',
-			'font_container' => $font_container_field && isset( $font_container_field['value'] ) ? $font_container_field['value'] : '',
-			'el_class' => $el_class_field && isset( $el_class_field['value'] ) ? $el_class_field['value'] : '',
-			'css' => $css_field && isset( $css_field['value'] ) ? $css_field['value'] : ''
-		), $atts ) );
 		$el_class = $this->getExtraClass( $el_class );
 		$font_container_obj = new Vc_Font_Container();
 		$google_fonts_obj = new Vc_Google_Fonts();
@@ -77,11 +78,12 @@ class WPBakeryShortCode_VC_Custom_heading extends WPBakeryShortCode {
 		$google_fonts_data = strlen( $google_fonts ) > 0 ? $google_fonts_obj->_vc_google_fonts_parse_attributes( $google_fonts_field_settings, $google_fonts ) : '';
 
 		return array(
-			'text' => $text,
+			'text' => isset( $text ) ? $text : '',
 			'google_fonts' => $google_fonts,
 			'font_container' => $font_container,
 			'el_class' => $el_class,
 			'css' => $css,
+			'link' => ( 0 === strpos( $link, '|' ) ) ? false : $link,
 			'font_container_data' => $font_container_data,
 			'google_fonts_data' => $google_fonts_data
 		);
@@ -103,14 +105,14 @@ class WPBakeryShortCode_VC_Custom_heading extends WPBakeryShortCode {
 		$styles = array();
 		if ( ! empty( $font_container_data ) && isset( $font_container_data['values'] ) ) {
 			foreach ( $font_container_data['values'] as $key => $value ) {
-				if ( $key != 'tag' && strlen( $value ) > 0 ) {
+				if ( $key !== 'tag' && strlen( $value ) > 0 ) {
 					if ( preg_match( '/description/', $key ) ) {
 						continue;
 					}
-					if ( $key == 'font_size' || $key == 'line_height' ) {
+					if ( $key === 'font_size' || $key === 'line_height' ) {
 						$value = preg_replace( '/\s+/', '', $value );
 					}
-					if ( $key == 'font_size' ) {
+					if ( $key === 'font_size' ) {
 						$pattern = '/^(\d*(?:\.\d+)?)\s*(px|\%|in|cm|mm|em|rem|ex|pt|pc|vw|vh|vmin|vmax)?$/';
 						// allowed metrics: http://www.w3schools.com/cssref/css_units.asp
 						$regexr = preg_match( $pattern, $value, $matches );
@@ -124,7 +126,7 @@ class WPBakeryShortCode_VC_Custom_heading extends WPBakeryShortCode {
 				}
 			}
 		}
-		if ( ! empty( $google_fonts_data ) && isset( $google_fonts_data['values'], $google_fonts_data['values']['font_family'], $google_fonts_data['values']['font_style'] ) ) {
+		if ( ( ! isset( $atts['use_theme_fonts'] ) || 'yes' !== $atts['use_theme_fonts'] ) && ! empty( $google_fonts_data ) && isset( $google_fonts_data['values'], $google_fonts_data['values']['font_family'], $google_fonts_data['values']['font_style'] ) ) {
 			$google_fonts_family = explode( ':', $google_fonts_data['values']['font_family'] );
 			$styles[] = "font-family:" . $google_fonts_family[0];
 			$google_fonts_styles = explode( ':', $google_fonts_data['values']['font_style'] );
@@ -142,10 +144,10 @@ class WPBakeryShortCode_VC_Custom_heading extends WPBakeryShortCode {
 		 *
 		 * @since 4.3
 		 */
-		$css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, 'vc_custom_heading' . $el_class . vc_shortcode_custom_css_class( $css, ' ' ), $this->settings['base'], $atts );
+		$css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, 'vc_custom_heading ' . $el_class . vc_shortcode_custom_css_class( $css, ' ' ), $this->settings['base'], $atts );
 
 		return array(
-			'css_class' => $css_class,
+			'css_class' => trim( preg_replace( '/\s+/', ' ', $css_class ) ),
 			'styles' => $styles
 		);
 	}

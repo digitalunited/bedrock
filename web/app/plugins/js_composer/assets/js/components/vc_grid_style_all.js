@@ -6,7 +6,7 @@
  * Basic Grid Style show all
  * ========================================================= */
 var vcGridStyleAll;
-(function ($) {
+(function ( $ ) {
 	/**
 	 * "Show all items" grid style.
 	 * ==============================
@@ -14,21 +14,21 @@ var vcGridStyleAll;
 	 * @param grid
 	 * @constructor
 	 */
-	vcGridStyleAll = function (grid) {
+	vcGridStyleAll = function ( grid ) {
 		this.grid = grid;
 		this.settings = grid.settings;
 		this.filterValue = null;
 		this.$el = false;
 		this.$content = false;
 		this.isLoading = false;
-		this.$loader = $('<div class="vc_grid-loading"></div>');
+		this.$loader = $( '<div class="vc_grid-loading"></div>' );
 		this.init();
 	};
 	/**
 	 * Initialize
 	 */
 	vcGridStyleAll.prototype.init = function () {
-		_.bindAll(this
+		_.bindAll( this
 			, 'addItems'
 			, 'showItems'
 		);
@@ -40,10 +40,10 @@ var vcGridStyleAll;
 		this.$el = this.grid.$el;
 		this.$content = this.$el;
 		this.setIsLoading();
-		this.grid.ajax({}, this.addItems);
+		this.grid.ajax( {}, this.addItems );
 	};
 	vcGridStyleAll.prototype.setIsLoading = function () {
-		this.$content.append(this.$loader);
+		this.$content.append( this.$loader );
 		this.isLoading = true;
 	};
 
@@ -56,35 +56,36 @@ var vcGridStyleAll;
 	 *
 	 * @param filter - string parameter with filter settings.
 	 */
-	vcGridStyleAll.prototype.filter = function (filter) {
-		filter = _.isUndefined(filter) || filter === '*' ? '' : filter;
-		if( this.filterValue == filter ) {
+	vcGridStyleAll.prototype.filter = function ( filter ) {
+		filter = _.isUndefined( filter ) || '*' === filter ? '' : filter;
+		if ( this.filterValue == filter ) {
 			return false; // already filtred
 		}
 		this.$content
-			.find('.vc_visible-item')
-			.removeClass('vc_visible-item ' + vcGridSettings.addItemsAnimation + ' animated');
-		this.filterValue =  filter;
-		_.defer(this.showItems); // just only for animation
+			.find( '.vc_visible-item' )
+			.removeClass( 'vc_visible-item ' + vcGridSettings.addItemsAnimation + ' animated' );
+		this.filterValue = filter;
+		_.defer( this.showItems ); // just only for animation
 	};
-	vcGridStyleAll.prototype.showItems = function() {
-		var $els = this.$content.find('.vc_grid-item' + this.filterValue);
+	vcGridStyleAll.prototype.showItems = function () {
+		var $els = this.$content.find( '.vc_grid-item' + this.filterValue );
 		this.setIsLoading();
-		$els.addClass('vc_visible-item ' + (
-			vcGridSettings.addItemsAnimation != 'none' ? vcGridSettings.addItemsAnimation + ' animated' : '') );
+		$els.addClass( 'vc_visible-item ' + (
+			'none' !== vcGridSettings.addItemsAnimation ? vcGridSettings.addItemsAnimation + ' animated' : '') );
 		this.unsetIsLoading();
+		jQuery( window ).trigger( 'grid:items:added', this.$el );
 	};
 	/**
 	 * Add new grid elements to content block. Called by ajax in render method.
 	 * @param html
 	 */
-	vcGridStyleAll.prototype.addItems = function (html) {
+	vcGridStyleAll.prototype.addItems = function ( html ) {
 		this.unsetIsLoading();
-		$(html).appendTo(this.$el);
-		this.$content = this.$el.find('[data-vc-grid-content="true"]');
+		$( html ).appendTo( this.$el );
+		this.$content = this.$el.find( '[data-vc-grid-content="true"]' );
 		this.grid.initFilter();
 		this.filter();
 		window.vc_prettyPhoto();
 		return false;
 	};
-})(window.jQuery);
+})( window.jQuery );

@@ -8,7 +8,7 @@ class WPBakeryShortCode_VC_Masonry_Grid extends WPBakeryShortCode_VC_Basic_Grid 
 
 	public function shortcodeScripts() {
 		parent::shortcodeScripts();
-		wp_register_script( 'vc_masonry', vc_asset_url( 'lib/masonry/dist/masonry.pkgd.min.js' ) );
+		wp_register_script( 'vc_masonry', vc_asset_url( 'lib/bower/masonry/dist/masonry.pkgd.min.js' ) );
 		wp_register_script( 'vc_grid-style-all-masonry', vc_asset_url( 'js/components/vc_grid_style_all_masonry.js' ),
 			array( 'vc_grid-style-all' ), WPB_VC_VERSION, true );
 		wp_register_script( 'vc_grid-style-lazy-masonry', vc_asset_url( 'js/components/vc_grid_style_lazy_masonry.js' ),

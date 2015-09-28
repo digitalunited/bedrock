@@ -10,6 +10,7 @@ Thanks to brshift for Portuguese translation
 Thanks to Muhammad Ali - http://bestit.org for Persian translation
 Thanks to Valentin Val for Bulgarian translation
 Thanks to evange for Japanese translation
+Thanks to Oberon Lai for traditional Chinese translation
 
 Thanks to Abid Omar for the detailed tutorial and WP Auto update class. https://github.com/omarabid/Self-Hosted-WordPress-Plugin-repository
 

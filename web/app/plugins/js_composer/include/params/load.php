@@ -28,7 +28,7 @@ require_once vc_path_dir( 'PARAMS_DIR', '/param_group/param_group.php' );
 require_once vc_path_dir( 'PARAMS_DIR', '/custom_markup/custom_markup.php' );
 require_once vc_path_dir( 'PARAMS_DIR', '/animation_style/animation_style.php' );
 require_once vc_path_dir( 'PARAMS_DIR', '/iconpicker/iconpicker.php' );
-require_once vc_path_dir( 'PARAMS_DIR', '/vc_grid_element/vc_grid_id/vc_grid_id.php' );
+require_once vc_path_dir( 'PARAMS_DIR', '/el_id/el_id.php' );
 
 global $vc_params_list;
 $vc_params_list = array(
@@ -64,5 +64,5 @@ $vc_params_list = array(
 	'custom_markup',
 	'animation_style',
 	'iconpicker',
-	'vc_grid_id',
+	'el_id',
 );

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * WPBakery Visual Composer shortcodes
  *

@@ -73,7 +73,7 @@ class Vc_AutoComplete {
 			}
 		}
 
-		$output .= '<li class="vc_autocomplete-input"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input class="vc_auto_complete_param" type="text" placeholder="Click here and start typing..." value="' . $this->value . '" autocomplete="off"></li>' .
+		$output .= '<li class="vc_autocomplete-input"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><input class="vc_auto_complete_param" type="text" placeholder="' . __( 'Click here and start typing...', 'js_composer' ) . '" value="' . $this->value . '" autocomplete="off"></li>' .
 		           '<li class="vc_autocomplete-clear"></li>' .
 		           '</ul>';
 

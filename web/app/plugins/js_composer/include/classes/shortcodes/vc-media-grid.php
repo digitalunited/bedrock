@@ -24,9 +24,10 @@ class WPBakeryShortCode_VC_Media_Grid extends WPBakeryShortCode_VC_Basic_Grid {
 			'include' => $atts['include'],
 			'posts_per_page' => apply_filters( 'vc_basic_grid_max_items', self::$default_max_items ),
 			'offset' => 0,
-			'post_type' => 'attachment', // $atts['post_type'],
+			'post_type' => 'attachment',
 			'orderby' => 'post__in',
 		);
+
 		return $settings;
 	}
 

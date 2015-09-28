@@ -16,13 +16,14 @@ Class WPBakeryShortCode_VC_Gitem_Col extends WPBakeryShortCode_VC_Column {
 			array( 'name' => 'center', 'label' => __( 'Center', 'js_composer' ) ),
 			array( 'name' => 'right', 'label' => __( 'Right', 'js_composer' ) )
 		);
-		$output    = '<span class="vc_control vc_control-align"><span class="vc_control-wrap">';
+		$output = '<span class="vc_control vc_control-align"><span class="vc_control-wrap">';
 		foreach ( $alignment as $data ) {
 			$attr = esc_attr( $data['name'] );
 			$output .= '<a href="#" data-vc-control-btn="align" data-vc-align="' . $attr . '" class="vc_control'
-			           . ' vc_control-align-' . $attr . '" title="' . esc_html($data['label'])
-			           . '"><i class="vc_icon vc_icon-align-'. $attr .'"></i></a>';
+			           . ' vc_control-align-' . $attr . '" title="' . esc_html( $data['label'] )
+			           . '"><i class="vc_icon vc_icon-align-' . $attr . '"></i></a>';
 		}
+
 		return $output . '</span></span>';
 	}
 }

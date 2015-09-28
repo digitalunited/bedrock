@@ -13,7 +13,6 @@ class Vc_Vendor_AdvancedCustomFields implements Vc_Vendor_Interface {
 	 * @since 4.3.3
 	 */
 	public function load() {
-
 		/**
 		 * Action when backend editor is rendering
 		 * @see Vc_Backend_Editor::renderEditor wp-content/plugins/js_composer/include/classes/editors/class-vc-backend-editor.php
@@ -31,10 +30,10 @@ class Vc_Vendor_AdvancedCustomFields implements Vc_Vendor_Interface {
 			&$this,
 			'enqueueJs'
 		) );
-		add_filter('vc_grid_item_shortcodes', array(
+		add_filter( 'vc_grid_item_shortcodes', array(
 			&$this,
 			'mapGridItemShortcodes'
-		));
+		) );
 	}
 
 	/**
@@ -46,10 +45,12 @@ class Vc_Vendor_AdvancedCustomFields implements Vc_Vendor_Interface {
 			vc_asset_url( 'js/vendors/advanced_custom_fields.js' ),
 			array( 'jquery' ), '1.0', true );
 	}
-	public function mapGridItemShortcodes(array $shortcodes) {
-		require_once vc_path_dir('VENDORS_DIR', 'plugins/acf/class-vc-gitem-acf-shortcode.php');
-		require_once vc_path_dir('VENDORS_DIR', 'plugins/acf/grid-item-attributes.php');
-		$wc_shortcodes = include vc_path_dir('VENDORS_DIR', 'plugins/acf/grid-item-shortcodes.php');
+
+	public function mapGridItemShortcodes( array $shortcodes ) {
+		require_once vc_path_dir( 'VENDORS_DIR', 'plugins/acf/class-vc-gitem-acf-shortcode.php' );
+		require_once vc_path_dir( 'VENDORS_DIR', 'plugins/acf/grid-item-attributes.php' );
+		$wc_shortcodes = include vc_path_dir( 'VENDORS_DIR', 'plugins/acf/grid-item-shortcodes.php' );
+
 		return $shortcodes + $wc_shortcodes;
 	}
 }

@@ -19,7 +19,8 @@
 /**
  * Shortcode class example "Hello World"
  *
- * Lets pretend that we want to create shortcode with this structure: [my_hello_world foo="bar"]Shortcode content here[/my_hello_world]
+ * Lets pretend that we want to create shortcode with this structure: [my_hello_world foo="bar"]Shortcode content
+ * here[/my_hello_world]
  */
 class WPBakeryShortCode_my_hello_world extends WPBakeryShortCode {
 
@@ -43,15 +44,13 @@ class WPBakeryShortCode_my_hello_world extends WPBakeryShortCode {
 			'my_dropdown' => ''
 		), $atts ) );
 
-		$width_class = '';//wpb_translateColumnWidthToSpan($width); // Determine width for our div holder
+		$width_class = '';
 		$css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $width_class, $this->settings['base'], $atts );
 		$output = '<div class="' . $css_class . '">';
 		$output .= '<h3>' . $foo . '</h3>';
 		$output .= wpb_js_remove_wpautop( $content, true );
 		$output .= '<p> Dropdown: ' . $my_dropdown . '</p>';
 		$output .= '</div>';
-
-		$output = $this->startRow( $el_position ) . $output . $this->endRow( $el_position );
 
 		return $output;
 	}

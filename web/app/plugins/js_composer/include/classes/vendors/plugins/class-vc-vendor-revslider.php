@@ -64,7 +64,7 @@ class Vc_Vendor_Revslider implements Vc_Vendor_Interface {
 					'type' => 'textfield',
 					'heading' => __( 'Widget title', 'js_composer' ),
 					'param_name' => 'title',
-					'description' => __( 'Enter text which will be used as widget title. Leave blank if no title is needed.', 'js_composer' )
+					'description' => __( 'Enter text used as widget title (Note: located above content element).', 'js_composer' )
 				),
 				array(
 					'type' => 'dropdown',
@@ -72,13 +72,14 @@ class Vc_Vendor_Revslider implements Vc_Vendor_Interface {
 					'param_name' => 'alias',
 					'admin_label' => true,
 					'value' => $revsliders,
+					'save_always' => true,
 					'description' => __( 'Select your Revolution Slider.', 'js_composer' )
 				),
 				array(
 					'type' => 'textfield',
 					'heading' => __( 'Extra class name', 'js_composer' ),
 					'param_name' => 'el_class',
-					'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' )
+					'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' )
 				)
 			)
 		) );

@@ -3,6 +3,7 @@ require_once vc_path_dir( 'SHORTCODES_DIR', 'vc-gitem.php' );
 
 class WPBakeryShortCode_VC_Gitem_Animated_Block extends WPBakeryShortCode_VC_Gitem {
 	protected static $animations = array();
+
 	public function itemGrid() {
 		$output = '';
 		$output .= '<div class="vc_gitem-animated-block-content-controls">'
@@ -19,10 +20,11 @@ class WPBakeryShortCode_VC_Gitem_Animated_Block extends WPBakeryShortCode_VC_Git
 	public function containerHtmlBlockParams( $width, $i ) {
 		return 'class="vc_gitem-animated-block-content"';
 	}
+
 	public static function animations() {
 		return array(
-			__( 'Single block', 'js_composer' ) => '',
-			__( 'No animation', 'js_composer' ) => 'none',
+			__( 'Single block (no animation)', 'js_composer' ) => '',
+			__( 'Double block (no animation)', 'js_composer' ) => 'none',
 			__( 'Fade in', 'js_composer' ) => 'fadeIn',
 			__( 'Scale in', 'js_composer' ) => 'scaleIn',
 			__( 'Scale in with rotation', 'js_composer' ) => 'scaleRotateIn',

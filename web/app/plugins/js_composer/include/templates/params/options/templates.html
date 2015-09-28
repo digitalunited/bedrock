@@ -16,10 +16,12 @@
                 <# _.each(options, function(option) { #>
                     <# if(_.isArray(option)) { #>
                         <option value="{{ option[0] }}"
-                        {{ value[0]===option[0] ? ' selected="true"' : '' }}>{{ option[1] }}</option>
+                                {{ value[0]===option[0] ?
+                        ' selected="true"' : '' }}>{{ option[1] }}</option>
                         <# } else { #>
                             <option value="{{ option }}"
-                            {{ value[0]===option ? ' selected="true"' : '' }}>{{ option }}</option>
+                                    {{ value[0]===option ?
+                            ' selected="true"' : '' }}>{{ option }}</option>
                             <# } #>
                                 <# }); #>
             </select>
@@ -35,8 +37,8 @@
 
             <div class="vc_options-checkboxes">
                 <# _.each(options, function(option) { #>
-                    <label><input type="checkbox" name="{{ name }}" value="{{ option[0] }}"{{ _.indexOf(value,
-                        option[0]) > -1 ? ' checked="true"' : '' }}> {{ option[1] }}</label>
+                    <label><input type="checkbox" name="{{ name }}" value="{{ option[0] }}" {{ _.indexOf(value,
+                                  option[0])> -1 ? ' checked="true"' : '' }}> {{ option[1] }}</label>
                     <# }); #>
             </div>
             <div class="descr"><i>{{ description }}</i></div>
@@ -49,7 +51,7 @@
             <label class="wpb_element_label">{{ label }}</label>
 
             <div class="vc_options-checkbox">
-                <label><input type="checkbox" name="{{ name }}" value="true"{{ value[0]==='true' ? ' checked="true"' :
+                <label><input type="checkbox" name="{{ name }}" value="true" {{ value[0] === 'true' ? ' checked="true"' :
                     '' }}> <?php _e('Yes', 'js_composer') ?></label>
             </div>
             <div class="descr"><i>{{ description }}</i></div>

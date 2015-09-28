@@ -44,7 +44,7 @@ class Vc_Edit_Form_Fields implements Vc_Render {
 	public function __construct( $tag, $atts ) {
 		$this->tag = $tag;
 		$this->atts = apply_filters( 'vc_edit_form_fields_attributes_' . $this->tag, $atts );
-		$this->setSettings( WPBMap::getShortCode( $this->tag ) );
+		$this->setSettings( WPBMap::getUserShortCode( $this->tag ) );
 	}
 
 	/**
@@ -56,7 +56,7 @@ class Vc_Edit_Form_Fields implements Vc_Render {
 	 * @return null
 	 */
 	public function setting( $key ) {
-		return isset( $this->settings[$key] ) ? $this->settings[$key] : null;
+		return isset( $this->settings[ $key ] ) ? $this->settings[ $key ] : null;
 	}
 
 	/**
@@ -108,13 +108,11 @@ class Vc_Edit_Form_Fields implements Vc_Render {
 		if ( is_null( $value ) ) { // If value doesn't exists
 			if ( isset( $param_settings['std'] ) ) {
 				$value = $param_settings['std'];
-			} elseif (
-				isset( $param_settings['value'] ) && is_array( $param_settings['value'] )
-				&& !empty( $param_settings['type'] ) && $param_settings['type'] != 'checkbox'
+			} elseif ( isset( $param_settings['value'] ) && is_array( $param_settings['value'] ) && ! empty( $param_settings['type'] ) && $param_settings['type'] !== 'checkbox'
 			) {
 				$first_key = key( $param_settings['value'] );
-				$value     = $first_key ? $param_settings['value'][$first_key] : '';
-			} elseif ( isset( $param_settings['value'] ) && !is_array( $param_settings['value'] ) ) {
+				$value = $first_key ? $param_settings['value'][ $first_key ] : '';
+			} elseif ( isset( $param_settings['value'] ) && ! is_array( $param_settings['value'] ) ) {
 				$value = $param_settings['value'];
 			}
 		}
@@ -129,9 +127,9 @@ class Vc_Edit_Form_Fields implements Vc_Render {
 	 */
 	public function enqueueScripts() {
 		$output = '';
-		if ( !WpbakeryShortcodeParams::isEnqueue() ) {
+		if ( ! WpbakeryShortcodeParams::isEnqueue() ) {
 			$scripts = apply_filters( 'vc_edit_form_enqueue_script', WpbakeryShortcodeParams::getScripts() );
-			foreach ($scripts as $script ) {
+			foreach ( $scripts as $script ) {
 				$output .= "\n\n" . '<script type="text/javascript" src="' . $script . '"></script>';
 			}
 		}
@@ -150,25 +148,41 @@ class Vc_Edit_Form_Fields implements Vc_Render {
 	 */
 	protected function renderGroupedFields( $groups, $groups_content ) {
 		$output = '';
-		if ( sizeof( $groups ) > 1 ) {
-			$output .= '<div class="vc_panel-tabs" id="vc_edit-form-tabs"><ul class="vc_edit-form-tabs-menu">';
+		if ( sizeof( $groups ) > 1 || ( sizeof( $groups ) >= 1 && empty( $groups_content['_general'] ) ) ) {
+			$output .= '<div class="vc_panel-tabs" id="vc_edit-form-tabs">';
+			$output .= '<ul class="vc_general vc_ui-tabs-line" data-vc-ui-element="panel-tabs-controls">';
 			$key = 0;
 			foreach ( $groups as $g ) {
 				$output .= '<li class="vc_edit-form-tab-control" data-tab-index="'
-				           . $key . '"><a href="#vc_edit-form-tab-' . $key ++
-				           . '" class="vc_edit-form-link">'
-				           . ( $g === '_general' ? __( 'General', 'js_composer' ) : $g ) . '</a></li>';
+				           . $key . '"><button data-vc-ui-element-target="#vc_edit-form-tab-'
+				           . $key ++ . '" class="vc_ui-tabs-line-trigger" data-vc-ui-element="panel-tab-control">'
+				           . ( $g === '_general' ? __( 'General', 'js_composer' ) : $g ) . '</button></li>';
 			}
-			$output .= '</ul>';
+			$output .= '<li class="vc_ui-tabs-line-dropdown-toggle" data-vc-action="dropdown"
+						    data-vc-content=".vc_ui-tabs-line-dropdown" data-vc-ui-element="panel-tabs-line-toggle">
+                            <span class="vc_ui-tabs-line-trigger" data-vc-accordion
+                                  data-vc-container=".vc_ui-tabs-line-dropdown-toggle"
+                                  data-vc-target=".vc_ui-tabs-line-dropdown"> </span>
+							<ul class="vc_ui-tabs-line-dropdown" data-vc-ui-element="panel-tabs-line-dropdown">
+							</ul>
+					</ul>';
+
+
+			/*$output .= '<ul class="vc_edit-form-tabs-menu">';
 			$key = 0;
 			foreach ( $groups as $g ) {
-				$output .= '<div id="vc_edit-form-tab-' . $key ++ . '" class="vc_edit-form-tab">';
-				$output .= $groups_content[$g];
+				$output .= '<li class="vc_edit-form-tab-control" data-tab-index="' . $key . '"><a href="#vc_edit-form-tab-' . $key ++ . '" class="vc_edit-form-link">' . ( $g === '_general' ? __( 'General', 'js_composer' ) : $g ) . '</a></li>';
+			}
+			$output .= '</ul>';*/
+			$key = 0;
+			foreach ( $groups as $g ) {
+				$output .= '<div id="vc_edit-form-tab-' . $key ++ . '" class="vc_edit-form-tab vc_row" data-vc-ui-element="panel-edit-element-tab">';
+				$output .= $groups_content[ $g ];
 				$output .= '</div>';
 			}
 			$output .= '</div>';
-		} elseif ( !empty( $groups_content['_general'] ) ) {
-			$output .= $groups_content['_general'];
+		} elseif ( ! empty( $groups_content['_general'] ) ) {
+			$output .= '<div class="vc_edit-form-tab vc_row vc_active" data-vc-ui-element="panel-edit-element-tab">' . $groups_content['_general'] . '</div>';
 		}
 
 		return $output;
@@ -181,34 +195,45 @@ class Vc_Edit_Form_Fields implements Vc_Render {
 	 */
 	public function render() {
 		$this->loadDefaultParams();
-		$output             = $el_position = '';
-		$groups_content     = $groups = array();
-		$params             = $this->setting( 'params' );
-		$editor_css_classes = apply_filters( 'vc_edit_form_class', array(
-			'wpb_edit_form_elements',
-			'vc_edit_form_elements'
-		), $this->atts, $params );
-		$output .= '<div class="'
-		           . implode( ' ', $editor_css_classes )
-		           . '" data-title="' . htmlspecialchars( __( 'Edit', 'js_composer' )
-		                                                  . ' ' . __( $this->setting( 'name' ), "js_composer" ) ) . '">';
-		foreach ( $params as $param ) {
-			$name = isset( $param['param_name'] ) ? $param['param_name'] : null;
-			if ( !is_null( $name ) ) {
-				$value = isset( $this->atts[$name] ) ? $this->atts[$name] : null;
-				$value = $this->parseShortcodeAttributeValue( $param, $value );
-				$group = isset( $param['group'] ) && '' !== $param['group'] ? $param['group'] : '_general';
-				if ( !isset( $groups_content[$group] ) ) {
-					$groups[]               = $group;
-					$groups_content[$group] = '';
+		$output = $el_position = '';
+		$groups_content = $groups = array();
+		$params = $this->setting( 'params' );
+		$editor_css_classes = apply_filters( 'vc_edit_form_class',
+			array(
+				'wpb_edit_form_elements',
+				'vc_edit_form_elements'
+			),
+			$this->atts,
+			$params );
+		$deprecated = $this->setting( 'deprecated' );
+		if ( ! empty( $deprecated ) ) {
+			$output .= '<div class="vc_row vc_shortcode-edit-form-deprecated-message"><div class="vc_col-sm-12 wpb_element_wrapper">' .
+			           vc_message_warning( sprintf( __( 'You are using outdated element, it is deprecated since version %s.', 'js_composer' ), $this->setting( 'deprecated' ) ) ) .
+			           '</div></div>';
+		}
+		$output .= '<div class="' . implode( ' ',
+				$editor_css_classes ) . '" data-title="' . htmlspecialchars( __( 'Edit',
+					'js_composer' ) . ' ' . __( $this->setting( 'name' ), "js_composer" ) ) . '">';
+		if ( is_array( $params ) ) {
+			foreach ( $params as $param ) {
+				$name = isset( $param['param_name'] ) ? $param['param_name'] : null;
+				if ( ! is_null( $name ) ) {
+					$value = isset( $this->atts[ $name ] ) ? $this->atts[ $name ] : null;
+					$value = $this->parseShortcodeAttributeValue( $param, $value );
+					$group = isset( $param['group'] ) && '' !== $param['group'] ? $param['group'] : '_general';
+					if ( ! isset( $groups_content[ $group ] ) ) {
+						$groups[] = $group;
+						$groups_content[ $group ] = '';
+					}
+					$groups_content[ $group ] .= $this->renderField( $param, $value );
 				}
-				$groups_content[$group] .= $this->renderField( $param, $value );
 			}
 		}
 		$output .= $this->renderGroupedFields( $groups, $groups_content );
 		$output .= '</div>';
 		$output .= $this->enqueueScripts();
 		echo $output;
+		do_action( 'vc_edit_form_fields_after_render' );
 	}
 
 	/**
@@ -221,44 +246,51 @@ class Vc_Edit_Form_Fields implements Vc_Render {
 	 * @param $value
 	 *
 	 * vc_filter: vc_single_param_edit - hook to edit any shortode param
-	 * vc_filter: vc_form_fields_render_field_{shortcode_name}_{param_name}_param_value - hook to edit shortcode param value
-	 * vc_filter: vc_form_fields_render_field_{shortcode_name}_{param_name}_param - hook to edit shortcode param attributes
-	 * vc_filter: vc_single_param_edit_holder_output - hook to edit output of this method
+	 * vc_filter: vc_form_fields_render_field_{shortcode_name}_{param_name}_param_value - hook to edit shortcode param
+	 *     value vc_filter: vc_form_fields_render_field_{shortcode_name}_{param_name}_param - hook to edit shortcode
+	 *     param attributes vc_filter: vc_single_param_edit_holder_output - hook to edit output of this method
+	 *
 	 * @return mixed|void
 	 */
 	protected function renderField( $param, $value ) {
 		$param['vc_single_param_edit_holder_class'] = array(
 			'wpb_el_type_' . $param['type'],
+			'vc_wrapper-param-type-' . $param['type'],
 			'vc_shortcode-param'
 		);
-		if ( !empty( $param['param_holder_class'] ) ) {
+		if ( ! empty( $param['param_holder_class'] ) ) {
 			$param['vc_single_param_edit_holder_class'][] = $param['param_holder_class'];
 		}
-		$param  = apply_filters( 'vc_single_param_edit', $param, $value );
-		$output = '<div class="' . implode( ' ', $param['vc_single_param_edit_holder_class'] ) . '" data-param_name="' . $param['param_name'] . '" data-param_type="' . $param['type'] . '">';
-		$output .= ( isset( $param['heading'] ) )
-			? '<div class="wpb_element_label">' . __( $param['heading'], "js_composer" ) . '</div>' : '';
+		$param = apply_filters( 'vc_single_param_edit', $param, $value );
+		$output = '<div class="' . implode( ' ',
+				$param['vc_single_param_edit_holder_class'] ) . '" data-vc-ui-element="panel-shortcode-param" data-vc-shortcode-param-name="' . esc_attr( $param['param_name'] ) . '" data-param_type="' . esc_attr( $param['type'] ) . '" data-param_settings="' . esc_attr( json_encode( $param ) ) . '">';
+		$output .= ( isset( $param['heading'] ) ) ? '<div class="wpb_element_label">' . $param['heading'] . '</div>' : '';
 		$output .= '<div class="edit_form_line">';
-		$value = apply_filters(
-			'vc_form_fields_render_field_' . $this->setting( 'base' ) . '_' . $param['param_name'] . '_param_value'
-			, $value
-			, $param
-			, $this->settings
-			, $this->atts );
-		$param = apply_filters(
-			'vc_form_fields_render_field_' . $this->setting( 'base' ) . '_' . $param['param_name'] . '_param'
-			, $param
-			, $value
-			, $this->settings
-			, $this->atts );
+		$value = apply_filters( 'vc_form_fields_render_field_' . $this->setting( 'base' ) . '_' . $param['param_name'] . '_param_value',
+			$value,
+			$param,
+			$this->settings,
+			$this->atts );
+		$param = apply_filters( 'vc_form_fields_render_field_' . $this->setting( 'base' ) . '_' . $param['param_name'] . '_param',
+			$param,
+			$value,
+			$this->settings,
+			$this->atts );
+		$output = apply_filters( 'vc_edit_form_fields_render_field_' . $param['type'] . '_before', $output );
 		$output .= vc_do_shortcode_param_settings_field( $param['type'], $param, $value, $this->setting( 'base' ) );
+		$output_after = '';
 		if ( isset( $param['description'] ) ) {
-			$output .= '<span class="vc_description vc_clearfix">' . __( $param['description'], "js_composer" ) . '</span>';
+			$output_after .= '<span class="vc_description vc_clearfix">' . $param['description'] . '</span>';
 		}
-		$output .= '</div>';
-		$output .= '</div>';
+		$output_after .= '</div></div>';
+		$output .= apply_filters( 'vc_edit_form_fields_render_field_' . $param['type'] . '_after', $output_after );
 
-		return apply_filters( 'vc_single_param_edit_holder_output', $output, $param, $value, $this->settings, $this->atts );
+		return apply_filters( 'vc_single_param_edit_holder_output',
+			$output,
+			$param,
+			$value,
+			$this->settings,
+			$this->atts );
 	}
 
 	/**

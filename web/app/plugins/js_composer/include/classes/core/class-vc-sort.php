@@ -33,6 +33,17 @@ class Vc_Sort {
 	}
 
 	/**
+	 * Used to change/set data to sort
+	 *
+	 * @since 4.5
+	 *
+	 * @param $data
+	 */
+	public function setData( $data ) {
+		$this->data = $data;
+	}
+
+	/**
 	 * Sort $this->data by user key, used in class-vc-mapper.
 	 * If keys are equals it SAVES a position in array (index).
 	 *
@@ -74,6 +85,7 @@ class Vc_Sort {
 
 	/**
 	 * @since 4.4
+	 *
 	 * @return array - sorting data
 	 */
 	public function getData() {

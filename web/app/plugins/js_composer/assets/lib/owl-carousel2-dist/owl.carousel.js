@@ -1389,7 +1389,7 @@
 			.removeClass(this.options.dragClass)
 			.removeClass(this.options.grabClass)
 			.attr('class', this.$element.attr('class').replace(new RegExp(this.options.responsiveClass + '-\\S+\\s', 'g'), ''))
-			.removeData('owl.carousel');
+			.removeData('owl.vccarousel');
 	};
 
 	/**
@@ -1465,7 +1465,7 @@
 			$.grep([ 'on', name, namespace ], function(v) { return v })
 				.join('-').toLowerCase()
 		), event = $.Event(
-			[ name, 'owl', namespace || 'carousel' ].join('.').toLowerCase(),
+			[ name, 'owl', namespace || 'vccarousel' ].join('.').toLowerCase(),
 			$.extend({ relatedTarget: this }, status, data)
 		);
 
@@ -1614,22 +1614,22 @@
 	 * @todo Navigation plugin `next` and `prev`
 	 * @public
 	 */
-	$.fn.owlCarousel = function(option) {
+	$.fn.vcOwlCarousel = function(option) {
 		var args = Array.prototype.slice.call(arguments, 1);
 
 		return this.each(function() {
 			var $this = $(this),
-				data = $this.data('owl.carousel');
+				data = $this.data('owl.vccarousel');
 
 			if (!data) {
 				data = new Owl(this, typeof option == 'object' && option);
-				$this.data('owl.carousel', data);
+				$this.data('owl.vccarousel', data);
 
 				$.each([
 					'next', 'prev', 'to', 'destroy', 'refresh', 'replace', 'add', 'remove'
 				], function(i, event) {
 					data.register({ type: Owl.Type.Event, name: event });
-					data.$element.on(event + '.owl.carousel.core', $.proxy(function(e) {
+					data.$element.on(event + '.owl.vccarousel.core', $.proxy(function(e) {
 						if (e.namespace && e.relatedTarget !== this) {
 							this.suppress([ event ]);
 							data[event].apply(this, [].slice.call(arguments, 1));
@@ -1649,7 +1649,7 @@
 	 * The constructor for the jQuery Plugin
 	 * @public
 	 */
-	$.fn.owlCarousel.Constructor = Owl;
+	$.fn.vcOwlCarousel.Constructor = Owl;
 
 })(window.Zepto || window.jQuery, window, document);
 
@@ -1694,7 +1694,7 @@
 		 * @type {Object}
 		 */
 		this._handlers = {
-			'initialized.owl.carousel': $.proxy(function(e) {
+			'initialized.owl.vccarousel': $.proxy(function(e) {
 				if (e.namespace && this._core.settings.autoRefresh) {
 					this.watch();
 				}
@@ -1760,7 +1760,7 @@
 		}
 	};
 
-	$.fn.owlCarousel.Constructor.Plugins.AutoRefresh = AutoRefresh;
+	$.fn.vcOwlCarousel.Constructor.Plugins.AutoRefresh = AutoRefresh;
 
 })(window.Zepto || window.jQuery, window, document);
 
@@ -1799,7 +1799,7 @@
 		 * @type {Object}
 		 */
 		this._handlers = {
-			'initialized.owl.carousel change.owl.carousel': $.proxy(function(e) {
+			'initialized.owl.vccarousel change.owl.vccarousel': $.proxy(function(e) {
 				if (!e.namespace) {
 					return;
 				}
@@ -1895,7 +1895,7 @@
 		}
 	};
 
-	$.fn.owlCarousel.Constructor.Plugins.Lazy = Lazy;
+	$.fn.vcOwlCarousel.Constructor.Plugins.Lazy = Lazy;
 
 })(window.Zepto || window.jQuery, window, document);
 
@@ -1926,12 +1926,12 @@
 		 * @type {Object}
 		 */
 		this._handlers = {
-			'initialized.owl.carousel refreshed.owl.carousel': $.proxy(function(e) {
+			'initialized.owl.vccarousel refreshed.owl.vccarousel': $.proxy(function(e) {
 				if (e.namespace && this._core.settings.autoHeight) {
 					this.update();
 				}
 			}, this),
-			'changed.owl.carousel': $.proxy(function(e) {
+			'changed.owl.vccarousel': $.proxy(function(e) {
 				if (e.namespace && this._core.settings.autoHeight && e.property.name == 'position'){
 					this.update();
 				}
@@ -1980,7 +1980,7 @@
 		}
 	};
 
-	$.fn.owlCarousel.Constructor.Plugins.AutoHeight = AutoHeight;
+	$.fn.vcOwlCarousel.Constructor.Plugins.AutoHeight = AutoHeight;
 
 })(window.Zepto || window.jQuery, window, document);
 
@@ -2026,27 +2026,27 @@
 		 * @type {Object}
 		 */
 		this._handlers = {
-			'initialized.owl.carousel': $.proxy(function(e) {
+			'initialized.owl.vccarousel': $.proxy(function(e) {
 				if (e.namespace) {
 					this._core.register({ type: 'state', name: 'playing', tags: [ 'interacting' ] });
 				}
 			}, this),
-			'resize.owl.carousel': $.proxy(function(e) {
+			'resize.owl.vccarousel': $.proxy(function(e) {
 				if (e.namespace && this._core.settings.video && this.isInFullScreen()) {
 					e.preventDefault();
 				}
 			}, this),
-			'refreshed.owl.carousel': $.proxy(function(e) {
+			'refreshed.owl.vccarousel': $.proxy(function(e) {
 				if (e.namespace && this._core.is('resizing')) {
 					this._core.$stage.find('.cloned .owl-video-frame').remove();
 				}
 			}, this),
-			'changed.owl.carousel': $.proxy(function(e) {
+			'changed.owl.vccarousel': $.proxy(function(e) {
 				if (e.namespace && e.property.name === 'position' && this._playing) {
 					this.stop();
 				}
 			}, this),
-			'prepared.owl.carousel': $.proxy(function(e) {
+			'prepared.owl.vccarousel': $.proxy(function(e) {
 				if (!e.namespace) {
 					return;
 				}
@@ -2261,7 +2261,7 @@
 		}
 	};
 
-	$.fn.owlCarousel.Constructor.Plugins.Video = Video;
+	$.fn.vcOwlCarousel.Constructor.Plugins.Video = Video;
 
 })(window.Zepto || window.jQuery, window, document);
 
@@ -2286,18 +2286,18 @@
 		this.next = undefined;
 
 		this.handlers = {
-			'change.owl.carousel': $.proxy(function(e) {
+			'change.owl.vccarousel': $.proxy(function(e) {
 				if (e.namespace && e.property.name == 'position') {
 					this.previous = this.core.current();
 					this.next = e.property.value;
 				}
 			}, this),
-			'drag.owl.carousel dragged.owl.carousel translated.owl.carousel': $.proxy(function(e) {
+			'drag.owl.vccarousel dragged.owl.vccarousel translated.owl.vccarousel': $.proxy(function(e) {
 				if (e.namespace) {
 					this.swapping = e.type == 'translated';
 				}
 			}, this),
-			'translate.owl.carousel': $.proxy(function(e) {
+			'translate.owl.vccarousel': $.proxy(function(e) {
 				if (e.namespace && this.swapping && (this.core.options.animateOut || this.core.options.animateIn)) {
 					this.swap();
 				}
@@ -2382,7 +2382,7 @@
 		}
 	};
 
-	$.fn.owlCarousel.Constructor.Plugins.Animate = Animate;
+	$.fn.vcOwlCarousel.Constructor.Plugins.Animate = Animate;
 
 })(window.Zepto || window.jQuery, window, document);
 
@@ -2426,7 +2426,7 @@
 		 * @type {Object}
 		 */
 		this._handlers = {
-			'changed.owl.carousel': $.proxy(function(e) {
+			'changed.owl.vccarousel': $.proxy(function(e) {
 				if (e.namespace && e.property.name === 'settings') {
 					if (this._core.settings.autoplay) {
 						this.play();
@@ -2435,7 +2435,7 @@
 					}
 				}
 			}, this),
-			'initialized.owl.carousel': $.proxy(function(e) {
+			'initialized.owl.vccarousel': $.proxy(function(e) {
 				if (e.namespace && this._core.settings.autoplay) {
 					this.play();
 				}
@@ -2544,7 +2544,7 @@
 		}
 	};
 
-	$.fn.owlCarousel.Constructor.Plugins.autoplay = Autoplay;
+	$.fn.vcOwlCarousel.Constructor.Plugins.autoplay = Autoplay;
 
 })(window.Zepto || window.jQuery, window, document);
 
@@ -2621,28 +2621,28 @@
 		 * @type {Object}
 		 */
 		this._handlers = {
-			'prepared.owl.carousel': $.proxy(function(e) {
+			'prepared.owl.vccarousel': $.proxy(function(e) {
 				if (e.namespace && this._core.settings.dotsData) {
 					this._templates.push('<div class="' + this._core.settings.dotClass + '">' +
 						$(e.content).find('[data-dot]').andSelf('[data-dot]').attr('data-dot') + '</div>');
 				}
 			}, this),
-			'added.owl.carousel': $.proxy(function(e) {
+			'added.owl.vccarousel': $.proxy(function(e) {
 				if (e.namespace && this._core.settings.dotsData) {
 					this._templates.splice(e.position, 0, this._templates.pop());
 				}
 			}, this),
-			'remove.owl.carousel': $.proxy(function(e) {
+			'remove.owl.vccarousel': $.proxy(function(e) {
 				if (e.namespace && this._core.settings.dotsData) {
 					this._templates.splice(e.position, 1);
 				}
 			}, this),
-			'changed.owl.carousel': $.proxy(function(e) {
+			'changed.owl.vccarousel': $.proxy(function(e) {
 				if (e.namespace && e.property.name == 'position') {
 					this.draw();
 				}
 			}, this),
-			'initialized.owl.carousel': $.proxy(function(e) {
+			'initialized.owl.vccarousel': $.proxy(function(e) {
 				if (e.namespace && !this._initialized) {
 					this._core.trigger('initialize', null, 'navigation');
 					this.initialize();
@@ -2652,7 +2652,7 @@
 					this._core.trigger('initialized', null, 'navigation');
 				}
 			}, this),
-			'refreshed.owl.carousel': $.proxy(function(e) {
+			'refreshed.owl.vccarousel': $.proxy(function(e) {
 				if (e.namespace && this._initialized) {
 					this._core.trigger('refresh', null, 'navigation');
 					this.update();
@@ -2926,7 +2926,7 @@
 		}
 	};
 
-	$.fn.owlCarousel.Constructor.Plugins.Navigation = Navigation;
+	$.fn.vcOwlCarousel.Constructor.Plugins.Navigation = Navigation;
 
 })(window.Zepto || window.jQuery, window, document);
 
@@ -2971,12 +2971,12 @@
 		 * @type {Object}
 		 */
 		this._handlers = {
-			'initialized.owl.carousel': $.proxy(function(e) {
+			'initialized.owl.vccarousel': $.proxy(function(e) {
 				if (e.namespace && this._core.settings.startPosition === 'URLHash') {
 					$(window).trigger('hashchange.owl.navigation');
 				}
 			}, this),
-			'prepared.owl.carousel': $.proxy(function(e) {
+			'prepared.owl.vccarousel': $.proxy(function(e) {
 				if (e.namespace) {
 					var hash = $(e.content).find('[data-hash]').andSelf('[data-hash]').attr('data-hash');
 
@@ -2987,7 +2987,7 @@
 					this._hashes[hash] = e.content;
 				}
 			}, this),
-			'changed.owl.carousel': $.proxy(function(e) {
+			'changed.owl.vccarousel': $.proxy(function(e) {
 				if (e.namespace && e.property.name === 'position') {
 					var current = this._core.items(this._core.relative(this._core.current())),
 						hash = $.map(this._hashes, function(item, hash) {
@@ -3048,7 +3048,7 @@
 		}
 	};
 
-	$.fn.owlCarousel.Constructor.Plugins.Hash = Hash;
+	$.fn.vcOwlCarousel.Constructor.Plugins.Hash = Hash;
 
 })(window.Zepto || window.jQuery, window, document);
 

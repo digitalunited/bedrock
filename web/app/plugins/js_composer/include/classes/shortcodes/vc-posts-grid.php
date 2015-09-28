@@ -21,9 +21,9 @@ class WPBakeryShortCode_VC_Posts_Grid extends WPBakeryShortCode {
 		$pt_array = vc_editor_post_types();
 		foreach ( $pt_array as $pt ) {
 			add_meta_box( 'vc_teaser', __( 'VC: Custom Teaser', "js_composer" ), Array(
-					&$this,
-					'outputTeaser'
-				), $pt, 'side' );
+				&$this,
+				'outputTeaser'
+			), $pt, 'side' );
 		}
 		add_action( 'save_post', array( &$this, 'saveTeaserMetaBox' ) );
 	}
@@ -65,9 +65,9 @@ class WPBakeryShortCode_VC_Posts_Grid extends WPBakeryShortCode {
 	protected function getTaxonomies() {
 		if ( $this->taxonomies === false ) {
 			$this->taxonomies = get_object_taxonomies( ! empty( $this->loop_args['post_type'] ) ? $this->loop_args['post_type'] : get_post_types( array(
-						'public' => false,
-						'name' => 'attachment'
-					), 'names', 'NOT' ) );
+				'public' => false,
+				'name' => 'attachment'
+			), 'names', 'NOT' ) );
 		}
 
 		return $this->taxonomies;
@@ -102,10 +102,8 @@ class WPBakeryShortCode_VC_Posts_Grid extends WPBakeryShortCode {
 				$teaser_width = 'vc_col-sm-2';
 				break;
 		}
-		//return $teaser_width;
-		$custom = get_custom_column_class( $teaser_width );
 
-		return $custom ? $custom : $teaser_width;
+		return $teaser_width;
 	}
 
 	protected function getMainCssClass( $filter ) {
@@ -146,8 +144,8 @@ class WPBakeryShortCode_VC_Posts_Grid extends WPBakeryShortCode {
 		} elseif ( $type === 'link_image' && isset( $post->image_link ) && ! empty( $post->image_link ) ) {
 			$this->loadPrettyPhoto();
 			// actually fixes relations if more prettyphoto added on page
-			if(! $this->pretty_rel_random ) {
-				$this->pretty_rel_random = ' rel="prettyPhoto[rel-' . get_the_ID() . '-' . rand() . ']"'; //rel-'.rand();
+			if ( ! $this->pretty_rel_random ) {
+				$this->pretty_rel_random = ' rel="prettyPhoto[rel-' . get_the_ID() . '-' . rand() . ']"';
 			}
 			$output .= '<a href="' . $post->image_link . '" class="' . $css_class . ' prettyphoto"' . $this->pretty_rel_random . ' ' . $this->link_target . ' title="' . $post->title_attribute . '">' . $content . '</a>';
 		} else {
@@ -166,7 +164,7 @@ class WPBakeryShortCode_VC_Posts_Grid extends WPBakeryShortCode {
 	}
 
 	protected function setLinkTarget( $grid_link_target = '' ) {
-		$this->link_target = $grid_link_target == '_blank' ? ' target="_blank"' : '';
+		$this->link_target = $grid_link_target === '_blank' ? ' target="_blank"' : '';
 	}
 
 	protected function findBlockTemplate() {

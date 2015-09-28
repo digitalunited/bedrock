@@ -21,4 +21,3 @@ function vc_options_include_templates() {
 }
 
 add_action( 'admin_footer', 'vc_options_include_templates' );
-// add_action('vc_frontend_editor_render', 'vc_options_include_templates');

@@ -41,6 +41,24 @@ class WpbakeryShortcodeParams {
 	 * @var bool
 	 */
 	protected static $is_enqueue = false;
+	/**
+	 * @since 4.7
+	 * @var array - store params not required to init
+	 */
+	protected static $optional_init_params = array();
+
+	/**
+	 * Get list of params that need to be initialized
+	 *
+	 * @return string[]
+	 */
+	public static function getRequiredInitParams() {
+		$all_params = array_keys( self::$params );
+		$optional_params = apply_filters( 'vc_edit_form_fields_optional_params', self::$optional_init_params );
+		$required_params = array_diff( $all_params, $optional_params );
+
+		return $required_params;
+	}
 
 	/**
 	 * @since 4.2
@@ -75,7 +93,8 @@ class WpbakeryShortcodeParams {
 	 * @since 4.2
 	 *
 	 * @param $name - attribute name
-	 * @param $form_field_callback - hook, will be called when settings form is shown and attribute added to shortcode param list
+	 * @param $form_field_callback - hook, will be called when settings form is shown and attribute added to shortcode
+	 *     param list
 	 * @param $script_url - javascript file url which will be attached at the end of settings form.
 	 *
 	 * @return bool - return true if attribute type created
@@ -153,7 +172,8 @@ class WpbakeryShortcodeParams {
  * Helper function to register new shortcode attribute hook.
  *
  * @param $name - attribute name
- * @param $form_field_callback - hook, will be called when settings form is shown and attribute added to shortcode param list
+ * @param $form_field_callback - hook, will be called when settings form is shown and attribute added to shortcode
+ *     param list
  * @param $script_url - javascript file url which will be attached at the end of settings form.
  *
  * @since 4.4
@@ -167,7 +187,8 @@ function vc_add_shortcode_param( $name, $form_field_callback, $script_url = null
  * Helper function to register new shortcode attribute hook.
  *
  * @param $name - attribute name
- * @param $form_field_callback - hook, will be called when settings form is shown and attribute added to shortcode param list
+ * @param $form_field_callback - hook, will be called when settings form is shown and attribute added to shortcode
+ *     param list
  * @param $script_url - javascript file url which will be attached at the end of settings form.
  *
  * @since 4.2

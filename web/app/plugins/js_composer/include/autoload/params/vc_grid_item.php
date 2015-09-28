@@ -47,43 +47,61 @@ function vc_gitem_post_data_get_link_target_frontend_editor( $target ) {
 	return ' target="_blank"';
 }
 
-function vc_gitem_create_link( $atts, $default_class = '' ) {
+function vc_gitem_create_link( $atts, $default_class = '', $title = '' ) {
 	$link = '';
 	$target = '';
+	$title_attr = '';
+	$css_class = 'vc_gitem-link' . ( strlen( $default_class ) > 0 ? ' ' . $default_class : '' );
 	if ( isset( $atts['link'] ) ) {
-		$css_class = 'vc_gitem-link' . ( strlen( $default_class ) > 0 ? ' ' . $default_class : '' );
-		if ( 'custom' === $atts['link'] && !empty( $atts['url'] ) ) {
+		if ( 'custom' === $atts['link'] && ! empty( $atts['url'] ) ) {
 			$link = vc_build_link( $atts['url'] );
 			if ( strlen( $link['target'] ) ) {
 				$target = ' target="' . esc_attr( $link['target'] ) . '"';
 			}
+			if ( strlen( $link['title'] ) ) {
+				$title = $link['title'];
+			}
 			$link = 'a href="' . esc_attr( $link['url'] ) . '" class="' . esc_attr( $css_class ) . '"';
 		} elseif ( 'post_link' === $atts['link'] ) {
 			$link = 'a href="{{ post_link_url }}" class="' . esc_attr( $css_class ) . '"';
+			if ( ! strlen( $title ) ) {
+				$title = '{{ post_title }}';
+			}
 		} elseif ( 'image' === $atts['link'] ) {
 			$link = 'a{{ post_image_url_href }} class="' . esc_attr( $css_class ) . '"';
 		} elseif ( 'image_lightbox' === $atts['link'] ) {
 			$link = 'a{{ post_image_url_attr_prettyphoto:' . $css_class . ' }}';
 		}
 	}
+	if ( strlen( $title ) > 0 ) {
+		$title_attr = ' title="' . esc_attr( $title ) . '"';
+	}
 
-	return apply_filters( 'vc_gitem_post_data_get_link_link', $link )
-	       . apply_filters( 'vc_gitem_post_data_get_link_target', $target );
+	return apply_filters( 'vc_gitem_post_data_get_link_link', $link, $atts, $css_class )
+	       . apply_filters( 'vc_gitem_post_data_get_link_target', $target, $atts )
+	       . apply_filters( 'vc_gitem_post_data_get_link_title', $title_attr, $atts );
 }
 
-function vc_gitem_create_link_real( $atts, $post, $default_class = '' ) {
+function vc_gitem_create_link_real( $atts, $post, $default_class = '', $title = '' ) {
 	$link = '';
 	$target = '';
+	$title_attr = '';
 	if ( isset( $atts['link'] ) ) {
 		$link_css_class = 'vc_gitem-link' . ( strlen( $default_class ) > 0 ? ' ' . $default_class : '' );
-		if ( 'custom' === $atts['link'] && !empty( $atts['url'] ) ) {
+		if ( 'custom' === $atts['link'] && ! empty( $atts['url'] ) ) {
 			$link = vc_build_link( $atts['url'] );
 			if ( strlen( $link['target'] ) ) {
 				$target = ' target="' . esc_attr( $link['target'] ) . '"';
 			}
-			$link = 'a href="' . esc_attr( $link['url'] ) . '" class="' . esc_attr( $link_css_class ) . '"' . $target;
+			if ( strlen( $link['title'] ) ) {
+				$title = $link['title'];
+			}
+			$link = 'a href="' . esc_attr( $link['url'] ) . '" class="' . esc_attr( $link_css_class ) . '"';
 		} elseif ( 'post_link' === $atts['link'] ) {
 			$link = 'a href="' . get_permalink( $post->ID ) . '" class="' . esc_attr( $link_css_class ) . '"';
+			if ( ! strlen( $title ) ) {
+				$title = the_title( '', '', false );
+			}
 		} elseif ( 'image' === $atts['link'] ) {
 			$href_link = vc_gitem_template_attribute_post_image_url( '', array( 'post' => $post, 'data' => '' ) );
 			$link = 'a href="' . $href_link . '" class="' . esc_attr( $link_css_class ) . '"';
@@ -93,9 +111,14 @@ function vc_gitem_create_link_real( $atts, $post, $default_class = '' ) {
 					'data' => $link_css_class
 				) );
 		}
-	}//to disable relative links uncomment this..
-	return apply_filters( 'vc_gitem_post_data_get_link_real_link', $link )
-	       . apply_filters( 'vc_gitem_post_data_get_link_real_target', $target );
+	}
+	if ( strlen( $title ) > 0 ) {
+		$title_attr = ' title="' . esc_attr( $title ) . '"';
+	}
+
+	return apply_filters( 'vc_gitem_post_data_get_link_real_link', $link, $atts, $post, $link_css_class )
+	       . apply_filters( 'vc_gitem_post_data_get_link_real_target', $target, $atts, $post )
+	       . apply_filters( 'vc_gitem_post_data_get_link_real_title', $title_attr, $atts );
 }
 
 function vc_gitem_post_data_get_link_link_frontend_editor( $link ) {

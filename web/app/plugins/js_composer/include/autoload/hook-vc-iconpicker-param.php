@@ -45,8 +45,8 @@ function vc_iconpicker_base_register_css() {
 	wp_register_style( 'vc_entypo', vc_asset_url( 'css/lib/vc-entypo/vc_entypo.css' ), false, WPB_VC_VERSION, 'screen' ); // TODO: build as MIN
 
 	// Theme
-	wp_register_style( 'vc-icon-picker-main-css', vc_asset_url( 'lib/vcIconPicker/css/jquery.fonticonpicker.min.css' ) );
-	wp_register_style( 'vc-icon-picker-main-css-theme', vc_asset_url( 'lib/vcIconPicker/themes/grey-theme/jquery.fonticonpicker.vcgrey.min.css' ) );
+	wp_register_style( 'vc-icon-picker-main-css', vc_asset_url( 'lib/bower/vcIconPicker/css/jquery.fonticonpicker.min.css' ) );
+	wp_register_style( 'vc-icon-picker-main-css-theme', vc_asset_url( 'lib/bower/vcIconPicker/themes/grey-theme/jquery.fonticonpicker.vcgrey.min.css' ) );
 }
 
 /**
@@ -55,7 +55,7 @@ function vc_iconpicker_base_register_css() {
  * @since 4.4
  */
 function vc_iconpicker_base_register_js() {
-	wp_register_script( 'vc-icon-picker', vc_asset_url( 'lib/vcIconPicker/jquery.fonticonpicker.min.js' ), array( 'jquery' ) );
+	wp_register_script( 'vc-icon-picker', vc_asset_url( 'lib/bower/vcIconPicker/jquery.fonticonpicker.min.js' ), array( 'jquery' ) );
 }
 
 /**

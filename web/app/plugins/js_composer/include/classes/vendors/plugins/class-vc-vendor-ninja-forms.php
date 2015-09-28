@@ -50,6 +50,7 @@ Class Vc_Vendor_NinjaForms implements Vc_Vendor_Interface {
 						'heading' => __( 'Select ninja form', 'js_composer' ),
 						'param_name' => 'id',
 						'value' => $ninja_forms,
+						'save_always' => true,
 						'description' => __( 'Choose previously created ninja form from the drop down list.', 'js_composer' ),
 					),
 				),

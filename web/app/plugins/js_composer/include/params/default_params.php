@@ -15,10 +15,8 @@
  * @return string - html string.
  */
 function vc_textfield_form_field( $settings, $value ) {
-	$value = __( $value, "js_composer" );
 	$value = htmlspecialchars( $value );
 
-	//$value = $param_value;
 	return '<input name="' . $settings['param_name']
 	       . '" class="wpb_vc_param_value wpb-textinput '
 	       . $settings['param_name'] . ' ' . $settings['type']
@@ -36,7 +34,7 @@ function vc_textfield_form_field( $settings, $value ) {
  */
 function vc_dropdown_form_field( $settings, $value ) {
 	$output = '';
-	$css_option = vc_get_dropdown_option( $settings, $value );
+	$css_option = str_replace( '#', 'hash-', vc_get_dropdown_option( $settings, $value ) );
 	$output .= '<select name="'
 	           . $settings['param_name']
 	           . '" class="wpb_vc_param_value wpb-input wpb-select '
@@ -47,26 +45,27 @@ function vc_dropdown_form_field( $settings, $value ) {
 	if ( is_array( $value ) ) {
 		$value = isset( $value['value'] ) ? $value['value'] : array_shift( $value );
 	}
-	foreach ( $settings['value'] as $index => $data ) {
-		if ( is_numeric( $index ) && ( is_string( $data ) || is_numeric( $data ) ) ) {
-			$option_label = $data;
-			$option_value = $data;
-		} elseif ( is_numeric( $index ) && is_array( $data ) ) {
-			$option_label = isset( $data['label'] ) ? $data['label'] : array_pop( $data );
-			$option_value = isset( $data['value'] ) ? $data['value'] : array_pop( $data );
-		} else {
-			$option_value = $data;
-			$option_label = $index;
+	if ( ! empty( $settings['value'] ) ) {
+		foreach ( $settings['value'] as $index => $data ) {
+			if ( is_numeric( $index ) && ( is_string( $data ) || is_numeric( $data ) ) ) {
+				$option_label = $data;
+				$option_value = $data;
+			} elseif ( is_numeric( $index ) && is_array( $data ) ) {
+				$option_label = isset( $data['label'] ) ? $data['label'] : array_pop( $data );
+				$option_value = isset( $data['value'] ) ? $data['value'] : array_pop( $data );
+			} else {
+				$option_value = $data;
+				$option_label = $index;
+			}
+			$selected = '';
+
+			if ( $value !== '' && (string) $option_value === (string) $value ) {
+				$selected = ' selected';
+			}
+			$option_class = str_replace( '#', 'hash-', $option_value );
+			$output .= '<option class="' . $option_class . '" value="' . $option_value . '"' . $selected . '>'
+			           . htmlspecialchars( $option_label ) . '</option>';
 		}
-		$option_label = __( $option_label, "js_composer" );
-		//$val = strtolower(str_replace(array(" "), array("_"), $val));
-		//$val = strtolower(str_replace(array(" "), array("_"), $val)); //issue #464 github
-		$selected = '';
-		if ( $value !== '' && (string) $option_value === (string) $value ) {
-			$selected = ' selected="selected"';
-		}
-		$output .= '<option class="' . $option_value . '" value="' . $option_value . '"' . $selected . '>'
-		           . htmlspecialchars( $option_label ) . '</option>';
 	}
 	$output .= '</select>';
 
@@ -88,15 +87,17 @@ function vc_checkbox_form_field( $settings, $value ) {
 		$value = ''; // fix #1239
 	}
 	$current_value = strlen( $value ) > 0 ? explode( ",", $value ) : array();
-	$values = is_array( $settings['value'] ) ? $settings['value'] : array();
-	foreach ( $values as $label => $v ) {
-		$checked = count( $current_value ) > 0 && in_array( $v, $current_value ) ? ' checked="checked"' : '';
-		$output .= ' <label class="vc_checkbox-label"><input id="'
-		           . $settings['param_name'] . '-' . $v . '" value="'
-		           . $v . '" class="wpb_vc_param_value '
-		           . $settings['param_name'] . ' ' . $settings['type'] . '" type="checkbox" name="'
-		           . $settings['param_name'] . '"'
-		           . $checked . '> ' . __( $label, "js_composer" ) . '</label>';
+	$values = isset( $settings['value'] ) && is_array( $settings['value'] ) ? $settings['value'] : array( __( 'Yes' ) => 'true' );
+	if ( ! empty( $values ) ) {
+		foreach ( $values as $label => $v ) {
+			$checked = count( $current_value ) > 0 && in_array( $v, $current_value ) ? ' checked' : '';
+			$output .= ' <label class="vc_checkbox-label"><input id="'
+			           . $settings['param_name'] . '-' . $v . '" value="'
+			           . $v . '" class="wpb_vc_param_value '
+			           . $settings['param_name'] . ' ' . $settings['type'] . '" type="checkbox" name="'
+			           . $settings['param_name'] . '"'
+			           . $checked . '> ' . $label . '</label>';
+		}
 	}
 
 	return $output;
@@ -119,9 +120,9 @@ function vc_posttypes_form_field( $settings, $value ) {
 	$post_types = get_post_types( $args );
 	foreach ( $post_types as $post_type ) {
 		$checked = "";
-		if ( $post_type != 'attachment' ) {
+		if ( $post_type !== 'attachment' ) {
 			if ( in_array( $post_type, explode( ",", $value ) ) ) {
-				$checked = ' checked="checked"';
+				$checked = ' checked';
 			}
 			$output .= ' <label class="vc_checkbox-label"><input id="'
 			           . $settings['param_name'] . '-' . $post_type . '" value="'
@@ -154,7 +155,7 @@ function vc_taxonomies_form_field( $settings, $value ) {
 		foreach ( $taxonomies as $tax ) {
 			$checked = "";
 			if ( in_array( $tax->name, explode( ",", $value ) ) ) {
-				$checked = ' checked="checked"';
+				$checked = ' checked';
 			}
 			$output .= ' <label class="vc_checkbox-label" data-post-type="'
 			           . $type . '"><input id="'
@@ -249,8 +250,6 @@ function vc_textarea_safe_form_field( $settings, $value ) {
  * @return string - html string.
  */
 function vc_textarea_form_field( $settings, $value ) {
-	$value = __( $value, "js_composer" );
-
 	return '<textarea name="' .
 	       $settings['param_name'] . '" class="wpb_vc_param_value wpb-textarea '
 	       . $settings['param_name'] . ' ' . $settings['type'] . '">' . $value . '</textarea>';
@@ -277,11 +276,10 @@ function vc_attach_images_form_field( $settings, $value, $tag, $single = false )
 	           . $settings['type'] . '" name="' . $settings['param_name'] . '" value="' . $value . '"/>';
 	$output .= '<div class="gallery_widget_attached_images">';
 	$output .= '<ul class="gallery_widget_attached_images_list">';
-	$output .= ( $param_value != '' ) ? fieldAttachedImages( explode( ",", $value ) ) : '';
+	$output .= ( $param_value !== '' ) ? fieldAttachedImages( explode( ",", $value ) ) : '';
 	$output .= '</ul>';
 	$output .= '</div>';
 	$output .= '<div class="gallery_widget_site_images">';
-	// $param_line .= siteAttachedImages(explode(",", $param_value));
 	$output .= '</div>';
 	if ( $single === true ) {
 		$output .= '<a class="gallery_widget_add_images" href="#" use-single="true" title="'
@@ -291,7 +289,6 @@ function vc_attach_images_form_field( $settings, $value, $tag, $single = false )
 		           . __( 'Add images', "js_composer" ) . '">' . __( 'Add images', "js_composer" ) . '</a>'; //class: button
 	}
 
-	//$param_line .= '<div class="wpb_clear"></div>';
 	return $output;
 }
 
@@ -330,9 +327,9 @@ function vc_widgetised_sidebars_form_field( $settings, $value ) {
 	foreach ( $sidebars as $sidebar ) {
 		$selected = '';
 		if ( $sidebar["id"] == $value ) {
-			$selected = ' selected="selected"';
+			$selected = ' selected';
 		}
-		$sidebar_name = __( $sidebar["name"], "js_composer" );
+		$sidebar_name = $sidebar["name"];
 		$output .= '<option value="' . $sidebar["id"] . '"' . $selected . '>' . $sidebar_name . '</option>';
 	}
 	$output .= '</select>';

@@ -6,13 +6,15 @@
  * Shortcodes params preset attribute for edit form
  * ========================================================= */
 // Safety first
-if (_.isUndefined(window.vc)) var vc = {atts: {}};
-(function ($) {
+if ( _.isUndefined( window.vc ) ) {
+	var vc = { atts: {} };
+}
+(function ( $ ) {
 	/**
 	 * Backbone view for params preset
 	 * @type {*}
 	 */
-	var ParamsPresetView = Backbone.View.extend({
+	var ParamsPresetView = Backbone.View.extend( {
 		events: {
 			'change': 'setParams'
 		},
@@ -21,31 +23,31 @@ if (_.isUndefined(window.vc)) var vc = {atts: {}};
 		 */
 		setParams: function () {
 			var val = this.save(),
-				$option = this.$el.find('[value="' + val + '"]'),
+				$option = this.$el.find( '[value="' + val + '"]' ),
 				data,
 				$edit_form = vc.edit_element_block_view.content(),
 				$params_preset = this.$el;
-			if ($option.length) {
-				data = $option.data('params');
+			if ( $option.length ) {
+				data = $option.data( 'params' );
 				var fields = [];
-				_.each(data, function (value, key, list) {
-					var $field = $edit_form.find('[name=' + key + '].wpb_vc_param_value'),
+				_.each( data, function ( value, key, list ) {
+					var $field = $edit_form.find( '[name=' + key + '].wpb_vc_param_value' ),
 						fieldManager;
-					if ($field.length) {
-						$field.unbind('change.vcParamsPreset');
-						fieldManager = $field.data('vcFieldManager');
-						fieldManager && fieldManager.render && fieldManager.render(value);
-						fields.push($field);
-						$field.val(value).trigger('change');
+					if ( $field.length ) {
+						$field.unbind( 'change.vcParamsPreset' );
+						fieldManager = $field.data( 'vcFieldManager' );
+						fieldManager && fieldManager.render && fieldManager.render( value );
+						fields.push( $field );
+						$field.val( value ).trigger( 'change' );
 					}
-				});
-				_.each(fields, function (value, key ) {
-					value.bind('change.vcParamsPreset', function (e) {
-						if(_.isUndefined(e.extra_type)) {
-							$params_preset.val('');
+				} );
+				_.each( fields, function ( value, key ) {
+					value.bind( 'change.vcParamsPreset', function ( e ) {
+						if ( _.isUndefined( e.extra_type ) ) {
+							$params_preset.val( '' );
 						}
-					});
-				});
+					} );
+				} );
 			}
 		},
 		// Render value
@@ -57,24 +59,20 @@ if (_.isUndefined(window.vc)) var vc = {atts: {}};
 		save: function () {
 			return this.$el.val();
 		}
-	});
+	} );
 
 	vc.atts.params_preset = {
-		parse: function(param) {
-			var $el = $('select[name=' + param.param_name + ']', this.content());
-			if($el && $el.data('fieldManager')) {
-				return $el.data('fieldManager').save();
-			}
-			return "";
+		parse: function ( param ) {
+			return $( 'select[name=' + param.param_name + ']', this.content() ).val();
 		},
-		init: function (param, $field) {
+		init: function ( param, $field ) {
 			// Iterate through all params_preset selects and build backbone view
-			$('.vc_params-preset-select', $field).each(function () {
-				var $this = $(this);
-				_.isUndefined($this.data('fieldManager')) && $this.data('fieldManager',
-					new ParamsPresetView({el: $this}).render());
-			});
+			$( '.vc_params-preset-select', $field ).each( function () {
+				var $this = $( this );
+				_.isUndefined( $this.data( 'fieldManager' ) ) && $this.data( 'fieldManager',
+					new ParamsPresetView( { el: $this } ).render() );
+			} );
 		}
 	};
 
-})(window.jQuery);
+})( window.jQuery );

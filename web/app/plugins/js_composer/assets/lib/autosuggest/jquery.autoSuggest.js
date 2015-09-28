@@ -127,7 +127,7 @@
                     for(var i=0; i < vals.length; i++){
                         var v_data = {};
                         v_data[opts.selectedValuesProp] = vals[i];
-                        if(vals[i] != ""){
+                        if(vals[i] !== ''){
                             add_selected_item(v_data, "000"+i);
                         }
                     }
@@ -141,16 +141,16 @@
                             var new_v = opts.preFill[i][opts.selectedValuesProp];
                             if(new_v == undefined){ new_v = ""; }
                             prefill_value = prefill_value+new_v+",";
-                            if(new_v != ""){
+                            if(new_v !== ''){
                                 add_selected_item(opts.preFill[i], "000"+i);
                             }
                         }
                     }
                 }
-                if(prefill_value != ""){
-                    input.val("");
+                if(prefill_value !== ''){
+                    input.val('');
                     var lastChar = prefill_value.substring(prefill_value.length-1);
-                    if(lastChar != ","){ prefill_value = prefill_value+","; }
+                    if(lastChar !== ","){ prefill_value = prefill_value+","; }
                     values_input.val(","+prefill_value);
                     $("li.as-selection-item", selections_holder).addClass("blur").removeClass("selected");
                 }
@@ -173,7 +173,7 @@
                         $(this).val("");
                     } else if(input_focus){
                         $("li.as-selection-item", selections_holder).removeClass("blur");
-                        if($(this).val() != ""){
+                        if($(this).val() != ''){
                             results_ul.css("width",selections_holder.outerWidth());
                             results_holder.show();
                         }
@@ -283,7 +283,6 @@
                     // and type some chinese character, `lastKeyPressCode` will still be [del].
                     // This might cause problem so we move the line to key events section;
                     // ignore if the following keys are pressed: [del] [shift] [capslock]
-                    // if( lastKeyPressCode == 46 || (lastKeyPressCode > 8 && lastKeyPressCode < 32) ){ return results_holder.hide(); }
                     var string = input.val().replace(/[\\]+|[\/]+/g,"");
                     if (string == prev) return;
                     prev = string;
@@ -307,7 +306,7 @@
                     if (!opts.matchCase){ query = query.toLowerCase(); }
                     query = query.replace("(", "\\(", "g").replace(")", "\\)", "g");
                     var matchCount = 0;
-                    results_holder.html(results_ul.html("")).hide();
+                    results_holder.html(results_ul.empty()).hide();
                     var d_count = countValidItems(data);
                     for(var i=0;i<d_count;i++){
                         var num = i;

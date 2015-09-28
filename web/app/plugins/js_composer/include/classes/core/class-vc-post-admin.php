@@ -28,8 +28,7 @@ Class Vc_Post_Admin {
 			return;
 		}
 		$this->setJsStatus( $post_id );
-		// $this->setInterfaceVersion($post_id);
-		if ( ! ( isset( $_POST['wp-preview'] ) && 'dopreview' == $_POST['wp-preview'] ) ) {
+		if ( ! ( isset( $_POST['wp-preview'] ) && 'dopreview' === $_POST['wp-preview'] ) ) {
 
 			$this->setSettings( $post_id );
 		}
@@ -48,13 +47,13 @@ Class Vc_Post_Admin {
 		$value = vc_post_param( 'wpb_vc_js_status' );
 		if ( $value !== null ) {
 			// Add value
-			if ( get_post_meta( $post_id, '_wpb_vc_js_status' ) == '' ) {
+			if ( get_post_meta( $post_id, '_wpb_vc_js_status' ) === '' ) {
 				add_post_meta( $post_id, '_wpb_vc_js_status', $value, true );
 			} // Update value
 			elseif ( $value != get_post_meta( $post_id, '_wpb_vc_js_status', true ) ) {
 				update_post_meta( $post_id, '_wpb_vc_js_status', $value );
 			} // Delete value
-			elseif ( $value == '' ) {
+			elseif ( $value === '' ) {
 				delete_post_meta( $post_id, '_wpb_vc_js_status', get_post_meta( $post_id, '_wpb_vc_js_status', true ) );
 			}
 		}
@@ -77,7 +76,8 @@ Class Vc_Post_Admin {
 	 *
 	 * It is possible to add any data to post settings by adding filter with tag 'vc_hooks_vc_post_settings'.
 	 * @since 4.4
-	 * vc_filter: vc_hooks_vc_post_settings - hook to override post meta settings for visual composer (used in grid for example)
+	 * vc_filter: vc_hooks_vc_post_settings - hook to override post meta settings for visual composer (used in grid for
+	 *     example)
 	 *
 	 * @param $post_id
 	 */

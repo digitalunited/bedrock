@@ -23,14 +23,17 @@
       display: block;
       height: auto;
       visibility: visible;
-      opacity: 1;
+      .opacity(1);
       -webkit-transform: none;
-      -moz-transform: none;
+      -ms-transform: none;
       transform: none;
       > div {
         white-space: normal;
       }
       > .vc_controls-cc {
+        -webkit-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
         transform: none;
         position: static;
       }
@@ -86,6 +89,7 @@
     padding-left: 21px !important;
   }
 }
+
 .vc_gitem-add-c-col {
   vertical-align: top;
   margin: 10px;
@@ -93,14 +97,12 @@
   min-height: @vc_gitem_min_height;
   cursor: pointer;
   box-sizing: border-box;
-  // .vc_empty-c & {
   background: transparent url('../vc/empty_row.png') no-repeat center center;
-  // }
   .vc_gitem-add-c-left &, .vc_gitem-add-c-right & {
     padding-top: 25px;
   }
   &:hover {
-    opacity: 0.5;
+    .opacity(0.5);
   }
   &.vc_zone-added {
     outline: 0;
@@ -109,10 +111,11 @@
       margin-top: 30px;
     }
     &:hover {
-      opacity: 1;
+      .opacity(1);
     }
   }
 }
+
 .vc_gitem-navbar-dropdown {
   padding: 15px;
 }
@@ -121,6 +124,3 @@
 @import "shortcodes/vc_gitem_animated_block_admin.less";
 @import "shortcodes/vc_gitem_zone_admin.less";
 @import "shortcodes/vc_gitem_row_admin.less";
-
-
-

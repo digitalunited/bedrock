@@ -18,7 +18,7 @@ Class Vc_Navbar implements Vc_Render {
 	/**
 	 * @var string
 	 */
-	protected $brand_url = 'http://vc.wpbakery.com/?utm_campaign=VCplugin_header&utm_source=vc_user&utm_medium=backend_editor';
+	protected $brand_url = 'http://vc.wpbakery.com/?utm_campaign=VCplugin&utm_source=vc_user&utm_medium=backend_editor';
 	/**
 	 * @var string
 	 */
@@ -138,9 +138,7 @@ Class Vc_Navbar implements Vc_Render {
 	 * @return string
 	 */
 	public function getControlPreview() {
-		return '';/*<li class="vc_pull-right vc_preview-backend">'
-		  //added to getControlsaveBacked() //
-		  .'</li>';*/
+		return '';
 	}
 
 	/**

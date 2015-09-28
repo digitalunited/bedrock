@@ -1,45 +1,62 @@
 <?php
 
-$output = $el_class = $image = $img_size = $img_link = $img_link_target = $img_link_large = $title = $alignment = $css_animation = $css = '';
+$el_class = $image = $img_size = $img_link = $img_link_target = $img_link_large = $title = $alignment = $css_animation = $css = '';
+/** @var $this WPBakeryShortCode_VC_Single_image */
+$atts = vc_map_get_attributes( $this->getShortcode(), $atts );
+extract( $atts );
 
-extract( shortcode_atts( array(
-	'title' => '',
-	'image' => $image,
-	'img_size' => 'thumbnail',
-	'link' => '',
-	'img_link_target' => '_self',
-	'alignment' => 'left',
-	'el_class' => '',
-	'css_animation' => '',
-	'style' => '',
-	'border_color' => '',
-	'css' => ''
-), $atts ) );
-
-$style = ( $style != '' ) ? $style : '';
-$border_color = ( $border_color != '' ) ? ' vc_box_border_' . $border_color : '';
+$default_src = vc_asset_url( 'vc/no_image.png' );
+$style = ( $style !== '' ) ? $style : '';
+$border_color = ( $border_color !== '' ) ? ' vc_box_border_' . $border_color : '';
 
 $img_id = preg_replace( '/[^\d]/', '', $image );
-$img = wpb_getImageBySize( array( 'attach_id' => $img_id, 'thumb_size' => $img_size, 'class' => 'vc_single_image-img' ) );
-if ( $img == NULL ) $img['thumbnail'] = '<img class="vc_single_image-img" src="' . vc_asset_url( 'vc/no_image.png' ) . '" />'; //' <small>'.__('This is image placeholder, edit your page to replace it.', 'js_composer').'</small>';
 
-$el_class = $this->getExtraClass( $el_class );
+switch ( $source ) {
+	case 'media_library':
+		$img = wpb_getImageBySize( array(
+			'attach_id' => $img_id,
+			'thumb_size' => $img_size,
+			'class' => 'vc_single_image-img'
+		) );
 
-$link = vc_gitem_create_link($atts);
-//to disable relative links uncomment this..
+		break;
 
-$img_output = ( $style == 'vc_box_shadow_3d' ) ? '<span class="vc_box_shadow_3d_wrap">' . $img['thumbnail'] . '</span>' : $img['thumbnail'];
-$image_string = ! empty( $link ) ? '<'. $link .'><div class="vc_single_image-wrapper ' . $style . ' ' . $border_color . '">' . $img_output . '</div></a>' : '<div class="vc_single_image-wrapper ' . $style . ' ' . $border_color . '">' . $img_output . '</div>';
-$css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, 'wpb_single_image wpb_content_element' . $el_class . vc_shortcode_custom_css_class( $css, ' ' ), $this->settings['base'], $atts );
-$css_class .= $this->getCSSAnimation( $css_animation );
+	case 'external_link':
+		$dimensions = vcExtractDimensions( $img_size );
+		$hwstring = $dimensions ? image_hwstring( $dimensions[0], $dimensions[1] ) : '';
 
-$css_class .= ' vc_align_' . $alignment;
+		$custom_src = $custom_src ? esc_attr( $custom_src ) : $default_src;
 
-$output .= "\n\t" . '<div class="' . $css_class . '">';
-$output .= "\n\t\t" . '<div class="wpb_wrapper">';
-$output .= "\n\t\t\t" . wpb_widget_title( array( 'title' => $title, 'extraclass' => 'wpb_singleimage_heading' ) );
-$output .= "\n\t\t\t" . $image_string;
-$output .= "\n\t\t" . '</div> ' . $this->endBlockComment( '.wpb_wrapper' );
-$output .= "\n\t" . '</div> ' . $this->endBlockComment( '.wpb_single_image' );
+		$img = array(
+			'thumbnail' => '<img class="vc_single_image-img" ' . $hwstring . ' src="' . $custom_src . '" />'
+		);
+		break;
+
+	default:
+		$img = false;
+}
+
+if ( ! $img ) {
+	$img['thumbnail'] = '<img class="vc_single_image-img" src="' . $default_src . '" />';
+}
+
+$link = vc_gitem_create_link( $atts );
+
+$img_output = ( $style === 'vc_box_shadow_3d' ) ? '<span class="vc_box_shadow_3d_wrap">' . $img['thumbnail'] . '</span>' : $img['thumbnail'];
+$image_string = ! empty( $link ) ? '<' . $link . '><div class="vc_single_image-wrapper ' . $style . ' ' . $border_color . '">' . $img_output . '</div></a>' : '<div class="vc_single_image-wrapper ' . $style . ' ' . $border_color . '">' . $img_output . '</div>';
+
+$class_to_filter = 'wpb_single_image wpb_content_element vc_align_' . $alignment . ' ' . $this->getCSSAnimation( $css_animation );
+$class_to_filter .= vc_shortcode_custom_css_class( $css, ' ' ) . $this->getExtraClass( $el_class );
+$css_class = apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, $class_to_filter, $this->settings['base'], $atts );
+
+
+$output = '
+	<div class="' . esc_attr( $css_class ) . '">
+		<div class="wpb_wrapper">
+			' . wpb_widget_title( array( 'title' => $title, 'extraclass' => 'wpb_singleimage_heading' ) ) . '
+			' . $image_string . '
+		</div>
+	</div>
+';
 
 echo $output;

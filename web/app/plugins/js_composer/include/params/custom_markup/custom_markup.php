@@ -10,6 +10,7 @@
  * @param $tag
  *
  * vc_filter: vc_custom_markup_render_filter - hook to override custom markup for field
+ *
  * @return mixed|void rendered template for params in edit form
  *
  */

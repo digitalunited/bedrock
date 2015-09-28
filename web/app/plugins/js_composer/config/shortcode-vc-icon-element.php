@@ -9,7 +9,7 @@ vc_map( array(
 	'base' => 'vc_icon',
 	'icon' => 'icon-wpb-vc_icon',
 	'category' => __( 'Content', 'js_composer' ),
-	'description' => __( 'Icon from icon library', 'js_composer' ),
+	'description' => __( 'Eye catching icons from libraries', 'js_composer' ),
 	'params' => array(
 		array(
 			'type' => 'dropdown',
@@ -31,8 +31,10 @@ vc_map( array(
 			'param_name' => 'icon_fontawesome',
 			'value' => 'fa fa-adjust', // default value to backend editor admin_label
 			'settings' => array(
-				'emptyIcon' => false, // default true, display an "EMPTY" icon?
-				'iconsPerPage' => 4000, // default 100, how many icons per/page to display, we use (big number) to display all icons in single page
+				'emptyIcon' => false,
+				// default true, display an "EMPTY" icon?
+				'iconsPerPage' => 4000,
+				// default 100, how many icons per/page to display, we use (big number) to display all icons in single page
 			),
 			'dependency' => array(
 				'element' => 'type',
@@ -105,15 +107,15 @@ vc_map( array(
 		),
 		array(
 			'type' => 'dropdown',
-			'heading' => __( 'Color', 'js_composer' ),
+			'heading' => __( 'Icon color', 'js_composer' ),
 			'param_name' => 'color',
 			'value' => array_merge( getVcShared( 'colors' ), array( __( 'Custom color', 'js_composer' ) => 'custom' ) ),
-			'description' => __( 'Icon color.', 'js_composer' ),
+			'description' => __( 'Select icon color.', 'js_composer' ),
 			'param_holder_class' => 'vc_colored-dropdown',
 		),
 		array(
 			'type' => 'colorpicker',
-			'heading' => __( 'Custom Icon Color', 'js_composer' ),
+			'heading' => __( 'Custom color', 'js_composer' ),
 			'param_name' => 'custom_color',
 			'description' => __( 'Select custom icon color.', 'js_composer' ),
 			'dependency' => array(
@@ -123,7 +125,7 @@ vc_map( array(
 		),
 		array(
 			'type' => 'dropdown',
-			'heading' => __( 'Background Style', 'js_composer' ),
+			'heading' => __( 'Background shape', 'js_composer' ),
 			'param_name' => 'background_style',
 			'value' => array(
 				__( 'None', 'js_composer' ) => '',
@@ -134,19 +136,29 @@ vc_map( array(
 				__( 'Outline Square', 'js_composer' ) => 'boxed-outline',
 				__( 'Outline Rounded', 'js_composer' ) => 'rounded-less-outline',
 			),
-			'description' => __( 'Background style for icon.', 'js_composer' )
+			'description' => __( 'Select background shape and style for icon.', 'js_composer' )
 		),
 		array(
 			'type' => 'dropdown',
-			'heading' => __( 'Background Color', 'js_composer' ),
+			'heading' => __( 'Background color', 'js_composer' ),
 			'param_name' => 'background_color',
-			'value' => getVcShared( 'colors' ),
+			'value' => array_merge( getVcShared( 'colors' ), array( __( 'Custom color', 'js_composer' ) => 'custom' ) ),
 			'std' => 'grey',
-			'description' => __( 'Background Color.', 'js_composer' ),
+			'description' => __( 'Select background color for icon.', 'js_composer' ),
 			'param_holder_class' => 'vc_colored-dropdown',
 			'dependency' => array(
 				'element' => 'background_style',
 				'not_empty' => true,
+			),
+		),
+		array(
+			'type' => 'colorpicker',
+			'heading' => __( 'Custom background color', 'js_composer' ),
+			'param_name' => 'custom_background_color',
+			'description' => __( 'Select custom icon background color.', 'js_composer' ),
+			'dependency' => array(
+				'element' => 'background_color',
+				'value' => 'custom',
 			),
 		),
 		array(
@@ -162,9 +174,9 @@ vc_map( array(
 			'heading' => __( 'Icon alignment', 'js_composer' ),
 			'param_name' => 'align',
 			'value' => array(
-				__( 'Align left', 'js_composer' ) => 'left',
-				__( 'Align right', 'js_composer' ) => 'right',
-				__( 'Align center', 'js_composer' ) => 'center',
+				__( 'Left', 'js_composer' ) => 'left',
+				__( 'Right', 'js_composer' ) => 'right',
+				__( 'Center', 'js_composer' ) => 'center',
 			),
 			'description' => __( 'Select icon alignment.', 'js_composer' ),
 		),
@@ -179,9 +191,14 @@ vc_map( array(
 			'type' => 'textfield',
 			'heading' => __( 'Extra class name', 'js_composer' ),
 			'param_name' => 'el_class',
-			'description' => __( 'If you wish to style particular content element differently, then use this field to add a class name and then refer to it in your css file.', 'js_composer' )
+			'description' => __( 'Style particular content element differently - add a class name and refer to it in custom CSS.', 'js_composer' )
 		),
-
+		array(
+			'type' => 'css_editor',
+			'heading' => __( 'CSS box', 'js_composer' ),
+			'param_name' => 'css',
+			'group' => __( 'Design Options', 'js_composer' )
+		),
 	),
 	'js_view' => 'VcIconElementView_Backend',
 ) );

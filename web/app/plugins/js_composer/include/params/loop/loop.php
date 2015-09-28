@@ -11,10 +11,12 @@ function vc_loop_form_field( $settings, $value ) {
 	$query_builder = new VcLoopSettings( $value );
 	$params = $query_builder->getContent();
 	$loop_info = '';
-	foreach ( $params as $key => $param ) {
-		$param_value = vc_loop_get_value( $param );
-		if ( ! empty( $param_value ) ) {
-			$loop_info .= ' <b>' . $query_builder->getLabel( $key ) . '</b>: ' . $param_value . ';';
+	if ( is_array( $params ) ) {
+		foreach ( $params as $key => $param ) {
+			$param_value = vc_loop_get_value( $param );
+			if ( ! empty( $param_value ) ) {
+				$loop_info .= ' <b>' . $query_builder->getLabel( $key ) . '</b>: ' . $param_value . ';';
+			}
 		}
 	}
 
@@ -298,15 +300,15 @@ class VcLoopSettings {
 	 */
 	function __construct( $value, $settings = array() ) {
 		$this->parts = array(
-			'size' => __( 'Post Count', 'js_composer' ),
-			'order_by' => __( 'Order By', 'js_composer' ),
-			'order' => __( 'Order', 'js_composer' ),
+			'size' => __( 'Post count', 'js_composer' ),
+			'order_by' => __( 'Order by', 'js_composer' ),
+			'order' => __( 'Sort order', 'js_composer' ),
 			'post_type' => __( 'Post types', 'js_composer' ),
 			'authors' => __( 'Author', 'js_composer' ),
 			'categories' => __( 'Categories', 'js_composer' ),
 			'tags' => __( 'Tags', 'js_composer' ),
 			'tax_query' => __( 'Taxonomies', 'js_composer' ),
-			'by_id' => __( 'Individual Posts/Pages', 'js_composer' )
+			'by_id' => __( 'Individual posts/pages', 'js_composer' )
 		);
 		$this->settings = $settings;
 		// Parse loop string
@@ -316,11 +318,11 @@ class VcLoopSettings {
 			$locked = $this->getSettings( $part, 'locked' ) === 'true';
 			// Predefined value check.
 			if ( ! is_null( $this->getSettings( $part, 'value' ) ) && $this->replaceLockedValue( $part )
-			     && ( $locked === true || strlen( (string) $value ) == 0 )
+			     && ( $locked === true || strlen( (string) $value ) === 0 )
 			) {
 				$value = $this->settings[ $part ]['value'];
 			} elseif ( ! is_null( $this->getSettings( $part, 'value' ) ) && ! $this->replaceLockedValue( $part )
-			           && ( $locked === true || strlen( (string) $value ) == 0 )
+			           && ( $locked === true || strlen( (string) $value ) === 0 )
 			) {
 				$value = implode( ',', array_unique( explode( ',', $value . ',' . $this->settings[ $part ]['value'] ) ) );
 			}
@@ -415,20 +417,14 @@ class VcLoopSettings {
 	 */
 	public function parse_order_by( $value ) {
 		return $this->parseDropDown( $value, array(
-			//array('none', __("None", 'js_composer')),
 			array( 'date', __( "Date", 'js_composer' ) ),
 			'ID',
 			array( 'author', __( "Author", 'js_composer' ) ),
 			array( 'title', __( "Title", 'js_composer' ) ),
-			//'name',
 			array( 'modified', __( "Modified", 'js_composer' ) ),
-			//'parent',
 			array( 'rand', __( "Random", 'js_composer' ) ),
 			array( 'comment_count', __( "Comment count", 'js_composer' ) ),
 			array( 'menu_order', __( "Menu order", 'js_composer' ) ),
-			//'meta_value',
-			//'meta_value_num',
-			//'post__in'
 		) );
 	}
 
@@ -458,7 +454,7 @@ class VcLoopSettings {
 		);
 		$post_types = get_post_types( $args );
 		foreach ( $post_types as $post_type ) {
-			if ( $post_type != 'attachment' ) {
+			if ( $post_type !== 'attachment' ) {
 				$options[] = $post_type;
 			}
 		}
@@ -863,6 +859,7 @@ function vc_get_loop_settings_json() {
 	$loop_settings->render();
 	die();
 }
+
 add_action( 'wp_ajax_wpb_get_loop_suggestion', 'vc_get_loop_suggestion' );
 add_action( 'wp_ajax_wpb_get_loop_settings', 'vc_get_loop_settings_json' );
 
@@ -872,6 +869,7 @@ add_action( 'wp_ajax_wpb_get_loop_settings', 'vc_get_loop_settings_json' );
 function vc_loop_include_templates() {
 	require_once vc_path_dir( 'TEMPLATES_DIR', 'params/loop/templates.html' );
 }
+
 add_action( 'admin_footer', 'vc_loop_include_templates' );
 
 /**

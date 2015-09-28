@@ -1,10 +1,17 @@
 <?php
-/** @var $this WPBakeryShortCode_VC_Gitem_Post_Data */
+/**
+ * Shortcode attributes
+ * @var $atts
+ * Shortcode class
+ * @var $this WPBakeryShortCode_VC_Gitem_Post_Data
+ */
 $output = $text = $google_fonts = $font_container = $el_class = $css = $google_fonts_data = $font_container_data = $link_html = '';
 extract( $this->getAttributes( $atts ) );
+
 extract( $this->getStyles( $el_class, $css, $google_fonts_data, $font_container_data, $atts ) );
+
 $data_source = $this->getDataSource( $atts );
-if(isset($atts['link']) && $atts['link'] !== '' && $atts['link'] !== 'none') {
+if ( isset( $atts['link'] ) && '' !== $atts['link'] && 'none' !== $atts['link'] ) {
 	$link_html = vc_gitem_create_link( $atts );
 }
 $use_custom_fonts = isset( $atts['use_custom_fonts'] ) && 'yes' === $atts['use_custom_fonts'];
@@ -33,5 +40,4 @@ $output .= '<' . $font_container_data['values']['tag'] . ' ' . $style . ' >';
 $output .= $content;
 $output .= '</' . $font_container_data['values']['tag'] . '>';
 $output .= '</div>';
-
 echo $output;

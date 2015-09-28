@@ -26,7 +26,7 @@
  * @return mixed|string|void
  */
 function wpb_widget_title( $params = array( 'title' => '' ) ) {
-	if ( $params['title'] == '' ) {
+	if ( $params['title'] === '' ) {
 		return '';
 	}
 
@@ -36,22 +36,18 @@ function wpb_widget_title( $params = array( 'title' => '' ) ) {
 	return apply_filters( 'wpb_widget_title', $output, $params );
 }
 
-
 /*
 
 Available filters in default.php
 wpb_toggle_heading
 
-
 Available filters in buttons.php
 wpb_cta_text
-
 
 Available filters in teaser_grid.php
 vc_teaser_grid_title
 vc_teaser_grid_thumbnail
 vc_teaser_grid_content
 vc_teaser_grid_carousel_arrows
-
 
 */

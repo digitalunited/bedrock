@@ -46,6 +46,7 @@ Class Vc_Vendor_ContactForm7 implements Vc_Vendor_Interface {
 					'heading' => __( 'Select contact form', 'js_composer' ),
 					'param_name' => 'id',
 					'value' => $contact_forms,
+					'save_always' => true,
 					'description' => __( 'Choose previously created contact form from the drop down list.', 'js_composer' )
 				)
 			)

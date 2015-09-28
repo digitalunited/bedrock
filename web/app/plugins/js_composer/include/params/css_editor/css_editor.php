@@ -91,9 +91,12 @@ if ( ! class_exists( 'WPBakeryVisualComposerCssEditor' ) ) {
 			$output = '<div class="vc_css-editor vc_row" data-css-editor="true">';
 			$output .= $this->onionLayout();
 			$output .= '<div class="vc_col-xs-5 vc_settings">'
-			           . '    <label>' . __( 'Border', 'js_composer' ) . '</label> '
+			           . '    <label>' . __( 'Border color', 'js_composer' ) . '</label> '
 			           . '    <div class="color-group"><input type="text" name="border_color" value="" class="vc_color-control"></div>'
+			           . '    <label>' . __( 'Border style', 'js_composer' ) . '</label> '
 			           . '    <div class="vc_border-style"><select name="border_style" class="vc_border-style">' . $this->getBorderStyleOptions() . '</select></div>'
+			           . '    <label>' . __( 'Border radius', 'js_composer' ) . '</label> '
+			           . '    <div class="vc_border-radius"><select name="border_radius" class="vc_border-radius">' . $this->getBorderRadiusOptions() . '</select></div>'
 			           . '    <label>' . __( 'Background', 'js_composer' ) . '</label>'
 			           . '    <div class="color-group"><input type="text" name="background_color" value="" class="vc_color-control"></div>'
 			           . '    <div class="vc_background-image">' . $this->getBackgroundImageControl() . '<div class="vc_clearfix"></div></div>'
@@ -105,8 +108,8 @@ if ( ! class_exists( 'WPBakeryVisualComposerCssEditor' ) ) {
 			$output .= '</div><div class="vc_clearfix"></div>';
 			$output .= '<script type="text/html" id="vc_css-editor-image-block">'
 			           . '<li class="added">'
-			           . '  <div class="inner" style="width: 75px; height: 75px; overflow: hidden;text-align: center;">'
-			           . '    <img src="{{ img.url }}?id={{ img.id }}" data-image-id="{{ img.id }}" class="vc_ce-image<# if(!_.isUndefined(img.css_class)) {#> {{ img.css_class }}<# }#>">'
+			           . '  <div class="inner" style="width: 80px; height: 80px; overflow: hidden;text-align: center;">'
+			           . '    <img src="{{ img.url }}?id={{ img.id }}" data-image-id="{{ img.id }}" class="vc_ce-image<# if (!_.isUndefined(img.css_class)) {#> {{ img.css_class }}<# }#>">'
 			           . '  </div>'
 			           . '  <a href="#" class="icon-remove"></a>'
 			           . '</li>'
@@ -124,8 +127,35 @@ if ( ! class_exists( 'WPBakeryVisualComposerCssEditor' ) ) {
 		 */
 		function getBackgroundImageControl() {
 			return apply_filters( 'vc_css_editor_background_image_control', '<ul class="vc_image">'
-			       . '</ul>'
-			       . '<a href="#" class="vc_add-image">' . __( 'Add image', 'js_composer' ) . '</a>');
+			                                                                . '</ul>'
+			                                                                . '<a href="#" class="vc_add-image">' . __( 'Add image', 'js_composer' ) . '</a>' );
+		}
+
+		/**
+		 * @return string
+		 */
+		function getBorderRadiusOptions() {
+			$radiuses = apply_filters( 'vc_css_editor_border_radius_options_data', array(
+				'' => __( 'None', 'js_composer' ),
+				'1px' => '1px',
+				'2px' => '2px',
+				'3px' => '3px',
+				'4px' => '4px',
+				'5px' => '5px',
+				'10px' => '10px',
+				'15px' => '15px',
+				'20px' => '20px',
+				'25px' => '25px',
+				'30px' => '30px',
+				'35px' => '35px'
+			) );
+
+			$output = '';
+			foreach ( $radiuses as $radius => $title ) {
+				$output .= '<option value="' . $radius . '">' . $title . '</option>';
+			}
+
+			return $output;
 		}
 
 		/**
@@ -164,7 +194,7 @@ if ( ! class_exists( 'WPBakeryVisualComposerCssEditor' ) ) {
 				__( 'Contain', 'js_composer' ) => 'contain',
 				__( 'No Repeat', 'js_composer' ) => 'no-repeat',
 				__( 'Repeat', 'js_composer' ) => 'repeat'
-			));
+			) );
 			foreach ( $styles as $name => $style ) {
 				$output .= '<option value="' . $style . '">' . $name . '</option>';
 			}
@@ -196,12 +226,12 @@ if ( ! class_exists( 'WPBakeryVisualComposerCssEditor' ) ) {
 		 * @return string
 		 */
 		protected function layerControls( $name, $prefix = '' ) {
-			$output = '<label>' . __( $name, 'js_composer' ) . '</label>';
+			$output = '<label>' . $name . '</label>';
 			foreach ( $this->positions as $pos ) {
-				$output .= '<input type="text" name="' . $name . '_' . $pos . ( $prefix != '' ? '_' . $prefix : '' ) . '" data-name="' . $name . ( $prefix != '' ? '-' . $prefix : '' ) . '-' . $pos . '" class="vc_' . $pos . '" placeholder="-" data-attribute="' . $name . '" value="">';
+				$output .= '<input type="text" name="' . $name . '_' . $pos . ( $prefix !== '' ? '_' . $prefix : '' ) . '" data-name="' . $name . ( $prefix !== '' ? '-' . $prefix : '' ) . '-' . $pos . '" class="vc_' . $pos . '" placeholder="-" data-attribute="' . $name . '" value="">';
 			}
 
-			return apply_filters( 'vc_css_editor_layer_controls', $output);
+			return apply_filters( 'vc_css_editor_layer_controls', $output );
 		}
 	}
 }

@@ -24,7 +24,7 @@ Class Vc_Navbar_Frontend extends Vc_Navbar {
 	/**
 	 * @var string
 	 */
-	protected $brand_url = 'http://vc.wpbakery.com/?utm_campaign=VCplugin_header&utm_source=vc_user&utm_medium=frontend_editor';
+	protected $brand_url = 'http://vc.wpbakery.com/?utm_campaign=VCplugin&utm_source=vc_user&utm_medium=frontend_editor';
 
 	/**
 	 * @return string
@@ -105,17 +105,17 @@ Class Vc_Navbar_Frontend extends Vc_Navbar {
 		<li class="vc_show-mobile vc_pull-right">
 			<button data-url="<?php esc_attr_e( get_edit_post_link( $post->ID ) . '&wpb_vc_js_status=true' ) ?>"
 			        class="vc_btn vc_btn-default vc_btn-sm vc_navbar-btn vc_btn-backend-editor" id="vc_button-cancel"
-			        title="<?php _e( "Cancel all changes and return to WP dashboard", 'js_composer' ) ?>"><?php _e( 'Backend editor', 'js_composer' ) ?></button>
+			        title="<?php _e( "Cancel all changes and return to WP dashboard", 'js_composer' ) ?>"><?php _e( 'Backend Editor', 'js_composer' ) ?></button>
 			<?php if ( ! in_array( $post->post_status, array( 'publish', 'future', 'private' ) ) ): ?>
 				<?php if ( $post->post_status === 'draft' ): ?>
 					<button type="button" class="vc_btn vc_btn-default vc_btn-sm vc_navbar-btn vc_btn-save-draft"
 					        id="vc_button-save-draft"
-					        title="<?php esc_attr_e( "Save draft", 'js_composer' ) ?>"><?php _e( 'Save draft', 'js_composer' ) ?></button>
+					        title="<?php esc_attr_e( "Save Draft", 'js_composer' ) ?>"><?php _e( 'Save Draft', 'js_composer' ) ?></button>
 				<?php elseif ( $post->post_status === 'pending' && $can_publish ): ?>
 					<button type="button" class="vc_btn vc_btn-primary vc_btn-sm vc_navbar-btn vc_btn-save"
 					        id="vc_button-save-as-pending"
 					        title="<?php esc_attr_e( "Save as Pending", 'js_composer' ) ?>"><?php _e( 'Save as Pending', 'js_composer' ) ?></button>
-				<?php endif; ?>
+				<?php endif ?>
 				<?php if ( $can_publish ) : ?>
 					<button type="button" class="vc_btn vc_btn-primary vc_btn-sm vc_navbar-btn vc_btn-save"
 					        id="vc_button-update" title="<?php esc_attr_e( "Publish", 'js_composer' ) ?>"
@@ -124,12 +124,12 @@ Class Vc_Navbar_Frontend extends Vc_Navbar {
 					<button type="button" class="vc_btn vc_btn-primary vc_btn-sm vc_navbar-btn vc_btn-save"
 					        id="vc_button-update" title="<?php esc_attr_e( "Submit for Review", 'js_composer' ) ?>"
 					        data-change-status="pending"><?php _e( 'Submit for Review', 'js_composer' ) ?></button>
-				<?php endif; ?>
+				<?php endif ?>
 			<?php else: ?>
 				<button type="button" class="vc_btn vc_btn-primary vc_btn-sm vc_navbar-btn vc_btn-save"
 				        id="vc_button-update"
 				        title="<?php esc_attr_e( "Update", 'js_composer' ) ?>"><?php _e( 'Update', 'js_composer' ) ?></button>
-			<?php endif; ?>
+			<?php endif ?>
 		</li>
 		<?php
 		$output = ob_get_contents();

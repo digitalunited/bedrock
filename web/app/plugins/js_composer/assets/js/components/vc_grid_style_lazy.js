@@ -7,8 +7,8 @@
  * ========================================================= */
 
 var vcGridStyleLazy = null;
-(function ($) {
-	$.waypoints('extendFn', 'vc_grid-infinite', function(options) {
+(function ( $ ) {
+	$.waypoints( 'extendFn', 'vc_grid-infinite', function ( options ) {
 		var $container, opts;
 		var el = this;
 		opts = $.extend(
@@ -19,21 +19,22 @@ var vcGridStyleLazy = null;
 				items: '.infinite-item',
 				offset: 'bottom-in-view',
 				handle: {
-					load: function( opts ) { }
+					load: function ( opts ) {
+					}
 				}
 			},
-			options);
-		$container = opts.container === 'auto' ? el : $(opts.container,el);
-		opts.handler = function(direction) {
+			options );
+		$container = 'auto' === opts.container ? el : $( opts.container, el );
+		opts.handler = function ( direction ) {
 			var $this;
-			if (direction === 'down' || direction === 'right') {
-				$this = $(this);
-				$this.waypoint('destroy');
-				opts.handle.load.call(this, opts);
+			if ( 'down' === direction || 'right' === direction ) {
+				$this = $( this );
+				$this.waypoint( 'destroy' );
+				opts.handle.load.call( this, opts );
 			}
 		};
-		return this.waypoint(opts);
-	});
+		return this.waypoint( opts );
+	} );
 	/**
 	 * "Lazy loading" grid style.
 	 * ==============================
@@ -41,14 +42,14 @@ var vcGridStyleLazy = null;
 	 * @param grid
 	 * @constructor
 	 */
-	vcGridStyleLazy = function (grid) {
+	vcGridStyleLazy = function ( grid ) {
 		this.grid = grid;
 		this.settings = grid.settings;
 		this.$el = false;
 		this.filterValue = null;
 		this.$content = false;
 		this.isLoading = false;
-		this.$loader = $('<div class="vc_grid-loading"></div>');
+		this.$loader = $( '<div class="vc_grid-loading"></div>' );
 		this.init();
 	};
 
@@ -56,7 +57,7 @@ var vcGridStyleLazy = null;
 	 * Initialize
 	 */
 	vcGridStyleLazy.prototype.setIsLoading = function () {
-		this.$content.append(this.$loader);
+		this.$content.append( this.$loader );
 		this.isLoading = true;
 	};
 
@@ -65,7 +66,7 @@ var vcGridStyleLazy = null;
 		this.$loader && this.$loader.remove();
 	};
 	vcGridStyleLazy.prototype.init = function () {
-		_.bindAll(this
+		_.bindAll( this
 			, 'addItems'
 			, 'showItems'
 		);
@@ -78,14 +79,15 @@ var vcGridStyleLazy = null;
 		this.$el = this.grid.$el;
 		this.$content = this.$el;
 		this.setIsLoading();
-		this.grid.ajax({}, this.addItems);
+		this.grid.ajax( {}, this.addItems );
 	};
 
 	vcGridStyleLazy.prototype.showItems = function () {
-		var $els = this.$content.find('.vc_grid_filter-item:not(.vc_visible-item):lt('+this.settings.items_per_page+')');
+		var $els = this.$content.find( '.vc_grid_filter-item:not(.vc_visible-item):lt(' + this.settings.items_per_page + ')' );
 		this.setIsLoading();
-		$els.addClass('vc_visible-item ' + vcGridSettings.addItemsAnimation + ' animated');
+		$els.addClass( 'vc_visible-item ' + vcGridSettings.addItemsAnimation + ' animated' );
 		this.unsetIsLoading();
+		jQuery( window ).trigger( 'grid:items:added', this.$el );
 	};
 
 	/**
@@ -93,18 +95,18 @@ var vcGridStyleLazy = null;
 	 *
 	 * @param filter - string parameter with filter settings.
 	 */
-	vcGridStyleLazy.prototype.filter = function (filter) {
-		filter = _.isUndefined(filter) || filter === '*' ? '' : filter;
-		if( this.filterValue == filter ) {
+	vcGridStyleLazy.prototype.filter = function ( filter ) {
+		filter = _.isUndefined( filter ) || '*' === filter ? '' : filter;
+		if ( this.filterValue == filter ) {
 			return false; // already filtered
 		}
-		this.$content.find('.vc_visible-item, .vc_grid_filter-item').removeClass('vc_visible-item vc_grid_filter-item '
-			+ ( vcGridSettings.addItemsAnimation != 'none' ? vcGridSettings.addItemsAnimation + ' animated' : '') );
-		this.filterValue =  filter;
+		this.$content.find( '.vc_visible-item, .vc_grid_filter-item' ).removeClass( 'vc_visible-item vc_grid_filter-item '
+		+ ( 'none' !== vcGridSettings.addItemsAnimation ? vcGridSettings.addItemsAnimation + ' animated' : '') );
+		this.filterValue = filter;
 		this.$content
-			.find('.vc_grid-item' + this.filterValue)
-			.addClass('vc_grid_filter-item');
-		_.defer(this.showItems); // for animation
+			.find( '.vc_grid-item' + this.filterValue )
+			.addClass( 'vc_grid_filter-item' );
+		_.defer( this.showItems ); // for animation
 		this.initScroll();
 	};
 
@@ -112,11 +114,11 @@ var vcGridStyleLazy = null;
 	 * Add new grid elements to content block. This request is sent after load more btn click.
 	 * @param html
 	 */
-	vcGridStyleLazy.prototype.addItems = function (html) {
-		var els = $(html);
-		this.$el.append(els);
+	vcGridStyleLazy.prototype.addItems = function ( html ) {
+		var els = $( html );
+		this.$el.append( els );
 		this.unsetIsLoading();
-		this.$content = els.find('[data-vc-grid-content="true"]');
+		this.$content = els.find( '[data-vc-grid-content="true"]' );
 		this.grid.initFilter();
 		this.filter();
 		window.vc_prettyPhoto();
@@ -124,24 +126,24 @@ var vcGridStyleLazy = null;
 
 	vcGridStyleLazy.prototype.initScroll = function () {
 		var self = this;
-		this.$content.unbind('waypoint').waypoint('vc_grid-infinite', {
+		this.$content.unbind( 'waypoint' ).waypoint( 'vc_grid-infinite', {
 			container: 'auto',
 			items: '.vc_grid-item',
 			handle: {
-				load: function( opts ) {
+				load: function ( opts ) {
 					self.showItems();
 					self.checkNext( opts );
 				}
 			}
-		});
+		} );
 	};
 	vcGridStyleLazy.prototype.checkNext = function ( opts ) {
-		if (this.$content.find('.vc_grid_filter-item:not(".vc_visible-item")').length) {
+		if ( this.$content.find( '.vc_grid_filter-item:not(".vc_visible-item")' ).length ) {
 			var fn, self = this;
-			fn = function() {
-				return self.$content.waypoint(opts);
+			fn = function () {
+				return self.$content.waypoint( opts );
 			};
-			_.defer(fn);
+			_.defer( fn );
 		}
 	};
-})(window.jQuery);
+})( window.jQuery );

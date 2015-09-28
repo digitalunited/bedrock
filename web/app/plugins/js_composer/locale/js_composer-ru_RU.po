@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Visual Composer\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-10-23 18:20+0200\n"
-"PO-Revision-Date: 2014-10-23 18:21+0200\n"
+"PO-Revision-Date: 2015-04-26 23:56+0200\n"
 "Last-Translator: Michael M <hello@wpbakery.com>\n"
 "Language-Team: WPBakery\n"
 "Language: ru_RU\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e;esc_attr__\n"
 "X-Poedit-Basepath: ../\n"
-"X-Generator: Poedit 1.6.7\n"
+"X-Generator: Poedit 1.7.5\n"
 "X-Poedit-SearchPath-0: ./config/.\n"
 "X-Poedit-SearchPath-1: ./include/.\n"
 
@@ -26,7 +26,7 @@ msgstr "Синий"
 
 #: config/./map.php:15 config/./map.php:2370
 msgid "Turquoise"
-msgstr "Берюзовый"
+msgstr "Бирюзовый"
 
 #: config/./map.php:16 config/./map.php:2371
 msgid "Green"
@@ -79,15 +79,15 @@ msgstr "Нет"
 
 #: config/./map.php:42
 msgid "Top to bottom"
-msgstr ""
+msgstr "Сверху вниз"
 
 #: config/./map.php:43
 msgid "Bottom to top"
-msgstr ""
+msgstr "Снизу вверх"
 
 #: config/./map.php:44
 msgid "Left to right"
-msgstr ""
+msgstr "Слева направо"
 
 #: config/./map.php:45
 msgid "Right to left"
@@ -95,13 +95,15 @@ msgstr "Справа налево"
 
 #: config/./map.php:46
 msgid "Appear from center"
-msgstr ""
+msgstr "По центру"
 
 #: config/./map.php:48
 msgid ""
 "Select type of animation if you want this element to be animated when it "
 "enters into the browsers viewport. Note: Works only in modern browsers."
 msgstr ""
+"Выберите тип анимации для элемента. Внимание! Работает только в современных "
+"браузерах."
 
 #: config/./map.php:52 config/./map.php:126
 msgid "Row"
@@ -126,7 +128,7 @@ msgstr "Содержимое"
 
 #: config/./map.php:58 config/./map.php:133
 msgid "Place content elements inside the row"
-msgstr ""
+msgstr "Поместите элементы в строку"
 
 #: config/./map.php:62 config/./map.php:137 config/./map.php:180
 #: config/./map.php:231
@@ -136,9 +138,8 @@ msgstr "Цвет"
 
 #: config/./map.php:64 config/./map.php:139 config/./map.php:182
 #: config/./map.php:233
-#, fuzzy
 msgid "Select font color"
-msgstr "Выберите контактную форму"
+msgstr "Выберите цвет шрифта"
 
 #: config/./map.php:111 config/./map.php:144 config/./map.php:187
 #: config/./map.php:238 config/./map.php:282 config/./map.php:387
@@ -181,9 +182,8 @@ msgid ""
 "If you wish to style particular content element differently, then use this "
 "field to add a class name and then refer to it in your css file."
 msgstr ""
-"Если вы хотите добавить стили к определенному блоку, тогда используйте это "
-"поле чтобы добавить CSS класс и затем используйте этот класс в своем CSS "
-"файле."
+"Если вы хотите добавить стили к определенному блоку, используйте это поле "
+"чтобы добавить CSS класс и затем используйте этот класс в своем CSS файле."
 
 #: config/./map.php:117 config/./map.php:150 config/./map.php:193
 #: config/./map.php:245 config/./map.php:288 config/./map.php:783
@@ -200,51 +200,51 @@ msgstr "Дизайн элементов"
 
 #: config/./map.php:159 include/./params/column_offset/column_offset.php:22
 msgid "1 column - 1/12"
-msgstr ""
+msgstr "1 колонка - 1/12"
 
 #: config/./map.php:160 include/./params/column_offset/column_offset.php:23
 msgid "2 columns - 1/6"
-msgstr ""
+msgstr "2 колонки - 1/6"
 
 #: config/./map.php:161 include/./params/column_offset/column_offset.php:24
 msgid "3 columns - 1/4"
-msgstr ""
+msgstr "3 колонки - 1/4"
 
 #: config/./map.php:162 include/./params/column_offset/column_offset.php:25
 msgid "4 columns - 1/3"
-msgstr ""
+msgstr "4 колонки - 1/3"
 
 #: config/./map.php:163 include/./params/column_offset/column_offset.php:26
 msgid "5 columns - 5/12"
-msgstr ""
+msgstr "5 колонок - 5/12"
 
 #: config/./map.php:164 include/./params/column_offset/column_offset.php:27
 msgid "6 columns - 1/2"
-msgstr ""
+msgstr "6 колонок - 1/2"
 
 #: config/./map.php:165 include/./params/column_offset/column_offset.php:28
 msgid "7 columns - 7/12"
-msgstr ""
+msgstr "7 колонок - 7/12"
 
 #: config/./map.php:166 include/./params/column_offset/column_offset.php:29
 msgid "8 columns - 2/3"
-msgstr ""
+msgstr "8 колонок - 2/3"
 
 #: config/./map.php:167 include/./params/column_offset/column_offset.php:30
 msgid "9 columns - 3/4"
-msgstr ""
+msgstr "9 колонок - 3/4"
 
 #: config/./map.php:168 include/./params/column_offset/column_offset.php:31
 msgid "10 columns - 5/6"
-msgstr ""
+msgstr "10 колонок - 5/6"
 
 #: config/./map.php:169 include/./params/column_offset/column_offset.php:32
 msgid "11 columns - 11/12"
-msgstr ""
+msgstr "11 колонок - 11/12"
 
 #: config/./map.php:170 include/./params/column_offset/column_offset.php:33
 msgid "12 columns - 1/1"
-msgstr ""
+msgstr "12 колонок - 1/1"
 
 #: config/./map.php:173 config/./map.php:219
 msgid "Column"
@@ -253,11 +253,11 @@ msgstr "Колонка"
 #: config/./map.php:200 config/./map.php:252
 #: include/./templates/params/column_offset/template.tpl.php:20
 msgid "Width"
-msgstr ""
+msgstr "Высота"
 
 #: config/./map.php:203 config/./map.php:211 config/./map.php:255
 msgid "Width & Responsiveness"
-msgstr ""
+msgstr "Высота & Реакция"
 
 #: config/./map.php:204 config/./map.php:256
 #, fuzzy
@@ -391,17 +391,17 @@ msgstr "Расположение заголовка"
 
 #: config/./map.php:416 config/./map.php:724
 msgid "Align center"
-msgstr "Выровнить по центру"
+msgstr "Выровнять по центру"
 
 #: config/./map.php:417 config/./map.php:722 config/./map.php:1997
 #: config/./map.php:2124
 msgid "Align left"
-msgstr "Выровнить по левому краю"
+msgstr "Выровнять по левому краю"
 
 #: config/./map.php:418 config/./map.php:723 config/./map.php:1996
 #: config/./map.php:2123
 msgid "Align right"
-msgstr "Выровнить по правому краю"
+msgstr "Выровнять по правому краю"
 
 #: config/./map.php:420
 msgid "Select title location."
@@ -413,18 +413,16 @@ msgid "Separator alignment"
 msgstr "Заголовок разделителя."
 
 #: config/./map.php:427 config/./map.php:3458
-#, fuzzy
 msgid "Center"
-msgstr "Выровнить по центру"
+msgstr "Выровнять по центру"
 
 #: config/./map.php:428 config/./map.php:3459
 msgid "Left"
 msgstr ""
 
 #: config/./map.php:429 config/./map.php:3460
-#, fuzzy
 msgid "Right"
-msgstr "Выровнить по правому краю"
+msgstr "Выровнять по правому краю"
 
 #: config/./map.php:431
 #, fuzzy
@@ -568,7 +566,7 @@ msgstr "Высокая"
 
 #: config/./map.php:601
 msgid "Select button size."
-msgstr "Выбеите размер кнопки."
+msgstr "Выберите размер кнопки."
 
 #: config/./map.php:605
 msgid "Annotation"
@@ -1017,7 +1015,7 @@ msgstr "ID Таба"
 
 #: config/./map.php:1134
 msgid "Accordion"
-msgstr "Акордион"
+msgstr "Аккордеон"
 
 #: config/./map.php:1140
 msgid "Collapsible content panels"
@@ -1036,7 +1034,7 @@ msgstr ""
 
 #: config/./map.php:1156
 msgid "Allow collapsible all"
-msgstr "Разрешить сворачивание секций акордиона"
+msgstr "Разрешить сворачивание секций аккордеона"
 
 #: config/./map.php:1158
 msgid "Select checkbox to allow all sections to be collapsible."
@@ -1047,9 +1045,8 @@ msgid "Allow"
 msgstr "Разрешить"
 
 #: config/./map.php:1173
-#, fuzzy
 msgid "Add section"
-msgstr "Добавить секцию акордиона"
+msgstr "Добавить секцию аккордеона"
 
 #: config/./map.php:1177
 msgid "Section 1"
@@ -1067,7 +1064,7 @@ msgstr "Секция"
 
 #: config/./map.php:1193
 msgid "Accordion section title."
-msgstr "Заголовок секции акордиона"
+msgstr "Заголовок секции аккордеона"
 
 #: config/./map.php:1203
 msgid "Teaser (posts) Grid"
@@ -1758,7 +1755,7 @@ msgstr "Позиция кнопки"
 
 #: config/./map.php:1998 config/./map.php:2125
 msgid "Align bottom"
-msgstr "Выровнить по низу"
+msgstr "Выровнять по низу"
 
 #: config/./map.php:2000 config/./map.php:2127
 msgid "Select button alignment."
@@ -1949,7 +1946,7 @@ msgstr "Группа"
 
 #: config/./map.php:2313
 msgid "Photo stream type."
-msgstr "Тип фото потока."
+msgstr "Тип фото потока"
 
 #: config/./map.php:2317
 msgid "Display"
@@ -1957,7 +1954,7 @@ msgstr "Показывать"
 
 #: config/./map.php:2320
 msgid "Latest"
-msgstr "Последнии"
+msgstr "Последние"
 
 #: config/./map.php:2323
 msgid "Photo order."
@@ -2733,9 +2730,8 @@ msgid "Dropdown"
 msgstr ""
 
 #: config/./map.php:3455
-#, fuzzy
 msgid "Align"
-msgstr "Выровнить по левому краю"
+msgstr "Выровнять по левому краю"
 
 #: config/./map.php:3482
 #, fuzzy
@@ -3159,7 +3155,7 @@ msgstr "Ошибка. Попробуйте еще раз."
 msgid ""
 "If you close this window all shortcode settings will be lost. Close this "
 "window?"
-msgstr "Если вы закроете это окно настройки блока будут утерены. Закрыть окно?"
+msgstr "Если вы закроете это окно настройки блока будут утеряны. Закрыть окно?"
 
 #: include/./classes/core/class-vc-base.php:483
 msgid "Select element type"
@@ -3244,9 +3240,8 @@ msgid "Template added to the page."
 msgstr ""
 
 #: include/./classes/core/class-vc-base.php:503
-#, fuzzy
 msgid "Nothing to save. Template is empty."
-msgstr "Нет ниодного шаблона."
+msgstr "Нет ни одного шаблона."
 
 #: include/./classes/core/class-vc-base.php:504
 #, fuzzy
@@ -3362,9 +3357,8 @@ msgid "Desktop"
 msgstr ""
 
 #: include/./classes/editors/navbar/class-vc-navbar-frontend.php:37
-#, fuzzy
 msgid "Tablet landscape mode"
-msgstr "Включенные элементы"
+msgstr "Включённые элементы"
 
 #: include/./classes/editors/navbar/class-vc-navbar-frontend.php:42
 msgid "Tablet portrait mode"
@@ -3470,13 +3464,12 @@ msgstr "Вставить шаблон"
 
 #: include/./classes/editors/popups/class-vc-templates-editor.php:240
 msgid "No custom templates yet."
-msgstr "Нет ниодного шаблона."
+msgstr "Нет ни одного шаблона."
 
 #: include/./classes/settings/class-vc-automapper.php:110
 #: include/./classes/settings/class-vc-automapper.php:123
-#, fuzzy
 msgid "My shortcodes"
-msgstr "Включенные элементы"
+msgstr "Включённые элементы"
 
 #: include/./classes/settings/class-vc-automapper.php:121
 #, fuzzy
@@ -3873,8 +3866,8 @@ msgid ""
 "Select for which content types Visual Composer should be available during "
 "post creation/editing."
 msgstr ""
-"Выберите для каких материалов Visual Composer должен быть доступен вовремя "
-"создавания/редактирования."
+"Выберите для каких материалов Visual Composer должен быть доступен во время "
+"создания/редактирования."
 
 #: include/./classes/settings/class-vc-settings.php:559
 msgid ""
@@ -3882,7 +3875,7 @@ msgid ""
 "modify any files, then it's a good place to enter your code at this field."
 msgstr ""
 "Если вы хотите добавить индивидуальный CSS код для плагина, и не хотите "
-"редактировать файлы в ручную, то введите ваш код в это поле."
+"редактировать файлы вручную, то введите ваш код в это поле."
 
 #: include/./classes/settings/class-vc-settings.php:574
 msgid ""
@@ -3910,23 +3903,22 @@ msgid ""
 "Enable the use of custom design options for your site. When checked, custom "
 "css file will be used."
 msgstr ""
-"Использовать индивидуальные настройки дизайна. Если выбранно, то "
+"Использовать индивидуальные настройки дизайна. Если выбрано, то "
 "использоваться будет индивидуальный CSS файл."
 
 #: include/./classes/settings/class-vc-settings.php:701
 msgid ""
 "To change default vertical spacing between content elements, enter new value "
 "here. Example: 20px"
-msgstr "Чтобы изменить растояние между рядами, введите новое значение тут."
+msgstr "Чтобы изменить расстояние между рядами, введите новое значение тут."
 
 #: include/./classes/settings/class-vc-settings.php:707
-#, fuzzy
 msgid ""
 "To change default horizontal spacing between columns, enter new value in "
 "pixels here."
 msgstr ""
-"Чтобы изменить растояние между колонками, введите новое значение в процентах "
-"тут."
+"Чтобы изменить расстояние между колонками, введите новое значение в "
+"процентах тут."
 
 #: include/./classes/settings/class-vc-settings.php:713
 #, fuzzy
@@ -3986,7 +3978,7 @@ msgstr ""
 
 #: include/./classes/settings/class-vc-settings.php:877
 msgid "Invalid Margin value."
-msgstr "Неверное значение: Нижний отступ."
+msgstr "Неверное значение: нижний отступ."
 
 #: include/./classes/settings/class-vc-settings.php:886
 msgid "Invalid Gutter value."
@@ -4002,7 +3994,7 @@ msgid ""
 "Visual Composer: Your css class names settings are deprecated. <a href=\"%s"
 "\">Click here to resolve</a>."
 msgstr ""
-"Visual Composer: Ваши настройки для CSS классов работают не верно. <a href="
+"Visual Composer: Ваши настройки для CSS классов работают неверно. <a href="
 "\"%s\">Нажмите сюда чтобы разобраться</a>."
 
 #: include/./classes/settings/class-vc-settings.php:999
@@ -4511,9 +4503,9 @@ msgstr ""
 #: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:767
 #: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:821
 #: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:914
-#, fuzzy, php-format
+#, php-format
 msgid "Select how to sort retrieved products. More at %s."
-msgstr "Выберите как сортировать выбранные записиы. Подробнее %s."
+msgstr "Выберите как сортировать выбранные записи. Подробнее %s."
 
 #: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:228
 msgid "Featured products"
@@ -5067,9 +5059,8 @@ msgid "slideInLeft"
 msgstr ""
 
 #: include/./params/animation_style/animation_style.php:374
-#, fuzzy
 msgid "slideInRight"
-msgstr "Выровнить по правому краю"
+msgstr "Выровнять по правому краю"
 
 #: include/./params/animation_style/animation_style.php:378
 msgid "slideInUp"
@@ -5168,14 +5159,12 @@ msgid "left"
 msgstr ""
 
 #: include/./params/font_container/font_container.php:97
-#, fuzzy
 msgid "right"
-msgstr "Выровнить по правому краю"
+msgstr "Выровнять по правому краю"
 
 #: include/./params/font_container/font_container.php:98
-#, fuzzy
 msgid "center"
-msgstr "Выровнить по центру"
+msgstr "Выровнять по центру"
 
 #: include/./params/font_container/font_container.php:99
 msgid "justify"

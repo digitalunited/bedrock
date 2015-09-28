@@ -25,7 +25,7 @@ function vc_params_preset_form_field( $settings, $value ) {
 		$selected = '';
 		if ( isset( $option['value'] ) ) {
 			if ( $value !== '' && (string) $option['value'] === (string) $value ) {
-				$selected = ' selected="selected"';
+				$selected = ' selected';
 			}
 			$output .= '<option class="vc_params-preset-' . $option['value']
 			           . '" value="' . esc_attr( $option['value'] )

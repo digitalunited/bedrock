@@ -10,26 +10,19 @@
  *        'value'=>'',
  *        'settings'=>array(
  *            'fields'=>array(
- *
- *                'tag'=>'h2', // default value h2
+  *                'tag'=>'h2',
  *                'text_align',
  *                'font_size',
  *                'line_height',
  *                'color',
- *                //'font_style_italic'
- *                //'font_style_bold'
- *                //'font_family'
  *
  *                'tag_description' => __('Select element tag.','js_composer'),
  *                'text_align_description' => __('Select text alignment.','js_composer'),
  *                'font_size_description' => __('Enter font size.','js_composer'),
  *                'line_height_description' => __('Enter line height.','js_composer'),
  *                'color_description' => __('Select color for your element.','js_composer'),
- *                //'font_style_description' => __('Put your description here','js_composer'),
- *                //'font_family_description' => __('Put your description here','js_composer'),
  *            ),
  *        ),
- *        // 'description' => __( '', 'js_composer' ), // description for field group
  *    ),
  *  Ordering of fields, font_family, tag, text_align and etc. will be Same as ordering in array!
  *  To provide default value to field use 'key' => 'value'
@@ -58,7 +51,7 @@ class Vc_Font_Container {
                         <select class="vc_font_container_form_field-tag-select">';
 				$tags = $this->_vc_font_container_get_allowed_tags();
 				foreach ( $tags as $tag ) {
-					$data['tag'] .= '<option value="' . $tag . '" class="' . $tag . '" ' . ( $values['tag'] == $tag ? 'selected="selected"' : '' ) . '>' . __( $tag, 'js_composer' ) . '</option>';
+					$data['tag'] .= '<option value="' . $tag . '" class="' . $tag . '" ' . ( $values['tag'] == $tag ? 'selected' : '' ) . '>' . $tag . '</option>';
 				}
 				$data['tag'] .= '
                         </select>
@@ -92,10 +85,10 @@ class Vc_Font_Container {
                     <div class="wpb_element_label">' . __( 'Text align', 'js_composer' ) . '</div>
                     <div class="vc_font_container_form_field-text_align-container">
                         <select class="vc_font_container_form_field-text_align-select">
-                            <option value="left" class="left" ' . ( $values['text_align'] == 'left' ? 'selected="selected"' : '' ) . '>' . __( 'left', 'js_composer' ) . '</option>
-                            <option value="right" class="right" ' . ( $values['text_align'] == 'right' ? 'selected="selected"' : '' ) . '>' . __( 'right', 'js_composer' ) . '</option>
-                            <option value="center" class="center" ' . ( $values['text_align'] == 'center' ? 'selected="selected"' : '' ) . '>' . __( 'center', 'js_composer' ) . '</option>
-                            <option value="justify" class="justify" ' . ( $values['text_align'] == 'justify' ? 'selected="selected"' : '' ) . '>' . __( 'justify', 'js_composer' ) . '</option>
+                            <option value="left" class="left" ' . ( $values['text_align'] === 'left' ? 'selected' : '' ) . '>' . __( 'left', 'js_composer' ) . '</option>
+                            <option value="right" class="right" ' . ( $values['text_align'] === 'right' ? 'selected' : '' ) . '>' . __( 'right', 'js_composer' ) . '</option>
+                            <option value="center" class="center" ' . ( $values['text_align'] === 'center' ? 'selected' : '' ) . '>' . __( 'center', 'js_composer' ) . '</option>
+                            <option value="justify" class="justify" ' . ( $values['text_align'] === 'justify' ? 'selected' : '' ) . '>' . __( 'justify', 'js_composer' ) . '</option>
                         </select>
                     </div>';
 				if ( isset( $fields['text_align_description'] ) && strlen( $fields['text_align_description'] ) > 0 ) {
@@ -143,7 +136,7 @@ class Vc_Font_Container {
                         <select class="vc_font_container_form_field-font_family-select">';
 				$fonts = $this->_vc_font_container_get_web_safe_fonts();
 				foreach ( $fonts as $font_name => $font_data ) {
-					$data['font_family'] .= '<option value="' . $font_name . '" class="' . vc_build_safe_css_class( $font_name ) . '" ' . ( strtolower( $values['font_family'] ) == strtolower( $font_name ) ? 'selected="selected"' : '' ) . ' data[font_family]="' . urlencode( $font_data ) . '">' . __( $font_name, 'js_composer' ) . '</option>';
+					$data['font_family'] .= '<option value="' . $font_name . '" class="' . vc_build_safe_css_class( $font_name ) . '" ' . ( strtolower( $values['font_family'] ) == strtolower( $font_name ) ? 'selected' : '' ) . ' data[font_family]="' . urlencode( $font_data ) . '">' . $font_name . '</option>';
 				}
 				$data['font_family'] .= '
                         </select>
@@ -161,11 +154,11 @@ class Vc_Font_Container {
                     <div class="wpb_element_label">' . __( 'Font style', 'js_composer' ) . '</div>
                     <div class="vc_font_container_form_field-font_style-container">
                         <label>
-                            <input type="checkbox" class="vc_font_container_form_field-font_style-checkbox italic" value="italic" ' . ( $values['font_style_italic'] == "1" ? 'checked="checked"' : '' ) . '><span class="vc_font_container_form_field-font_style-label italic">' . __( 'italic', 'js_composer' ) . '</span>
+                            <input type="checkbox" class="vc_font_container_form_field-font_style-checkbox italic" value="italic" ' . ( $values['font_style_italic'] === "1" ? 'checked' : '' ) . '><span class="vc_font_container_form_field-font_style-label italic">' . __( 'italic', 'js_composer' ) . '</span>
                          </label>
                         <br />
                         <label>
-                            <input type="checkbox" class="vc_font_container_form_field-font_style-checkbox bold" value="bold" ' . ( $values['font_style_bold'] == "1" ? 'checked="checked"' : '' ) . '><span class="vc_font_container_form_field-font_style-label bold">' . __( 'bold', 'js_composer' ) . '</span>
+                            <input type="checkbox" class="vc_font_container_form_field-font_style-checkbox bold" value="bold" ' . ( $values['font_style_bold'] === "1" ? 'checked' : '' ) . '><span class="vc_font_container_form_field-font_style-label bold">' . __( 'bold', 'js_composer' ) . '</span>
                         </label>
                     </div>';
 				if ( isset( $fields['font_style_description'] ) && strlen( $fields['font_style_description'] ) > 0 ) {
@@ -175,7 +168,7 @@ class Vc_Font_Container {
 				}
 				$data['font_style'] .= '</div>';
 			}
-
+			$data = apply_filters( 'vc_font_container_output_data', $data, $fields, $values, $settings );
 			// combine all in output, make sure you follow ordering
 			foreach ( $fields as $key => $field ) {
 				if ( isset( $data[ $key ] ) ) {
@@ -230,13 +223,13 @@ class Vc_Font_Container {
 	 */
 	public function _vc_font_container_get_allowed_tags() {
 		$allowed_tags = array(
+			'h1',
 			'h2',
 			'h3',
 			'h4',
 			'h5',
 			'h6',
 			'p',
-			//'span', // @note this is not inline element, so you can't use this for text-align
 			'div',
 		);
 

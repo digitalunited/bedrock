@@ -100,7 +100,7 @@ class Vc_Teaser_Box {
 		$output = '<div class="vc_teaser-switch"><label><input type="checkbox" name="' . self::$meta_data_name . '[enable]" value="1" id="vc_teaser-checkbox"' . ( $this->getTeaserData( 'enable' ) === '1' ? ' checked="true"' : '' ) . '> ' . __( 'Enable custom teaser', "js_composer" ) . '</label></div>';
 		$output .= '<input type="hidden" name="' . self::$meta_data_name . '[data]" class="vc_teaser-data-field" value="' . htmlspecialchars( $this->getTeaserData( 'data' ) ) . '">';
 		$output .= '<div class="vc_teaser-constructor-hint">';
-		$output .= '<p>' . __( 'Here you can customize teaser block design. It will be used instead of default settings in "Posts Grid" or "Carousel" content elements.', 'js_composer' ) . '</p>';
+		$output .= '<p>' . __( 'Customize teaser block design to overwrite default settings used in "Carousel" content element.', 'js_composer' ) . '</p>';
 		$output .= '</div>';
 		$output .= '<div class="vc_teaser-constructor">';
 		$output .= '<div class="vc_toolbar"></div>';

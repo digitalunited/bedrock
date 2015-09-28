@@ -10,21 +10,13 @@ require_once vc_path_dir( 'EDITORS_DIR', 'class-vc-backend-editor.php' );
 class Vc_Grid_Item_Editor extends Vc_Backend_Editor {
 	protected static $post_type = 'vc_grid_item';
 	protected $templates_editor = false;
+
 	function __construct() {
 		add_action( 'admin_print_scripts-post.php', array( &$this, 'printScriptsMessages' ) );
 		add_action( 'admin_print_scripts-post-new.php', array( &$this, 'printScriptsMessages' ) );
 		add_action( 'vc_templates_render_backend_template', array( &$this, 'loadPredefinedTemplate' ), 10, 2 );
-		// add_action( 'vc_after_init', array(&$this, 'mapShortcodes'));
 	}
-	/*
-	public function mapShortcodes() {
-		if(vc_request_param('vc_grid_item_editor') === 'true') {
-			require_once vc_path_dir( 'EDITORS_DIR', 'popups/class-vc-templates-editor-grid-item.php' );
-			$templates_editor = new Vc_Templates_Editor_Grid_Item();
-			$templates_editor->init();
-		}
-	}
-	*/
+
 	/**
 	 * Create post type and new item in the admin menu.
 	 * @return void
@@ -32,29 +24,33 @@ class Vc_Grid_Item_Editor extends Vc_Backend_Editor {
 	public static function createPostType() {
 		register_post_type( self::$post_type,
 			array(
-				'labels' => array(
-					'add_new_item' => __( 'Add Grid Element', "js_composer" ),
-					'name' => __( 'Grid Elements', "js_composer" ),
-					'singular_name' => __( 'Grid Element', "js_composer" ),
-					'edit_item' => __( 'Edit Grid Element', "js_composer" ),
-					'view_item' => __( 'View Grid Element', "js_composer" ),
-					'search_items' => __( 'Search Grid Elements', "js_composer" ),
-					'not_found' => __( 'No grid elements found', "js_composer" ),
-					'not_found_in_trash' => __( 'No grid elements found in Trash', "js_composer" ),
-				),
+				'labels' => self::getPostTypesLabels(),
 				'public' => false,
 				'has_archive' => false,
 				'show_in_nav_menus' => false,
 				'exclude_from_search' => true,
 				'publicly_queryable' => false,
 				'show_ui' => true,
+				'show_in_menu' => false,
 				'query_var' => true,
 				'capability_type' => 'post',
 				'hierarchical' => false,
 				'menu_position' => null,
-				'menu_icon' => vc_asset_url( 'vc/vc_grid_item_post_type_icon.png' ),
 				'supports' => array( 'title', 'editor' ),
 			)
+		);
+	}
+
+	public static function getPostTypesLabels() {
+		return array(
+			'add_new_item' => __( 'Add Grid Element', "js_composer" ),
+			'name' => __( 'Grid Elements', "js_composer" ),
+			'singular_name' => __( 'Grid Element', "js_composer" ),
+			'edit_item' => __( 'Edit Grid Element', "js_composer" ),
+			'view_item' => __( 'View Grid Element', "js_composer" ),
+			'search_items' => __( 'Search Grid Elements', "js_composer" ),
+			'not_found' => __( 'No grid elements found', "js_composer" ),
+			'not_found_in_trash' => __( 'No grid elements found in Trash', "js_composer" ),
 		);
 	}
 
@@ -78,7 +74,7 @@ class Vc_Grid_Item_Editor extends Vc_Backend_Editor {
 	}
 
 	/**
-	 *    Calls add_meta_box to create Editor block.
+	 * Calls add_meta_box to create Editor block.
 	 *
 	 * @access public
 	 */
@@ -90,6 +86,7 @@ class Vc_Grid_Item_Editor extends Vc_Backend_Editor {
 
 	/**
 	 * Change order of the controls for shortcodes admin block.
+	 *
 	 * @return array
 	 */
 	public function shortcodesControls() {
@@ -154,18 +151,21 @@ class Vc_Grid_Item_Editor extends Vc_Backend_Editor {
 			wp_enqueue_script( 'vc_grid_item_editor' );
 		}
 	}
+
 	public function templatesEditor() {
-		if(false === $this->templates_editor) {
-			require_once vc_path_dir('PARAMS_DIR', 'vc_grid_item/editor/popups/class-vc-templates-editor-grid-item.php' );
+		if ( false === $this->templates_editor ) {
+			require_once vc_path_dir( 'PARAMS_DIR', 'vc_grid_item/editor/popups/class-vc-templates-editor-grid-item.php' );
 			$this->templates_editor = new Vc_Templates_Editor_Grid_Item();
 		}
+
 		return $this->templates_editor;
 	}
 
 	public function loadPredefinedTemplate( $template_id, $template_type ) {
-		if ( 'grid_templates' == $template_type ) {
+		if ( 'grid_templates' === $template_type ) {
 			ob_start();
 			$this->templatesEditor()->load( $template_id );
+
 			return ob_get_clean();
 		}
 

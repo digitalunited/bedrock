@@ -5,8 +5,8 @@ Class Vc_Grid_Item_Preview {
 	protected $post_id = false;
 
 	public function render() {
-		$this->shortcodes_string = stripslashes( vc_request_param( 'shortcodes_string', true ) );
 		$this->post_id = vc_request_param( 'post_id' );
+		$this->shortcodes_string = stripslashes( vc_request_param( 'shortcodes_string', true ) );
 		require_once vc_path_dir( 'PARAMS_DIR', 'vc_grid_item/class-vc-grid-item.php' );
 		$grid_item = new Vc_Grid_Item();
 		$grid_item->setIsEnd( false );
@@ -26,6 +26,7 @@ Class Vc_Grid_Item_Preview {
 		if ( empty( $css ) ) {
 			$css = 'background-image: url(' . vc_asset_url( 'vc/vc_gitem_image.png' ) . ') !important';
 		}
+
 		return $css;
 	}
 
@@ -33,6 +34,7 @@ Class Vc_Grid_Item_Preview {
 		if ( empty( $url ) ) {
 			$url = vc_asset_url( 'vc/vc_gitem_image.png' );
 		}
+
 		return $url;
 	}
 
@@ -40,7 +42,44 @@ Class Vc_Grid_Item_Preview {
 		if ( empty( $img ) ) {
 			$img = '<img src="' . vc_asset_url( 'vc/vc_gitem_image.png' ) . '" alt="">';
 		}
+
 		return $img;
+	}
+
+	/**
+	 *
+	 * @since 4.5
+	 *
+	 * @param $link
+	 *
+	 * @return string
+	 */
+	public function disableContentLink( $link, $atts, $css_class ) {
+		return 'a' . ( strlen( $css_class ) > 0 ? ' class="' . esc_attr( $css_class ) . '"' : '' );
+	}
+
+	/**
+	 *
+	 * @since 4.5
+	 *
+	 * @param $link
+	 *
+	 * @return string
+	 */
+	public function disableRealContentLink( $link, $atts, $post, $css_class ) {
+		return 'a' . ( strlen( $css_class ) > 0 ? ' class="' . esc_attr( $css_class ) . '"' : '' );
+	}
+
+	/**
+	 * Used for filter: vc_gitem_zone_image_block_link
+	 * @since 4.5
+	 *
+	 * @param $link
+	 *
+	 * @return string
+	 */
+	public function disableGitemZoneLink( $link ) {
+		return '';
 	}
 
 	public function enqueue() {
@@ -51,7 +90,9 @@ Class Vc_Grid_Item_Preview {
 		wp_enqueue_style( 'js_composer_front' );
 		wp_enqueue_script( 'wpb_composer_front_js' );
 		wp_enqueue_style( 'js_composer_custom_css' );
-		require_once vc_path_dir( 'SHORTCODES_DIR', 'vc-basic-grid.php' );
+
+		VcShortcodeAutoloader::getInstance()->includeClass( 'WPBakeryShortCode_VC_Basic_Grid' );
+
 		$grid = new WPBakeryShortCode_VC_Basic_Grid( array( 'base' => 'vc_basic_grid' ) );
 		$grid->shortcodeScripts();
 		$grid->enqueueScripts();
@@ -62,16 +103,18 @@ Class Vc_Grid_Item_Preview {
 		$post->post_title = __( 'Post title', 'js_composer' );
 		$post->post_content = __( 'The WordPress Excerpt is an optional summary or description of a post; in short, a post summary.', 'js_composer' );
 		$post->post_excerpt = __( 'The WordPress Excerpt is an optional summary or description of a post; in short, a post summary.', 'js_composer' );
-		$GLOBALS[ 'post' ] = $post;
+		$GLOBALS['post'] = $post;
+
 		return $post;
 	}
 
 	public function addPlaceholderImage( $img ) {
-		if ( NULL === $img || false === $img ) {
+		if ( null === $img || false === $img ) {
 			$img = array(
 				'thumbnail' => '<img class="vc_img-placeholder vc_single_image-img" src="' . vc_asset_url( 'vc/vc_gitem_image.png' ) . '" />'
 			);
 		}
+
 		return $img;
 	}
 }

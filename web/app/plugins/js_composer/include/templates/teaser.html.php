@@ -1,7 +1,7 @@
 <script type="text/html" id="vc_teaser-button">
 	<div class="vc_teaser-checkbox">
 		<label class="vc_teaser-button-label vc_teaser-label-{{ value }}"><input
-		  class="vc_teaser-button vc_teaser-btn-{{ value }}" type="checkbox" value="{{value}}">
+				class="vc_teaser-button vc_teaser-btn-{{ value }}" type="checkbox" value="{{value}}">
 			<span>{{label}}</span></label>
 	</div>
 </script>
@@ -12,12 +12,12 @@
 
 		<div class="vc_link-controls">
 			<?php _e( 'Link to', "js_composer" ) ?>: <a href="#"
-														class="vc_link-control{{ link === 'none' ? ' vc_active-link' : ''}}"
-														data-link="none"><?php _e( 'No link', "js_composer" ) ?></a>
+			                                            class="vc_link-control{{ link === 'none' ? ' vc_active-link' : ''}}"
+			                                            data-link="none"><?php _e( 'No link', "js_composer" ) ?></a>
 			| <a href="#" class="vc_link-control{{ link === 'post' ? ' vc_active-link' : ''}}"
-				 data-link="post"><?php _e( 'On post', "js_composer" ) ?></a>
+			     data-link="post"><?php _e( 'On post', "js_composer" ) ?></a>
 			| <a href="#" class="vc_link-control{{ link === 'big_image' ? ' vc_active-link' : ''}}"
-				 data-link="big_image"><?php _e( 'Big image', "js_composer" ) ?></a>
+			     data-link="big_image"><?php _e( 'Big image', "js_composer" ) ?></a>
 		</div>
 	</div>
 </script>
@@ -33,12 +33,12 @@
 		</div>
 		<div class="vc_link-controls">
 			<?php _e( 'Link to', "js_composer" ) ?>: <a href="#"
-														class="vc_link-control{{ link === 'none' ? ' vc_active-link' : ''}}"
-														data-link="none"><?php _e( 'No link', "js_composer" ) ?></a>
+			                                            class="vc_link-control{{ link === 'none' ? ' vc_active-link' : ''}}"
+			                                            data-link="none"><?php _e( 'No link', "js_composer" ) ?></a>
 			| <a href="#" class="vc_link-control{{ link === 'post' ? ' vc_active-link' : ''}}"
-				 data-link="post"><?php _e( 'On post', "js_composer" ) ?></a>
+			     data-link="post"><?php _e( 'On post', "js_composer" ) ?></a>
 			| <a href="#" class="vc_link-control{{ link === 'big_image' ? ' vc_active-link' : ''}}"
-				 data-link="big_image"><?php _e( 'Big image', "js_composer" ) ?></a>
+			     data-link="big_image"><?php _e( 'Big image', "js_composer" ) ?></a>
 		</div>
 	</div>
 </script>
