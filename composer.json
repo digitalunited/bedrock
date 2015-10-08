@@ -32,17 +32,31 @@
   },
   "scripts": {
     "post-root-package-install": [
-        "Roots\\Bedrock\\Installer::addSalts",
-        "scripts/Roots/Bedrock/install_theme.sh"
-    ],
-    "post-create-project-cmd": [
-        "scripts/Roots/Bedrock/npm_install.sh"
+      "Roots\\Bedrock\\Installer::addSalts",
+      "scripts/Roots/Bedrock/install_theme.sh",
+      "scripts/Roots/Bedrock/npm_install.sh"
     ]
   },
   "repositories": [
     {
       "type": "composer",
       "url": "http://wpackagist.org"
+    },
+    {
+      "type": "git",
+      "url": "git@bitbucket.org:careofhaus/care-of-haus-premium-starter-theme.git"
+    },
+    {
+      "type": "git",
+      "url": "git@bitbucket.org:careofhaus/advanced-custom-fields-pro.git"
+    },
+    {
+      "type": "git",
+      "url": "git@bitbucket.org:careofhaus/visual-composer.git"
+    },
+    {
+      "type": "git",
+      "url": "git@bitbucket.org:careofhaus/gravityforms.git"
     }
   ],
   "require": {
@@ -51,7 +65,6 @@
     "composer/installers": "v1.0.12",
     "vlucas/phpdotenv": "1.0.9",
     "wpackagist-plugin/wordpress-seo": "*",
-    "wpackagist-plugin/wp-fail2ban": "*",
     "wpackagist-plugin/filenames-to-latin": "*",
     "wpackagist-plugin/debug-bar": "*",
     "wpackagist-plugin/cms-tree-page-view": "*",
@@ -59,11 +72,17 @@
     "wpackagist-plugin/redirection": "*",
     "wpackagist-plugin/disable-comments": "*",
     "wpackagist-plugin/google-analytics-for-wordpress": "*",
+    "wpackagist-plugin/bwp-minify": "*",
+    "wpackagist-plugin/post-duplicator": "*",
     "digitalunited/components": "*",
     "digitalunited/du-responsive-images": "*",
     "digitalunited/vc-clean-up": "*",
     "digitalunited/wordpress-clean-up": "*",
-    "roots/soil": "*"
+    "roots/soil": "*",
+    "careofhaus/care-of-haus-premium-starter-theme": "dev-master",
+    "careofhaus/advanced-custom-fields-pro": "dev-master",
+    "careofhaus/visual-composer": "dev-master",
+    "careofhaus/gravityforms": "dev-master"
   },
   "extra": {
     "installer-paths": {
