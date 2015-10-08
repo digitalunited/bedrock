@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a33ad84814dcc00f331f5bc438e9a250",
+    "hash": "ace6b94ada201b0b917db70951a34002",
     "packages": [
         {
             "name": "careofhaus/advanced-custom-fields-pro",
@@ -666,6 +666,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/w3-total-cache/"
+        },
+        {
+            "name": "wpackagist-plugin/wordfence",
+            "version": "6.0.19",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/wordfence/",
+                "reference": "tags/6.0.19"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wordfence.6.0.19.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wordfence/"
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
