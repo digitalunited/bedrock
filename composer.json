@@ -80,7 +80,7 @@
     "digitalunited/vc-clean-up": "*",
     "digitalunited/wordpress-clean-up": "*",
     "roots/soil": "*",
-    "careofhaus/care-of-haus-premium-starter-theme": "dev-master",
+    "careofhaus/care-of-haus": "dev-master",
     "careofhaus/advanced-custom-fields-pro": "dev-master",
     "careofhaus/visual-composer": "dev-master",
     "careofhaus/gravityforms": "dev-master"
