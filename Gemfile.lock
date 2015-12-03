@@ -1,20 +1,29 @@
+GIT
+  remote: https://github.com/lavmeiker/capistrano-wpcli.git
+  revision: 060572c5391d5d84bb00db0d8adcdd4e78e45c47
+  branch: master
+  specs:
+    capistrano-wpcli (0.1.2)
+      capistrano (~> 3.4.0)
+      sshkit (~> 1.7.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
-    capistrano (3.2.1)
+    capistrano (3.4.0)
       i18n
       rake (>= 10.0.0)
       sshkit (~> 1.3)
-    capistrano-composer (0.0.4)
+    capistrano-composer (0.0.6)
       capistrano (>= 3.0.0.pre)
-    colorize (0.7.3)
-    i18n (0.6.9)
+    colorize (0.7.7)
+    i18n (0.7.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
-    net-ssh (2.9.1)
-    rake (10.3.2)
-    sshkit (1.5.1)
-      colorize
+    net-ssh (3.0.1)
+    rake (10.4.2)
+    sshkit (1.7.1)
+      colorize (>= 0.7.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
 
@@ -22,5 +31,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capistrano (~> 3.2.0)
+  capistrano (~> 3.4.0)
   capistrano-composer
+  capistrano-wpcli!
+
+BUNDLED WITH
+   1.10.6
