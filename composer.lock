@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8a50d1ddfd28452cb31fbdc071d8d37b",
-    "content-hash": "b33c637b2bf19ca7f670a4774610b4c1",
+    "hash": "a1695082462e50facf0ed22c01941b3a",
+    "content-hash": "0354c6442c1f20a6581d170cde9914c6",
     "packages": [
         {
             "name": "careofhaus/advanced-custom-fields-pro",
@@ -137,16 +137,16 @@
         },
         {
             "name": "digitalunited/components",
-            "version": "0.1.17",
+            "version": "0.1.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitalunited/components.git",
-                "reference": "d8c9ad450a3ae62b630c10ac402927a331c505a6"
+                "reference": "06b134b78499a71c55a2d4a2023decc129a59229"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitalunited/components/zipball/d8c9ad450a3ae62b630c10ac402927a331c505a6",
-                "reference": "d8c9ad450a3ae62b630c10ac402927a331c505a6",
+                "url": "https://api.github.com/repos/digitalunited/components/zipball/06b134b78499a71c55a2d4a2023decc129a59229",
+                "reference": "06b134b78499a71c55a2d4a2023decc129a59229",
                 "shasum": ""
             },
             "require": {
@@ -176,7 +176,7 @@
                 "plugin",
                 "wordpress"
             ],
-            "time": "2015-10-26 11:51:50"
+            "time": "2015-12-17 12:34:09"
         },
         {
             "name": "digitalunited/du-responsive-images",
@@ -224,16 +224,16 @@
         },
         {
             "name": "digitalunited/vc-clean-up",
-            "version": "0.0.13",
+            "version": "0.0.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitalunited/vc-clean-up.git",
-                "reference": "08d997108801eaf8004fee5d4be0cfac1819a1b0"
+                "reference": "b81cc14824e7d2ccc3ee9390b5ce6a4c0f7d981f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitalunited/vc-clean-up/zipball/08d997108801eaf8004fee5d4be0cfac1819a1b0",
-                "reference": "08d997108801eaf8004fee5d4be0cfac1819a1b0",
+                "url": "https://api.github.com/repos/digitalunited/vc-clean-up/zipball/b81cc14824e7d2ccc3ee9390b5ce6a4c0f7d981f",
+                "reference": "b81cc14824e7d2ccc3ee9390b5ce6a4c0f7d981f",
                 "shasum": ""
             },
             "require": {
@@ -264,20 +264,20 @@
                 "plugin",
                 "wordpress"
             ],
-            "time": "2015-10-27 09:53:55"
+            "time": "2015-12-17 10:13:17"
         },
         {
             "name": "digitalunited/wordpress-clean-up",
-            "version": "0.0.3",
+            "version": "0.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitalunited/wordpress-clean-up.git",
-                "reference": "4b13a69812d8a736c6cb4e6846f3bdb4975f016f"
+                "reference": "de34b93d20c1addf6fa7d7af6f12272a9aeb3d53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitalunited/wordpress-clean-up/zipball/4b13a69812d8a736c6cb4e6846f3bdb4975f016f",
-                "reference": "4b13a69812d8a736c6cb4e6846f3bdb4975f016f",
+                "url": "https://api.github.com/repos/digitalunited/wordpress-clean-up/zipball/de34b93d20c1addf6fa7d7af6f12272a9aeb3d53",
+                "reference": "de34b93d20c1addf6fa7d7af6f12272a9aeb3d53",
                 "shasum": ""
             },
             "require": {
@@ -308,20 +308,20 @@
                 "plugin",
                 "wordpress"
             ],
-            "time": "2015-09-25 06:09:43"
+            "time": "2015-12-10 08:31:25"
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.3.1",
+            "version": "4.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "cfcf25eb42baeb7316a61c7a64e9a1ab3e291f2f"
+                "reference": "85d6a8c16c7e8bb369e7530d3676d16618f68e24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/cfcf25eb42baeb7316a61c7a64e9a1ab3e291f2f",
-                "reference": "cfcf25eb42baeb7316a61c7a64e9a1ab3e291f2f",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/85d6a8c16c7e8bb369e7530d3676d16618f68e24",
+                "reference": "85d6a8c16c7e8bb369e7530d3676d16618f68e24",
                 "shasum": ""
             },
             "require": {
@@ -345,7 +345,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2015-09-15 15:01:23"
+            "time": "2016-01-06 18:46:15"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -397,16 +397,16 @@
         },
         {
             "name": "roots/soil",
-            "version": "3.6.0",
+            "version": "3.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/soil.git",
-                "reference": "c9e224facb851011284c3ea925980d988473fb3f"
+                "reference": "8b534d4b271033d22b8fa0d055c740f7f9c4ca58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/soil/zipball/c9e224facb851011284c3ea925980d988473fb3f",
-                "reference": "c9e224facb851011284c3ea925980d988473fb3f",
+                "url": "https://api.github.com/repos/roots/soil/zipball/8b534d4b271033d22b8fa0d055c740f7f9c4ca58",
+                "reference": "8b534d4b271033d22b8fa0d055c740f7f9c4ca58",
                 "shasum": ""
             },
             "require": {
@@ -435,7 +435,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2015-11-19 04:59:49"
+            "time": "2015-12-24 19:42:34"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -590,7 +590,7 @@
         },
         {
             "name": "wpackagist-plugin/post-duplicator",
-            "version": "2.12",
+            "version": "2.14",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/post-duplicator/",
@@ -650,15 +650,15 @@
         },
         {
             "name": "wpackagist-plugin/wordfence",
-            "version": "6.0.20",
+            "version": "6.0.22",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/wordfence/",
-                "reference": "tags/6.0.20"
+                "reference": "tags/6.0.22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordfence.6.0.20.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordfence.6.0.22.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -670,15 +670,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "2.3.5",
+            "version": "3.0.7",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/2.3.5"
+                "reference": "tags/3.0.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.2.3.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.0.7.zip",
                 "reference": null,
                 "shasum": null
             },

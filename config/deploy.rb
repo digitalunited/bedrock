@@ -1,8 +1,9 @@
-set :application, 'my_app_name'
+set :application, 'folder.se'
 set :repo_url, 'git@example.com:me/my_repo.git'
 set :theme_name, 'careofhaus-child'
 
-set :wpcli_local_url, 'example.dev'
+set :wpcli_local_url, 'hausrock.se.dev'
+
 #set :wpcli_args, "--network" # For multisites
 
 # Branch options

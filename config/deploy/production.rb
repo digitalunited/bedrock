@@ -12,7 +12,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('web/app/cache', 'web/app/plugins
 
 # Extended Server Syntax
 # ======================
-server 'example.com', user: 'deploy', roles: %w{web app db}
+server 'hausrock.com', user: 'deploy', roles: %w{web app db}
 
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options

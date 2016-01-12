@@ -64,7 +64,7 @@
     "johnpbloch/wordpress": "*",
     "composer/installers": "v1.0.12",
     "vlucas/phpdotenv": "1.0.9",
-    "wpackagist-plugin/wordpress-seo": "2.3.5",
+    "wpackagist-plugin/wordpress-seo": "*",
     "wpackagist-plugin/wordfence": "*",
     "wpackagist-plugin/filenames-to-latin": "*",
     "wpackagist-plugin/cms-tree-page-view": "*",
