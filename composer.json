@@ -25,15 +25,13 @@
   },
   "config": {
     "preferred-install": "dist",
-    "generate-salts": true
+    "generate-salts": false
   },
   "autoload": {
     "psr-0": {"Roots\\Bedrock\\Installer": "scripts"}
   },
   "scripts": {
     "post-create-project-cmd": [
-      "Roots\\Bedrock\\Installer::addSalts",
-      "scripts/Roots/Bedrock/install_theme.sh",
       "scripts/Roots/Bedrock/npm_install.sh"
     ]
   },
