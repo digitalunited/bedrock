@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a1695082462e50facf0ed22c01941b3a",
-    "content-hash": "0354c6442c1f20a6581d170cde9914c6",
+    "hash": "dc12e8e24e88048b09ce8a46f64f0fb9",
+    "content-hash": "c70602ef1df2358d1724a2eee5565fcd",
     "packages": [
         {
             "name": "careofhaus/advanced-custom-fields-pro",
@@ -137,16 +137,16 @@
         },
         {
             "name": "digitalunited/components",
-            "version": "0.1.19",
+            "version": "0.1.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitalunited/components.git",
-                "reference": "06b134b78499a71c55a2d4a2023decc129a59229"
+                "reference": "589731bc712b88a3b7150f55961f68a0db70779c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitalunited/components/zipball/06b134b78499a71c55a2d4a2023decc129a59229",
-                "reference": "06b134b78499a71c55a2d4a2023decc129a59229",
+                "url": "https://api.github.com/repos/digitalunited/components/zipball/589731bc712b88a3b7150f55961f68a0db70779c",
+                "reference": "589731bc712b88a3b7150f55961f68a0db70779c",
                 "shasum": ""
             },
             "require": {
@@ -176,20 +176,20 @@
                 "plugin",
                 "wordpress"
             ],
-            "time": "2015-12-17 12:34:09"
+            "time": "2016-01-25 07:24:07"
         },
         {
             "name": "digitalunited/du-responsive-images",
-            "version": "0.0.12",
+            "version": "0.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitalunited/du-responsive-images.git",
-                "reference": "fd004058a2e3b81c55f63e63b8c1b9457cb0f14a"
+                "reference": "27277a9f92c2cb18149c9dc708d96fcb16a32af8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitalunited/du-responsive-images/zipball/fd004058a2e3b81c55f63e63b8c1b9457cb0f14a",
-                "reference": "fd004058a2e3b81c55f63e63b8c1b9457cb0f14a",
+                "url": "https://api.github.com/repos/digitalunited/du-responsive-images/zipball/27277a9f92c2cb18149c9dc708d96fcb16a32af8",
+                "reference": "27277a9f92c2cb18149c9dc708d96fcb16a32af8",
                 "shasum": ""
             },
             "require": {
@@ -220,7 +220,7 @@
                 "plugin",
                 "wordpress"
             ],
-            "time": "2015-11-20 13:15:00"
+            "time": "2016-01-26 15:13:06"
         },
         {
             "name": "digitalunited/vc-clean-up",
@@ -530,15 +530,15 @@
         },
         {
             "name": "wpackagist-plugin/disable-comments",
-            "version": "1.3.2",
+            "version": "1.4",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/disable-comments/",
-                "reference": "tags/1.3.2"
+                "reference": "tags/1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.3.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -649,26 +649,6 @@
             "homepage": "https://wordpress.org/plugins/w3-total-cache/"
         },
         {
-            "name": "wpackagist-plugin/wordfence",
-            "version": "6.0.22",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/wordfence/",
-                "reference": "tags/6.0.22"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordfence.6.0.22.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wordfence/"
-        },
-        {
             "name": "wpackagist-plugin/wordpress-seo",
             "version": "3.0.7",
             "source": {
@@ -701,7 +681,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.4"
+        "php": ">=5.5"
     },
     "platform-dev": []
 }
