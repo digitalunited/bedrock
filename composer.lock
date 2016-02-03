@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "417b50cc346d438b8a38dec1d715605d",
-    "content-hash": "c70602ef1df2358d1724a2eee5565fcd",
+    "hash": "63bebdcf259846a7322d8f017e7c19e7",
+    "content-hash": "7a09ea5a039e7b3e764ba7318580d471",
     "packages": [
         {
             "name": "careofhaus/advanced-custom-fields-pro",
@@ -17,17 +17,6 @@
             },
             "type": "wordpress-plugin",
             "time": "2015-11-19 07:47:42"
-        },
-        {
-            "name": "careofhaus/careofhaus",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@bitbucket.org:careofhaus/care-of-haus-premium-starter-theme.git",
-                "reference": "master"
-            },
-            "type": "wordpress-theme",
-            "time": "2015-12-02 09:44:33"
         },
         {
             "name": "careofhaus/gravityforms",
@@ -673,7 +662,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "careofhaus/careofhaus": 20,
         "careofhaus/advanced-custom-fields-pro": 20,
         "careofhaus/visual-composer": 20,
         "careofhaus/gravityforms": 20

@@ -42,10 +42,6 @@
     },
     {
       "type": "git",
-      "url": "git@bitbucket.org:careofhaus/care-of-haus-premium-starter-theme.git"
-    },
-    {
-      "type": "git",
       "url": "git@bitbucket.org:careofhaus/advanced-custom-fields-pro.git"
     },
     {
@@ -76,7 +72,6 @@
     "digitalunited/vc-clean-up": "*",
     "digitalunited/wordpress-clean-up": "*",
     "roots/soil": "*",
-    "careofhaus/careofhaus": "dev-master",
     "careofhaus/advanced-custom-fields-pro": "dev-master",
     "careofhaus/visual-composer": "dev-master",
     "careofhaus/gravityforms": "dev-master"
