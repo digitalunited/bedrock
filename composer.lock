@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "63bebdcf259846a7322d8f017e7c19e7",
-    "content-hash": "7a09ea5a039e7b3e764ba7318580d471",
+    "hash": "819090a2ebf9a19a8cbfb45739a4ed97",
+    "content-hash": "75aa0df4643476665c05b44ba2746fc5",
     "packages": [
         {
             "name": "careofhaus/advanced-custom-fields-pro",
@@ -478,26 +478,6 @@
             "time": "2014-10-16 14:50:21"
         },
         {
-            "name": "wpackagist-plugin/bwp-minify",
-            "version": "1.3.3",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/bwp-minify/",
-                "reference": "tags/1.3.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/bwp-minify.1.3.3.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/bwp-minify/"
-        },
-        {
             "name": "wpackagist-plugin/cms-tree-page-view",
             "version": "1.2.34",
             "source": {
@@ -616,26 +596,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/redirection/"
-        },
-        {
-            "name": "wpackagist-plugin/w3-total-cache",
-            "version": "0.9.4.1",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/w3-total-cache/",
-                "reference": "tags/0.9.4.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/w3-total-cache.0.9.4.1.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/w3-total-cache/"
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
