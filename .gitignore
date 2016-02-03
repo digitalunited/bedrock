@@ -1,7 +1,5 @@
 # Application
 web/app/plugins/*
-web/app/themes/*
-!web/app/themes/careofhaus-child
 !web/app/plugins/.gitkeep
 web/app/mu-plugins/*
 !web/app/mu-plugins/.gitkeep
