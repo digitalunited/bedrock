@@ -1,6 +1,6 @@
 set :application, 'folder.se'
 set :repo_url, 'git@example.com:me/my_repo.git'
-set :theme_name, 'careofhaus-child'
+set :theme_name, 'careofhaus'
 
 set :wpcli_local_url, 'hausrock.se.dev'
 
@@ -68,8 +68,6 @@ end
 # after 'deploy:publishing', 'deploy:update_option_paths'
 
 
-# Gulp --production on localhost
-
 namespace :deploy do
 
   # Theme path
@@ -87,6 +85,14 @@ namespace :deploy do
     end
   end
 
+  task :compile_local do
+    run_locally do
+      within fetch(:local_theme_path) do
+        execute :gulp
+      end
+    end
+  end
+
   task :copy do
     on roles(:web) do
 
@@ -94,14 +100,13 @@ namespace :deploy do
       set :remote_dist_path, -> { release_path.join(fetch(:theme_path)).join('dist') }
 
       info " Your local distribution path: #{fetch(:local_dist_path)} "
-      info " Your remote distribution path: #{fetch(:remote_dist_path)} "
+      info " Boom!!! Your remote distribution path: #{fetch(:remote_dist_path)} "
       info " Uploading files to remote "
       upload! fetch(:local_dist_path).to_s, fetch(:remote_dist_path), recursive: true
-      info " DON'T FORGET TO EMPTY ALL CACHES AFTER DEPLOYING "
     end
   end
 
-  task assets: %w(compile copy)
+  task assets: %w(compile copy compile_local)
 end
 
-after 'deploy:updated', 'deploy:assets'
+after 'deploy:updated', 'deploy:assets', 'deploy:compile_local'
