@@ -169,16 +169,16 @@
         },
         {
             "name": "digitalunited/du-responsive-images",
-            "version": "0.0.13",
+            "version": "0.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitalunited/du-responsive-images.git",
-                "reference": "27277a9f92c2cb18149c9dc708d96fcb16a32af8"
+                "reference": "5c62067087207e3b1d6a603cea28d374a2651531"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitalunited/du-responsive-images/zipball/27277a9f92c2cb18149c9dc708d96fcb16a32af8",
-                "reference": "27277a9f92c2cb18149c9dc708d96fcb16a32af8",
+                "url": "https://api.github.com/repos/digitalunited/du-responsive-images/zipball/5c62067087207e3b1d6a603cea28d374a2651531",
+                "reference": "5c62067087207e3b1d6a603cea28d374a2651531",
                 "shasum": ""
             },
             "require": {
@@ -209,20 +209,20 @@
                 "plugin",
                 "wordpress"
             ],
-            "time": "2016-01-26 15:13:06"
+            "time": "2016-02-15 20:46:13"
         },
         {
             "name": "digitalunited/vc-clean-up",
-            "version": "0.0.15",
+            "version": "0.0.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitalunited/vc-clean-up.git",
-                "reference": "b81cc14824e7d2ccc3ee9390b5ce6a4c0f7d981f"
+                "reference": "c4b4bb16f77c4b21672377221e51d5269444669a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitalunited/vc-clean-up/zipball/b81cc14824e7d2ccc3ee9390b5ce6a4c0f7d981f",
-                "reference": "b81cc14824e7d2ccc3ee9390b5ce6a4c0f7d981f",
+                "url": "https://api.github.com/repos/digitalunited/vc-clean-up/zipball/c4b4bb16f77c4b21672377221e51d5269444669a",
+                "reference": "c4b4bb16f77c4b21672377221e51d5269444669a",
                 "shasum": ""
             },
             "require": {
@@ -253,7 +253,7 @@
                 "plugin",
                 "wordpress"
             ],
-            "time": "2015-12-17 10:13:17"
+            "time": "2016-02-10 14:59:31"
         },
         {
             "name": "digitalunited/wordpress-clean-up",
