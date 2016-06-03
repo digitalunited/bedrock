@@ -7,8 +7,8 @@ set :stage, :production
 #role :db,  %w{deploy@example.com}
 
 
-set :linked_files, fetch(:linked_files, []).push('web/app/plugins/w3tc-wp-loader.php', 'web/app/advanced-cache.php', 'web/app/object-cache.php', 'web/app/db.php')
-set :linked_dirs, fetch(:linked_dirs, []).push('web/app/cache', 'web/app/plugins/cache', 'web/app/w3tc-config')
+set :linked_files, fetch(:linked_files, []).push('web/.htaccess')
+set :linked_dirs, fetch(:linked_dirs, []).push('web/app/uploads')
 
 # Extended Server Syntax
 # ======================
