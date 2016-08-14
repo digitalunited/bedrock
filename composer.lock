@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "819090a2ebf9a19a8cbfb45739a4ed97",
-    "content-hash": "75aa0df4643476665c05b44ba2746fc5",
+    "hash": "b9a34dc15cc7993bd3836f1ffbe225ef",
+    "content-hash": "446e7d00c5efa83ab2b58d548e148bc3",
     "packages": [
         {
             "name": "careofhaus/advanced-custom-fields-pro",
@@ -17,6 +17,35 @@
             },
             "type": "wordpress-plugin",
             "time": "2015-11-19 07:47:42"
+        },
+        {
+            "name": "careofhaus/coh-responsive-images",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@bitbucket.org:careofhaus/coh-responsive-images.git",
+                "reference": "master"
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.4"
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "CoH\\ResponsiveImages\\": "src/ResponsiveImages"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Tim Samuelsson",
+                    "email": "tim@careofhaus.se",
+                    "homepage": "http://careofhaus.se"
+                }
+            ],
+            "description": "Responsive Images for Developers",
+            "homepage": "http://careofhaus.se",
+            "time": "2016-06-02 11:10:57"
         },
         {
             "name": "careofhaus/gravityforms",
@@ -126,16 +155,16 @@
         },
         {
             "name": "digitalunited/components",
-            "version": "0.1.21",
+            "version": "0.1.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitalunited/components.git",
-                "reference": "589731bc712b88a3b7150f55961f68a0db70779c"
+                "reference": "210271f9c49794ccb27733e61fbbed194b7beb84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitalunited/components/zipball/589731bc712b88a3b7150f55961f68a0db70779c",
-                "reference": "589731bc712b88a3b7150f55961f68a0db70779c",
+                "url": "https://api.github.com/repos/digitalunited/components/zipball/210271f9c49794ccb27733e61fbbed194b7beb84",
+                "reference": "210271f9c49794ccb27733e61fbbed194b7beb84",
                 "shasum": ""
             },
             "require": {
@@ -165,64 +194,20 @@
                 "plugin",
                 "wordpress"
             ],
-            "time": "2016-01-25 07:24:07"
-        },
-        {
-            "name": "digitalunited/du-responsive-images",
-            "version": "0.0.14",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/digitalunited/du-responsive-images.git",
-                "reference": "5c62067087207e3b1d6a603cea28d374a2651531"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/digitalunited/du-responsive-images/zipball/5c62067087207e3b1d6a603cea28d374a2651531",
-                "reference": "5c62067087207e3b1d6a603cea28d374a2651531",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "~1.0",
-                "php": ">=5.4"
-            },
-            "type": "wordpress-plugin",
-            "autoload": {
-                "psr-4": {
-                    "DigitalUnited\\ResponsiveImages\\": "src/ResponsiveImages"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Tim Samuelsson",
-                    "email": "tim@careofhaus.se",
-                    "homepage": "http://careofhaus.se"
-                }
-            ],
-            "description": "Responsive Images for Developers",
-            "homepage": "https://github.com/digitalunited/du-responsive-images",
-            "keywords": [
-                "Responsive Images",
-                "plugin",
-                "wordpress"
-            ],
-            "time": "2016-02-15 20:46:13"
+            "time": "2016-05-02 11:00:10"
         },
         {
             "name": "digitalunited/vc-clean-up",
-            "version": "0.0.16",
+            "version": "0.0.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitalunited/vc-clean-up.git",
-                "reference": "c4b4bb16f77c4b21672377221e51d5269444669a"
+                "reference": "e8f65480cd07bbf69c54d965d63d29d6efaafffd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitalunited/vc-clean-up/zipball/c4b4bb16f77c4b21672377221e51d5269444669a",
-                "reference": "c4b4bb16f77c4b21672377221e51d5269444669a",
+                "url": "https://api.github.com/repos/digitalunited/vc-clean-up/zipball/e8f65480cd07bbf69c54d965d63d29d6efaafffd",
+                "reference": "e8f65480cd07bbf69c54d965d63d29d6efaafffd",
                 "shasum": ""
             },
             "require": {
@@ -253,7 +238,7 @@
                 "plugin",
                 "wordpress"
             ],
-            "time": "2016-02-10 14:59:31"
+            "time": "2016-03-02 22:34:14"
         },
         {
             "name": "digitalunited/wordpress-clean-up",
@@ -301,16 +286,16 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.4.2",
+            "version": "4.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "fe9320de0793602084c600e22c0c5e0bb601a264"
+                "reference": "f5c6f4dd899e6365ddf2752d2705ed1de7e10715"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/fe9320de0793602084c600e22c0c5e0bb601a264",
-                "reference": "fe9320de0793602084c600e22c0c5e0bb601a264",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/f5c6f4dd899e6365ddf2752d2705ed1de7e10715",
+                "reference": "f5c6f4dd899e6365ddf2752d2705ed1de7e10715",
                 "shasum": ""
             },
             "require": {
@@ -334,7 +319,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2016-02-02 17:16:14"
+            "time": "2016-06-21 16:31:21"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -386,16 +371,16 @@
         },
         {
             "name": "roots/soil",
-            "version": "3.6.2",
+            "version": "3.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/soil.git",
-                "reference": "8b534d4b271033d22b8fa0d055c740f7f9c4ca58"
+                "reference": "085fd3c9b16df5b72dce4fba09de0207937ef721"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/soil/zipball/8b534d4b271033d22b8fa0d055c740f7f9c4ca58",
-                "reference": "8b534d4b271033d22b8fa0d055c740f7f9c4ca58",
+                "url": "https://api.github.com/repos/roots/soil/zipball/085fd3c9b16df5b72dce4fba09de0207937ef721",
+                "reference": "085fd3c9b16df5b72dce4fba09de0207937ef721",
                 "shasum": ""
             },
             "require": {
@@ -424,7 +409,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2015-12-24 19:42:34"
+            "time": "2016-03-07 19:49:21"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -479,15 +464,15 @@
         },
         {
             "name": "wpackagist-plugin/cms-tree-page-view",
-            "version": "1.2.34",
+            "version": "1.3.4",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/cms-tree-page-view/",
-                "reference": "tags/1.2.34"
+                "url": "https://plugins.svn.wordpress.org/cms-tree-page-view/",
+                "reference": "tags/1.3.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cms-tree-page-view.1.2.34.zip",
+                "url": "https://downloads.wordpress.org/plugin/cms-tree-page-view.1.3.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -499,15 +484,15 @@
         },
         {
             "name": "wpackagist-plugin/disable-comments",
-            "version": "1.4",
+            "version": "1.5.1",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/disable-comments/",
-                "reference": "tags/1.4"
+                "url": "https://plugins.svn.wordpress.org/disable-comments/",
+                "reference": "tags/1.5.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.5.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -519,15 +504,15 @@
         },
         {
             "name": "wpackagist-plugin/filenames-to-latin",
-            "version": "2.0",
+            "version": "2.2",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/filenames-to-latin/",
-                "reference": "tags/2.0"
+                "url": "https://plugins.svn.wordpress.org/filenames-to-latin/",
+                "reference": "tags/2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/filenames-to-latin.2.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/filenames-to-latin.2.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -539,15 +524,15 @@
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
-            "version": "5.4.6",
+            "version": "5.5.2",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
-                "reference": "tags/5.4.6"
+                "url": "https://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
+                "reference": "tags/5.5.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.4.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.5.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -559,10 +544,10 @@
         },
         {
             "name": "wpackagist-plugin/post-duplicator",
-            "version": "2.14",
+            "version": "2.17",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/post-duplicator/",
+                "url": "https://plugins.svn.wordpress.org/post-duplicator/",
                 "reference": "trunk"
             },
             "dist": {
@@ -579,15 +564,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "2.4.3",
+            "version": "2.4.5",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/2.4.3"
+                "url": "https://plugins.svn.wordpress.org/redirection/",
+                "reference": "tags/2.4.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.2.4.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.2.4.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -599,15 +584,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "3.0.7",
+            "version": "3.4.2",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/3.0.7"
+                "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
+                "reference": "tags/3.4.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.0.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.4.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -624,7 +609,8 @@
     "stability-flags": {
         "careofhaus/advanced-custom-fields-pro": 20,
         "careofhaus/visual-composer": 20,
-        "careofhaus/gravityforms": 20
+        "careofhaus/gravityforms": 20,
+        "careofhaus/coh-responsive-images": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

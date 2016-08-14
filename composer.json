@@ -51,6 +51,10 @@
     {
       "type": "git",
       "url": "git@bitbucket.org:careofhaus/gravityforms.git"
+    },
+    {
+      "type": "git",
+      "url": "git@bitbucket.org:careofhaus/coh-responsive-images.git"
     }
   ],
   "require": {
@@ -66,17 +70,17 @@
     "wpackagist-plugin/google-analytics-for-wordpress": "*",
     "wpackagist-plugin/post-duplicator": "*",
     "digitalunited/components": "*",
-    "digitalunited/du-responsive-images": "*",
     "digitalunited/vc-clean-up": "*",
     "digitalunited/wordpress-clean-up": "*",
     "roots/soil": "*",
     "careofhaus/advanced-custom-fields-pro": "dev-master",
     "careofhaus/visual-composer": "dev-master",
-    "careofhaus/gravityforms": "dev-master"
+    "careofhaus/gravityforms": "dev-master",
+    "careofhaus/coh-responsive-images": "dev-master"
   },
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "digitalunited/components", "digitalunited/du-responsive-images"],
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "digitalunited/components", "careofhaus/coh-responsive-images"],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
     },
