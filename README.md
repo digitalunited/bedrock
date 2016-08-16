@@ -2,6 +2,23 @@
 
 Run `composer create-project digitalunited/hausrock <path>` to just get a new copy of Hausrock locally.
 
+## Deploy
+
+Deploy to staging `bundle exec cap staging deploy`
+Deploy to production `bundle exec cap production deploy`
+
+Pull uploads from staging `bundle exec cap staging wpcli:uploads:rsync:pull`
+Pull uploads from production `bundle exec cap production wpcli:uploads:rsync:pull`
+
+Push uploads from staging `bundle exec cap staging wpcli:uploads:rsync:push`
+Push uploads from production `bundle exec cap production wpcli:uploads:rsync:push`
+
+Pull database from staging `bundle exec cap staging wpcli:db:pull`
+Pull database from production `bundle exec cap production wpcli:db:pull`
+
+Push database from staging `bundle exec cap staging wpcli:db:push`
+Push database from production `bundle exec cap production wpcli:db:push`
+
 ## Installation/Usage
 
 Composer's `create-project` command will automatically install the Bedrock project to a directory and run `composer install`.
