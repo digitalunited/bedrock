@@ -5,6 +5,7 @@ Run `composer create-project digitalunited/hausrock <path>` to just get a new co
 ## Deploy
 
 Deploy to staging `bundle exec cap staging deploy`
+
 Deploy to production `bundle exec cap production deploy`
 
 Pull uploads from staging `bundle exec cap staging wpcli:uploads:rsync:pull`
