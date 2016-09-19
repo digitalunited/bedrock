@@ -67,7 +67,7 @@
                 "reference": "master"
             },
             "type": "wordpress-plugin",
-            "time": "2015-10-27 08:22:17"
+            "time": "2016-06-13 06:26:40"
         },
         {
             "name": "composer/installers",
@@ -286,16 +286,16 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.5.3",
+            "version": "4.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "f5c6f4dd899e6365ddf2752d2705ed1de7e10715"
+                "reference": "aca8da84b4a699b16b8bcc96d2bc794a4c7b5ae3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/f5c6f4dd899e6365ddf2752d2705ed1de7e10715",
-                "reference": "f5c6f4dd899e6365ddf2752d2705ed1de7e10715",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/aca8da84b4a699b16b8bcc96d2bc794a4c7b5ae3",
+                "reference": "aca8da84b4a699b16b8bcc96d2bc794a4c7b5ae3",
                 "shasum": ""
             },
             "require": {
@@ -319,7 +319,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2016-06-21 16:31:21"
+            "time": "2016-09-07 15:01:47"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -371,21 +371,24 @@
         },
         {
             "name": "roots/soil",
-            "version": "3.7.0",
+            "version": "3.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/soil.git",
-                "reference": "085fd3c9b16df5b72dce4fba09de0207937ef721"
+                "reference": "5b9b9d8a878b295f44b35cba826c462b20cc1d9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/soil/zipball/085fd3c9b16df5b72dce4fba09de0207937ef721",
-                "reference": "085fd3c9b16df5b72dce4fba09de0207937ef721",
+                "url": "https://api.github.com/repos/roots/soil/zipball/5b9b9d8a878b295f44b35cba826c462b20cc1d9c",
+                "reference": "5b9b9d8a878b295f44b35cba826c462b20cc1d9c",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "~1.0",
                 "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "^2.5.1"
             },
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
@@ -409,7 +412,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2016-03-07 19:49:21"
+            "time": "2016-08-30 18:15:45"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -484,15 +487,15 @@
         },
         {
             "name": "wpackagist-plugin/disable-comments",
-            "version": "1.5.1",
+            "version": "1.5.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/disable-comments/",
-                "reference": "tags/1.5.1"
+                "reference": "tags/1.5.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.5.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.5.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -584,15 +587,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "3.4.2",
+            "version": "3.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/3.4.2"
+                "reference": "tags/3.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.4.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.5.zip",
                 "reference": null,
                 "shasum": null
             },

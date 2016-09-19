@@ -5,39 +5,28 @@ cd careofhaus
 npm install && bower install && gulp
 rm -rf .git
 cd ../../../..
+echo "Ange URL:en för development miljön (example: hausrock.se.dev)"
+read envURL
+sed -i '' "s/hausrock.se.dev/$envURL/g" .env.example
+echo "Ange databasnamn för development miljön (example: hausrock_se)"
+read dbname
+sed -i '' "s/database_name/$dbname/g" .env.example
+cp .env.example .env
 
-# If /root/.my.cnf exists then it won't ask for root password
-if [ -f /root/.my.cnf ]; then
-	echo "Please enter the NAME of the new WordPress database! (example: database1)"
-	read dbname
-	echo "Please enter the WordPress database CHARACTER SET! (example: latin1, utf8, ...)"
-	read charset
-	echo "Creating new WordPress database..."
-	mysql -e "CREATE DATABASE ${dbname} /*\!40100 DEFAULT CHARACTER SET ${charset} */;"
-	echo "Database successfully created!"
-	echo "Showing existing databases..."
-	mysql -e "show databases;"
-	echo ""
-	echo "You're good now :)"
-	exit
+echo "Creating new WordPress database..."
+mysql -uroot -e "CREATE DATABASE ${dbname} /*\!40100 DEFAULT CHARACTER SET utf8 */;"
+echo "Database successfully created!"
+echo ""
+echo "Nu öppnas development miljön var god att installera WordPress"
+open http://$envURL
+read -p "Klicka på [Enter] när WordPress är installerat"
 
-# If /root/.my.cnf doesn't exist then it'll ask for root password
-else
-	echo "Please enter root user MySQL password!"
-	read rootpasswd
-	echo "Please enter the NAME of the new WordPress database! (example: database1)"
-	read dbname
-	echo "Please enter the WordPress database CHARACTER SET! (example: latin1, utf8, ...)"
-	read charset
-	echo "Creating new WordPress database..."
-	mysql -uroot -p${rootpasswd} -e "CREATE DATABASE ${dbname} /*\!40100 DEFAULT CHARACTER SET ${charset} */;"
-	echo "Database successfully created!"
-	echo "Showing existing databases..."
-	mysql -uroot -p${rootpasswd} -e "show databases;"
-	echo ""
-	echo "You're good now :)"
-	exit
-fi
-
-wp theme install twentysixteen
 wp theme activate careofhaus
+wp plugin activate --all
+wp rewrite structure '/%postname%/'
+wp post create --post_type=page --post_title='Startsida' --post_status=publish
+wp post delete 2
+wp post delete 1
+wp comment delete 1 --force
+wp option update page_on_front 3
+wp option update show_on_front page
