@@ -1,0 +1,63 @@
+// Grid settings
+$main-sm-columns: 12;
+$sidebar-sm-columns: 4;
+$grid-gutter-width: 30px;
+$container-large-desktop: (1170px + $grid-gutter-width);
+
+// Colors
+$brand-primary: #cf7c42;
+$brand-primary-light: #75848b;
+$brand-primary-dark: #660000;
+$brand-danger: #ea5f4a;
+$color-one: #cdcabe;
+$color-two: #303130;
+$color-three: #2a2a2a;
+$color-four: #393936;
+$color-five: #767160;
+$color-six: #3a668f;
+$white: #ffffff;
+$black: #000000;
+$blackish: #212121;
+$gray-lighter: #f2f2f2;
+$gray-light: #a0a0a0;
+$gray: #898989;
+$gray-dark: #626262;
+$gray-darker: #434343;
+$link-color: $brand-primary;
+$state-danger-text: $brand-danger;
+$text-color: $gray-dark;
+$headings-color: $text-color;
+
+// Borders
+$border-radius-base: 3px;
+
+// Margins
+$margin: 20px;
+$margin-bottom: 30px;
+$gap: 30px;
+
+// Typography
+$font-family-sans-serif: "Arial", sans-serif;
+$headings-font-family: "Arial", sans-serif;
+$headings-font-weight: 700;
+$font-weight-light: 300;
+$font-weight-base: 300;
+$font-weight-medium: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$link-hover-decoration: none;
+$font-size-base: 16px;
+$font-size-small: 14px;
+$font-size-extra-small: 12px;
+$line-height-normal: 26px;
+
+// Z-index positions
+$tab-bar-zindex: 500;
+$banner-zindex: 1000;
+$nav-more-zindex: 600;
+
+// Forms
+$input-height-base: 55px;
+$padding-base-horizontal: 20px;
+$input-color: $brand-primary;
+$input-border: $gray-dark;

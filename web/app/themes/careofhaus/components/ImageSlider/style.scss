@@ -1,0 +1,118 @@
+.component-imageslider {
+  overflow: hidden;
+  margin-bottom: $margin;
+
+  @media (max-width: $screen-xs-max) {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  .slider-wrapper {
+
+    a {
+      overflow: hidden;
+      display: block;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .slick-slide:focus {
+      outline: none;
+    }
+  }
+
+  .slick-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    height: 15px;
+    text-align: center;
+
+    li {
+      border: 2px solid $white;
+      background-color: $white;
+      width: 10px;
+      height: 10px;
+      list-style: none;
+      display: inline-block;
+      margin-right: 5px;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      button {
+        display: none;
+      }
+
+      &.slick-active  {
+        background-color: transparent;
+        width: 12px;
+        height: 12px;
+        cursor: auto;
+      }
+    }
+  }
+
+  .slick-arrow {
+    display: block;
+    position: absolute;
+    top: 50%;
+    border: 0;
+    background: transparent;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    transform-style: preserve-3d;
+    font-size: 0;
+    z-index: 100;
+    text-align: center;
+    padding: 0;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:before {
+      @include font-size($h1-font-sizes);
+      font-family: "icomoon";
+      content: "\e60f";
+      color: $white;
+      line-height: 38px;
+    }
+
+    &.slick-next {
+      right: 10px;
+
+      &:before {
+        content: "\e60e";
+      }
+    }
+
+    &.slick-prev {
+      left: 10px;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      width: 30px;
+      height: 30px;
+
+      &:before {
+        line-height: 30px;
+      }
+    }
+  }
+
+  img.image {
+    width: 100%;
+  }
+}

@@ -1,0 +1,16 @@
+.component-downloadablefiles {
+  margin-bottom: $margin / 2;
+
+  a {
+    font-weight: $font-weight-base;
+    font-size: $font-size-small;
+  }
+
+  .icon {
+    font-size: 20px;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    top: 4px;
+  }
+}

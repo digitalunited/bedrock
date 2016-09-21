@@ -1,0 +1,3 @@
+$(function () {
+    $('.contact-list').mixItUp();
+});

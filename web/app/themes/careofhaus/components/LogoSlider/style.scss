@@ -1,0 +1,63 @@
+.component-logoslider {
+
+  a {
+    display: block;
+  }
+
+  .slick-slide {
+    padding: 0 1em;
+  }
+
+  .item-bg-image {
+    height: 170px;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .logo-wrapper {
+    margin-bottom: 70px;
+
+  }
+
+  .slick-dots {
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    height: 15px;
+    text-align: center;
+
+    li {
+      border: 2px solid $white;
+      background-color: $white;
+      width: 10px;
+      height: 10px;
+      list-style: none;
+      display: inline-block;
+      margin-right: 5px;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      button {
+        display: none;
+      }
+
+      &.slick-active  {
+        background-color: transparent;
+        width: 12px;
+        height: 12px;
+        cursor: auto;
+      }
+    }
+  }
+}

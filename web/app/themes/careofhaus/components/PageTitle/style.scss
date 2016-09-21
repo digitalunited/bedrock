@@ -1,0 +1,21 @@
+.component-pagetitle {
+  .bg {
+    display: table;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 200px;
+    width: 100%;
+
+    @media (max-width: $screen-xs-max) {
+      height: 100px;
+    }
+  }
+
+  h1 {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: $white;
+  }
+}

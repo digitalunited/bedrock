@@ -1,0 +1,105 @@
+.component-row {
+
+  section {
+    position: relative;
+    width: 100%;
+
+    @media (max-width: $screen-sm-max) {
+      padding: 60px 0;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      padding: 40px 0;
+    }
+
+    .component-row {
+      margin-top: $margin * 2.5;
+
+      @media (max-width: $screen-xs-max) {
+        margin-top: $margin;
+      }
+    }
+
+    .container-fluid .row.inner {
+      margin-bottom: $margin * 1.5;
+
+      .col-sm-12:first-of-type {
+        margin-bottom: $margin;
+      }
+    }
+
+    .bg-fixed {
+      background-attachment: fixed !important;
+    }
+
+    &.no-padding-bottom {
+      padding-bottom: 0 !important;
+    }
+
+    &.no-padding-top {
+      padding-top: 0 !important;
+    }
+
+    &.full-height {
+      min-height: 100vh;
+      height: auto;
+    }
+
+    &.section-color--white {
+      p, h1, h2, h3, h4, h5, h6, label, ul, ol, li, td, tr, span, .btn--link {
+        color: $white;
+      }
+    }
+
+    &.section-bg--gray {
+      background-color: $gray;
+    }
+
+    &.section-bg--brand {
+      background-color: $brand-primary;
+    }
+
+    &.column-gray .row.inner .wpb_column > .wpb_wrapper {
+      background-color: $gray;
+      padding: 15px;
+    }
+
+    .container-fluid.full-width {
+
+      @media (min-width: 1275px) {
+        padding: 0;
+      }
+
+      .row-inner {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .vc_row {
+        padding-bottom: 0;
+        padding-top: 0;
+      }
+    }
+
+    &.no-column-padding {
+      .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        .wpb_column {
+          padding: 0 !important;
+        }
+      }
+    }
+  }
+}
+
+.component-row .container .component-row:last-of-type {
+  .row.inner {
+    margin-bottom: 0;
+  }
+}
+
+.container-fluid .row.inner .col-sm-12 {
+  margin-bottom: $margin;
+}

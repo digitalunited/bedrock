@@ -1,0 +1,91 @@
+.component-tabbar {
+  z-index: $tab-bar-zindex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: $brand-primary;
+  display: none;
+
+  @media (max-width: $screen-md-max) {
+    display: block;
+  }
+
+  .navigation--secondary {
+    width: 100%;
+
+    li {
+      width: 25%;
+    }
+
+    li.active a {
+      background-color: $brand-primary-light;
+    }
+
+    a {
+      height: 75px;
+      color: $white;
+      position: relative;
+      text-align: center;
+
+      &:before {
+        top: 5px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 32px;
+      }
+    }
+
+    span {
+      left: 0;
+      right: 0;
+      bottom: 5px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      a {
+        height: 60px;
+
+        &:before {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}
+
+.component-tabbar__more {
+  display: none;
+  overflow: hidden;
+  padding: 25px 75px;
+  background-color: $brand-primary-light;
+  border-bottom: 1px solid $white;
+  z-index: 100;
+
+  .navigation--mobile {
+    width: 100%;
+
+    li {
+      width: 100%;
+    }
+
+    li.active {
+      background-color: $brand-primary;
+    }
+
+    a {
+      color: $white;
+      height: 50px;
+      padding: 0 20px;
+      line-height: 50px;
+    }
+  }
+
+  @media (max-width: $screen-xs-max) {
+    padding: 0;
+  }
+}

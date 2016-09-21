@@ -1,0 +1,1373 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Care of Haus - English\n"
+"POT-Creation-Date: 2016-02-04 12:36+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Care of Haus <support@careofhaus.se>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_x;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: ../careofhaus-child/assets\n"
+"X-Poedit-SearchPathExcluded-1: ../careofhaus-child/node_modules\n"
+"X-Poedit-SearchPathExcluded-2: ../careofhaus-child/bower_components\n"
+"X-Poedit-SearchPathExcluded-3: bower_components\n"
+"X-Poedit-SearchPathExcluded-4: assets\n"
+"X-Poedit-SearchPathExcluded-5: node_modules\n"
+
+#: 404.php:2
+msgid "Sorry, but the page you were trying to view does not exist."
+msgstr "Sorry, the page you want to visit does not exist."
+
+#: base.php:13
+msgid ""
+"You are using an <strong>outdated</strong> browser. Please <a href=\"http://"
+"browsehappy.com/\">upgrade your\n"
+"  browser</a> to improve your experience."
+msgstr "asd"
+
+#: components/Accordion/component.php:20
+msgid "component.name.accordion"
+msgstr "Accordion"
+
+#: components/Accordion/component.php:21
+msgid "admin.accordion.desc"
+msgstr "Expandable content"
+
+#: components/Accordion/component.php:22 components/EmptySpace/component.php:23
+#: components/GoogleMaps/component.php:20
+#: components/GravityForms/component.php:49 components/Html/component.php:20
+#: components/Row/component.php:57 components/Text/component.php:23
+msgid "component.category.content"
+msgstr "Content"
+
+#: components/BreadCrumb/component.php:36
+msgid "component.breadcrumb.home"
+msgstr "Home"
+
+#: components/Button/component.php:13
+msgid "component.name.button"
+msgstr "Button"
+
+#: components/Button/component.php:14 components/ButtonLink/component.php:14
+msgid "component.category.buttons"
+msgstr "Buttons"
+
+#: components/Button/component.php:19 components/ButtonLink/component.php:20
+msgid "admin.text.button.text"
+msgstr "Text"
+
+#: components/Button/component.php:21 components/ButtonLink/component.php:22
+msgid "admin.text.link.here"
+msgstr "Link text here"
+
+#: components/Button/component.php:26 components/ButtonLink/component.php:28
+#: components/Heading/component.php:96 components/Icon/component.php:35
+#: components/Image/component.php:93 components/Teaser/component.php:51
+msgid "admin.text.link"
+msgstr "Link"
+
+#: components/Button/component.php:29 components/ButtonLink/component.php:31
+#: components/Heading/component.php:99 components/Icon/component.php:38
+#: components/Image/component.php:96
+msgid "admin.text.field.may.be.blank"
+msgstr "May be blank"
+
+#: components/Button/component.php:33 components/ButtonLink/component.php:35
+#: components/Image/component.php:39
+msgid "admin.text.position"
+msgstr "Position"
+
+#: components/Button/component.php:37 components/ButtonLink/component.php:39
+#: components/ButtonLink/component.php:62
+msgid "admin.text.left"
+msgstr "Left"
+
+#: components/Button/component.php:38 components/ButtonLink/component.php:40
+msgid "admin.text.center"
+msgstr "Centered"
+
+#: components/Button/component.php:39 components/ButtonLink/component.php:41
+#: components/ButtonLink/component.php:63
+msgid "admin.text.right"
+msgstr "Right"
+
+#: components/Button/component.php:45 components/Heading/component.php:83
+#: components/Icon/component.php:42 components/Ingress/component.php:38
+msgid "admin.text.color"
+msgstr "Color"
+
+#: components/Button/component.php:49 components/Teaser/component.php:24
+msgid "admin.text.color.brand.accent.blue"
+msgstr "Blue"
+
+#: components/Button/component.php:50 components/Heading/component.php:88
+#: components/Icon/component.php:46 components/Ingress/component.php:43
+#: components/Teaser/component.php:23
+msgid "admin.text.color.brand"
+msgstr "Dark blue"
+
+#: components/ButtonLink/component.php:13
+msgid "component.name.link.button"
+msgstr "Link"
+
+#: components/ButtonLink/component.php:47
+msgid "admin.text.arrow"
+msgstr "Arrow"
+
+#: components/ButtonLink/component.php:51
+msgid "admin.text.right.arrow"
+msgstr "Arrow right"
+
+#: components/ButtonLink/component.php:52
+msgid "admin.text.left.arrow"
+msgstr "Arrow right"
+
+#: components/ButtonLink/component.php:58
+msgid "admin.text.arrow.position"
+msgstr "Position"
+
+#: components/Column/component.php:26
+msgid "admin.text.bg.column.color"
+msgstr "Background color"
+
+#: components/Column/component.php:29
+msgid "admin.text.bg.color.transparent"
+msgstr "Transparent"
+
+#: components/Column/component.php:30 components/Row/component.php:82
+msgid "admin.text.bg.color.white"
+msgstr "White"
+
+#: components/Column/component.php:31 components/Row/component.php:83
+msgid "admin.text.bg.color.gray"
+msgstr "Gray background color in the row"
+
+#: components/Column/component.php:32 components/Row/component.php:84
+msgid "admin.text.bg.color.brand"
+msgstr "Brand color"
+
+#: components/Contact/cpt.php:10
+msgid "post-type.contact.name"
+msgstr "Contacts"
+
+#: components/Contact/cpt.php:11
+msgid "post-type.contact.name.singular"
+msgstr "Contact"
+
+#: components/Contact/cpt.php:12
+msgid "post-type.contact.add_new"
+msgstr "Add new contact"
+
+#: components/Contact/cpt.php:13
+msgid "post-type.contact.add_new_item"
+msgstr "Add new contact"
+
+#: components/Contact/cpt.php:14
+msgid "post-type.contact.all_items"
+msgstr "All contacts"
+
+#: components/Contact/cpt.php:37
+msgid "taxonomy.contact_department.name"
+msgstr "Departments"
+
+#: components/Contact/cpt.php:38
+msgid "taxonomy.contact_department.name.singular"
+msgstr "Department"
+
+#: components/Contact/cpt.php:39
+msgid "taxonomy.contact_department.all_items"
+msgstr "All deparments"
+
+#: components/Contact/cpt.php:40
+msgid "taxonomy.contact_department.edit_item"
+msgstr "Edit department"
+
+#: components/Contact/cpt.php:41
+msgid "taxonomy.contact_department.update_item"
+msgstr "Update department"
+
+#: components/Contact/cpt.php:42
+msgid "taxonomy.contact_department.add_new_item"
+msgstr "Add new department "
+
+#: components/Contact/cpt.php:43
+msgid "taxonomy.contact_department.new_item_name"
+msgstr "Add new department "
+
+#: components/Contact/cpt.php:44
+msgid "taxonomy.contact_department.menu_name"
+msgstr "Departments"
+
+#: components/ContactList/component.php:18
+msgid "component.name.contact_list"
+msgstr "Contact list"
+
+#: components/ContactList/component.php:19
+#: components/ContactSingle/component.php:15
+#: components/LogoSlider/component.php:14 components/Slider/component.php:14
+msgid "component.category.premium"
+msgstr "Premium"
+
+#: components/ContactList/view.php:4
+msgid "component.contact-list.all"
+msgstr "List all"
+
+#: components/ContactSingle/component.php:14
+msgid "component.name.contact.single"
+msgstr "Single contact"
+
+#: components/ContactSingle/view.php:25
+msgid "contact.download.vcard"
+msgstr "Download vCard"
+
+#: components/CookieAlert/component.php:10
+msgid "component.cookie.alert.text"
+msgstr ""
+"To be able to use this site to it’s full extent you have to accept that we "
+"use cookies. You can read more about our cookies here:"
+
+#: components/CookieAlert/view.php:2
+msgid "about cookies"
+msgstr "About cookies"
+
+#: components/CookieAlert/view.php:4
+msgid "I accept"
+msgstr "I accept"
+
+#: components/Divider/component.php:13
+msgid "component.name.divider"
+msgstr "Divider"
+
+#: components/Divider/component.php:17
+msgid "admin.text.theme.gap"
+msgstr "Theme gap"
+
+#: components/Divider/component.php:21
+msgid "admin.text.size.standard"
+msgstr "Standard"
+
+#: components/Divider/component.php:22
+msgid "admin.text.size.big"
+msgstr "Big"
+
+#: components/DownloadableFiles/component.php:13
+msgid "component.name.downloadable.files"
+msgstr "Downloadable files"
+
+#: components/DownloadableFiles/component.php:18
+msgid "admin.text.filename"
+msgstr "Selected file"
+
+#: components/DownloadableFiles/component.php:21
+msgid "admin.text.choose.file"
+msgstr "Choose a file in the list"
+
+#: components/EmptySpace/component.php:21
+msgid "component.name.empty.space"
+msgstr "Empty space"
+
+#: components/EmptySpace/component.php:22
+msgid "admin.desc.empty.space"
+msgstr "Empty space with variable height"
+
+#: components/EmptySpace/component.php:27
+msgid "component.empty.space.height"
+msgstr "Height"
+
+#: components/EmptySpace/component.php:31
+msgid "component.desc.empty.space"
+msgstr "test"
+
+#: components/EmptySpace/component.php:35
+msgid "extra.class.name"
+msgstr "Extra class name"
+
+#: components/EmptySpace/component.php:37
+msgid "extra.class.name.desc"
+msgstr "Set an extra class on the component"
+
+#: components/FAQ/cpt.php:10
+msgid "post-type.faq.name"
+msgstr "FAQ"
+
+#: components/FAQ/cpt.php:11
+msgid "post-type.faq.name.singular"
+msgstr "FAQ"
+
+#: components/FAQ/cpt.php:41
+msgid "component.faq.faq_category.name"
+msgstr "Category"
+
+#: components/FAQList/component.php:14
+msgid "component.faq.list.name"
+msgstr ""
+
+#: components/FAQList/component.php:19
+msgid "admin.component.faq.categories"
+msgstr ""
+
+#: components/FAQList/component.php:25
+msgid "component.faq.max.entries.per.category"
+msgstr ""
+
+#: components/FAQList/view.php:13
+msgid "component.faq.listing.no.questions"
+msgstr ""
+
+#: components/GoogleMaps/component.php:18
+msgid "component.name.google.maps"
+msgstr ""
+
+#: components/GoogleMaps/component.php:19
+msgid "admin.text.google.maps.desc"
+msgstr "Google Maps"
+
+#: components/GoogleMaps/component.php:24
+msgid "admin.text.google.maps.iframe.link"
+msgstr ""
+
+#: components/GoogleMaps/component.php:27
+#, php-format
+msgid ""
+"Visit %s to create your map (Step by step: 1) Find location 2) Click the cog "
+"symbol in the lower right corner and select \"Share or embed map\" 3) On "
+"modal window select \"Embed map\" 4) Copy iframe code and paste it)."
+msgstr ""
+
+#: components/GoogleMaps/component.php:27
+msgid "Google maps"
+msgstr ""
+
+#: components/GoogleMaps/component.php:31
+msgid "admin.text.google.maps.height"
+msgstr ""
+
+#: components/GoogleMaps/component.php:34
+msgid "Enter map height (in pixels or leave empty for responsive map)."
+msgstr ""
+
+#: components/GravityForms/component.php:47
+msgid "component.name.gravityforms"
+msgstr ""
+
+#: components/GravityForms/component.php:48
+msgid "admin.text.gravityforms.desc"
+msgstr ""
+
+#: components/GravityForms/component.php:54 components/Text/component.php:28
+msgid "Text"
+msgstr "Text"
+
+#: components/GravityForms/component.php:56 components/Text/component.php:30
+msgid ""
+"<p>I am text block. Click edit button to change this text. Lorem ipsum dolor "
+"sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec "
+"ullamcorper mattis, pulvinar dapibus leo.</p>"
+msgstr ""
+
+#: components/Heading/component.php:13
+msgid "component.name.heading"
+msgstr "Heading"
+
+#: components/Heading/component.php:21
+msgid "admin.text.heading.text"
+msgstr "Heading text"
+
+#: components/Heading/component.php:27
+msgid "admin.text.heading.tag"
+msgstr "Heading tag"
+
+#: components/Heading/component.php:42 components/Icon/component.php:67
+msgid "admin.text.size"
+msgstr "Size"
+
+#: components/Heading/component.php:46
+msgid "admin.text.size.extra.large"
+msgstr "Extra large"
+
+#: components/Heading/component.php:47
+msgid "admin.text.size.h1"
+msgstr "Heading 1"
+
+#: components/Heading/component.php:48
+msgid "admin.text.size.h2"
+msgstr "Heading 2"
+
+#: components/Heading/component.php:49
+msgid "admin.text.size.h3"
+msgstr "Heading 3"
+
+#: components/Heading/component.php:50
+msgid "admin.text.size.h4"
+msgstr "Heading 4"
+
+#: components/Heading/component.php:51
+msgid "admin.text.size.h5"
+msgstr "Heading 5"
+
+#: components/Heading/component.php:52
+msgid "admin.text.size.h6"
+msgstr "Heading 6"
+
+#: components/Heading/component.php:53
+msgid "admin.text.size.mini"
+msgstr "Mini"
+
+#: components/Heading/component.php:59
+msgid "admin.text.weight"
+msgstr "Weight"
+
+#: components/Heading/component.php:63
+msgid "admin.text.weight.light"
+msgstr "Light"
+
+#: components/Heading/component.php:64
+msgid "admin.text.weight.normal"
+msgstr "Normal"
+
+#: components/Heading/component.php:65
+msgid "admin.text.weight.bold"
+msgstr "Bold"
+
+#: components/Heading/component.php:71 components/Icon/component.php:55
+msgid "admin.text.heading.align"
+msgstr "Position"
+
+#: components/Heading/component.php:75 components/Icon/component.php:59
+#: components/Ingress/component.php:30
+msgid "admin.text.align.left"
+msgstr "Left"
+
+#: components/Heading/component.php:76 components/Icon/component.php:60
+#: components/Ingress/component.php:31
+msgid "admin.text.align.center"
+msgstr "Centered"
+
+#: components/Heading/component.php:77 components/Icon/component.php:61
+#: components/Ingress/component.php:32
+msgid "admin.text.align.right"
+msgstr "Right"
+
+#: components/Heading/component.php:87
+msgid "admin.text.color.standard"
+msgstr ""
+
+#: components/Heading/component.php:89 components/Icon/component.php:49
+#: components/Ingress/component.php:44 components/Row/component.php:93
+msgid "admin.text.color.white"
+msgstr "White"
+
+#: components/Heading/component.php:103 components/Row/component.php:117
+msgid "admin.text.padding.bottom"
+msgstr ""
+
+#: components/Heading/component.php:106 components/Row/component.php:120
+msgid "admin.text.no-padding-bottom"
+msgstr "No bottom margin"
+
+#: components/Heading/component.php:113
+msgid "admin.text.heading.max.width"
+msgstr "Max width"
+
+#: components/Heading/component.php:115
+msgid "admin.text.max.width.desc"
+msgstr "Set an max width (ex 100px or 50%)"
+
+#: components/Html/component.php:18
+msgid "component.name.html"
+msgstr "Pure HTML"
+
+#: components/Html/component.php:19
+msgid "admin.text.html.desc"
+msgstr "Raw HTML"
+
+#: components/Html/component.php:25
+msgid "Raw HTML"
+msgstr "Raw HTML"
+
+#: components/Html/component.php:28
+msgid "Enter your HTML content."
+msgstr ""
+
+#: components/Icon/component.php:14
+msgid "component.name.icon"
+msgstr "Icon"
+
+#: components/Icon/component.php:22 components/Teaser/component.php:44
+msgid "admin.text.icon"
+msgstr "Icon"
+
+#: components/Icon/component.php:29
+msgid "admin.text.subtitle"
+msgstr "Subtitle"
+
+#: components/Icon/component.php:47
+msgid "admin.text.color.brand-darker"
+msgstr "Dark blue"
+
+#: components/Icon/component.php:48
+msgid "admin.text.color.gray"
+msgstr "Gray"
+
+#: components/Icon/component.php:71 components/Image/component.php:33
+msgid "admin.text.size.small"
+msgstr "Small"
+
+#: components/Icon/component.php:72
+msgid "admin.text.size.medium"
+msgstr "Medium"
+
+#: components/Icon/component.php:73
+msgid "admin.text.size.large"
+msgstr "Large"
+
+#: components/Iframe/component.php:13
+msgid "component.name.iframe"
+msgstr "Iframe"
+
+#: components/Iframe/component.php:20 components/LogoSlider/cpt.php:40
+msgid "admin.text.url"
+msgstr "Url"
+
+#: components/Iframe/component.php:28
+msgid "admin.text.height.px"
+msgstr "Height in pixels"
+
+#: components/Iframe/view.php:2
+msgid "Your browser do not support iframes"
+msgstr "Your web browser does not support iframes"
+
+#: components/Image/component.php:15
+msgid "component.name.image"
+msgstr "Image"
+
+#: components/Image/component.php:20
+msgid "admin.text.image"
+msgstr "Image"
+
+#: components/Image/component.php:28
+msgid "admin.text.image.size"
+msgstr "Image size"
+
+#: components/Image/component.php:32
+msgid "admin.text.size.fullwidth"
+msgstr "Full width"
+
+#: components/Image/component.php:43
+msgid "admin.text.position.left"
+msgstr "Left aligned"
+
+#: components/Image/component.php:44
+msgid "admin.text.position.center"
+msgstr "Centered"
+
+#: components/Image/component.php:45
+msgid "admin.text.position.right"
+msgstr "Right aligned"
+
+#: components/Image/component.php:56
+msgid "admin.text.image.text"
+msgstr "Image text"
+
+#: components/Image/component.php:65
+msgid "admin.aspect-ratio.heading"
+msgstr "Aspect ratio"
+
+#: components/Image/component.php:76
+msgid "admin.aspect-ratio.description"
+msgstr "Choose aspect ratio of the image"
+
+#: components/Image/component.php:80 components/Teaser/component.php:20
+msgid "admin.text.theme"
+msgstr "Theme"
+
+#: components/Image/component.php:84
+msgid "admin.text.standard"
+msgstr "Standard"
+
+#: components/Image/component.php:85
+msgid "admin.text.theme.round"
+msgstr "Round"
+
+#: components/Image/component.php:88
+msgid "admin.text.theme.desc"
+msgstr "How the image is displayed"
+
+#: components/ImageSlider/component.php:13
+msgid "component.name.imageslider"
+msgstr "Image gallery"
+
+#: components/ImageSlider/component.php:19
+msgid "admin.text.imageslider.images"
+msgstr "Images"
+
+#: components/Ingress/component.php:13
+msgid "component.name.ingress"
+msgstr "Lead"
+
+#: components/Ingress/component.php:19
+msgid "admin.text.text"
+msgstr "Text"
+
+#: components/Ingress/component.php:26
+msgid "admin.text.align"
+msgstr "Position"
+
+#: components/Ingress/component.php:42
+msgid "admin.text.color.brand.light"
+msgstr "Blue-gray"
+
+#: components/LatestPosts/component.php:13
+msgid "component.name.latest.post"
+msgstr "Latest post"
+
+#: components/LatestPosts/component.php:18
+msgid "admin.text.latest.post.type"
+msgstr ""
+
+#: components/LatestPosts/component.php:21
+msgid "admin.post.type.posts"
+msgstr ""
+
+#: components/LatestPosts/component.php:22
+msgid "admin.post.type.events"
+msgstr ""
+
+#: components/LatestPosts/component.php:28
+msgid "admin.text.limit"
+msgstr ""
+
+#: components/LogoSlider/component.php:13
+msgid "component.name.logoslider"
+msgstr "Customer slides"
+
+#: components/LogoSlider/cpt.php:9
+msgid "post.type.name.logo.slides"
+msgstr "Customer slides"
+
+#: components/LogoSlider/cpt.php:10
+msgid "post.type.name.logo.slides.singular"
+msgstr "Customer slide"
+
+#: components/LogoSlider/cpt.php:39
+msgid "admin.text.title"
+msgstr "Titel"
+
+#: components/LogoSlider/cpt.php:41
+msgid "admin.text.order"
+msgstr "Ordning"
+
+#: components/LogoSlider/cpt.php:42
+msgid "admin.text.logo"
+msgstr "Logo"
+
+#: components/LogoSlider/cpt.php:43
+msgid "admin.text.date"
+msgstr "Datum"
+
+#: components/LogoSlider/view.php:6
+msgid "components.logoslider.view.heading"
+msgstr ""
+
+#: components/MobileMenu/view.php:2
+msgid "mobile-menu.back"
+msgstr "Back"
+
+#: components/MobileMenu/view.php:9
+msgid "menu"
+msgstr "Menu"
+
+#: components/MobileMenu/view.php:10
+msgid "close"
+msgstr "Close"
+
+#: components/MobileMenu/view.php:12
+msgid "mobile-menu.toggle"
+msgstr "Toggle"
+
+#: components/PageTitle/component.php:22
+msgid "Blog"
+msgstr ""
+
+#: components/Post/single.view.php:32
+msgid "prev.posts"
+msgstr "Previous post"
+
+#: components/Post/single.view.php:35
+msgid "next.posts"
+msgstr "Next post"
+
+#: components/PostList/component.php:38
+msgid "post.list.next.page.button"
+msgstr "Next page"
+
+#: components/PostList/component.php:55
+msgid "post.list.load.more.button"
+msgstr "Load more"
+
+#: components/PostList/component.php:82
+msgid "post.list.prev.page.button"
+msgstr "Previous page"
+
+#: components/PostList/component.php:92
+msgid "post.list.no.posts.message"
+msgstr "No posts"
+
+#: components/Row/component.php:55
+msgid "component.name.row"
+msgstr "Row"
+
+#: components/Row/component.php:56
+msgid "admin.row.desc"
+msgstr "A row to which  you can add modules."
+
+#: components/Row/component.php:61
+msgid "admin.text.background.image"
+msgstr "Background image"
+
+#: components/Row/component.php:66
+msgid "admin.text.background.image.fixed"
+msgstr "Parallax background image."
+
+#: components/Row/component.php:69
+msgid "admin.text.fixed.bg.image"
+msgstr "Yes"
+
+#: components/Row/component.php:79
+msgid "admin.text.bg.section.color"
+msgstr "White color on all text in the row"
+
+#: components/Row/component.php:90
+msgid "admin.text.section.color"
+msgstr "Section color"
+
+#: components/Row/component.php:99
+msgid "admin.text.column.padding"
+msgstr "Margins on columns inside the row"
+
+#: components/Row/component.php:102
+msgid "admin.text.no.column.padding"
+msgstr "Yes"
+
+#: components/Row/component.php:108
+msgid "admin.text.padding.top"
+msgstr "Padding top"
+
+#: components/Row/component.php:111
+msgid "admin.text.no-padding-top"
+msgstr "No top margins"
+
+#: components/Row/component.php:126
+msgid "admin.text.section.type"
+msgstr "Section type"
+
+#: components/Row/component.php:129
+msgid "admin.text.section.type.container"
+msgstr "Content with a max width"
+
+#: components/Row/component.php:130
+msgid "admin.text.section.type.container.fluid"
+msgstr "Full width content"
+
+#: components/SearchResult/component.php:20
+msgid "sarch.result.term.to.short"
+msgstr "Sökordet är för kort.  Testa en längre sökning"
+
+#: components/SearchResult/component.php:22
+msgid "sarch.result.no.hits.message"
+msgstr "Inga träffar"
+
+#: components/SearchResult/view.php:6
+msgid "search.result.headline"
+msgstr ""
+
+#: components/Sidebar/archive.view.php:10
+msgid "categories"
+msgstr "Categories"
+
+#: components/Sidebar/archive.view.php:11
+msgid "no.categories"
+msgstr "No categories"
+
+#: components/Sidebar/archive.view.php:20
+msgid "sidebar.yearly.archive.headline"
+msgstr "Archive"
+
+#: components/Slider/component.php:13
+msgid "component.name.slider"
+msgstr "Slider"
+
+#: components/Slider/component.php:20
+msgid "admin.text.slide.category"
+msgstr ""
+
+#: components/Slider/component.php:23
+msgid "admin.text.choose.slide.category"
+msgstr ""
+
+#: components/Slider/component.php:28
+msgid "admin.text.slide.show_dots"
+msgstr ""
+
+#: components/Slider/component.php:35
+msgid "admin.text.slide.show_arrows"
+msgstr ""
+
+#: components/Slider/cpt.php:10
+msgid "post-type.slider.name"
+msgstr "Slides"
+
+#: components/Slider/cpt.php:11
+msgid "post-type.slider.name.singular"
+msgstr "Slide"
+
+#: components/Slider/cpt.php:12
+msgid "post-type.slider.add_new"
+msgstr "Add new Slide"
+
+#: components/Slider/cpt.php:13
+msgid "post-type.slider.add_new_item"
+msgstr "Add new Slide"
+
+#: components/Slider/cpt.php:14
+msgid "post-type.slider.all_items"
+msgstr "All Slides"
+
+#: components/Slider/cpt.php:34
+msgid "taxonomy.slider_category.name"
+msgstr "Sliders"
+
+#: components/Slider/cpt.php:35
+msgid "taxonomy.slider.name.singular"
+msgstr "Slider"
+
+#: components/Slider/cpt.php:36
+msgid "taxonomy.slider.add_new"
+msgstr "Add new Slider"
+
+#: components/Slider/cpt.php:37
+msgid "taxonomy.slider.add_new_item"
+msgstr "Add new Slider"
+
+#: components/Slider/cpt.php:38
+msgid "taxonomy.slider.all_items"
+msgstr "All Sliders"
+
+#: components/StaticContent/component.php:14
+msgid "component.name.static-content"
+msgstr "Recurring content"
+
+#: components/StaticContent/component.php:19
+#: components/StaticContent/cpt.php:10
+msgid "post-type.static_content.name"
+msgstr "Recurring content"
+
+#: components/StaticContent/cpt.php:11
+msgid "post-type.static_content.name.singular"
+msgstr "Recurring content"
+
+#: components/StaticContent/cpt.php:12
+msgid "post-type.static_content.add_new"
+msgstr "Add new"
+
+#: components/StaticContent/cpt.php:13
+msgid "post-type.static_content.add_new_item"
+msgstr "Add new"
+
+#: components/StaticContent/cpt.php:14
+msgid "post-type.static_content.all_items"
+msgstr "All items"
+
+#: components/Teaser/component.php:13
+msgid "component.name.teaser"
+msgstr "Teaser"
+
+#: components/Teaser/component.php:30
+msgid "admin.text.headline"
+msgstr "Headline"
+
+#: components/Teaser/component.php:35
+msgid "admin.text.show.icon"
+msgstr "Show icon"
+
+#: components/Teaser/component.php:38
+msgid "admin.text.yes"
+msgstr "yes"
+
+#: components/Text/component.php:21
+msgid "component.name.text"
+msgstr "Text"
+
+#: components/Text/component.php:22
+msgid "admin.text.desc"
+msgstr "Enter text"
+
+#: components/Video/component.php:29
+msgid "component.Video.heading.videourl"
+msgstr "Video link"
+
+#: functions.php:23
+#, php-format
+msgid "Error locating %s for inclusion"
+msgstr ""
+
+#: functions.php:34
+msgid "General Theme settings"
+msgstr "lol"
+
+#: lib/extras.php:29
+msgid "read.more"
+msgstr "Read more"
+
+#: lib/init.php:46
+msgid "Footer left"
+msgstr ""
+
+#: lib/init.php:53
+msgid "Footer first right"
+msgstr ""
+
+#: lib/init.php:60
+msgid "Footer last right"
+msgstr ""
+
+#~ msgid "Generella Temainställningar"
+#~ msgstr "General theme settings"
+
+#~ msgid "Temainställningar"
+#~ msgstr "Theme settings"
+
+#~ msgid "to.the.top"
+#~ msgstr "To the top"
+
+#~ msgid "Footer"
+#~ msgstr "Sidfot"
+
+#~ msgid "post-type.faq.add_new"
+#~ msgstr "Add new FAQ"
+
+#~ msgid "post-type.faq.add_new_item"
+#~ msgstr "Add new FAQ"
+
+#~ msgid "taxonomy.faq_category.name"
+#~ msgstr "Categori"
+
+#~ msgid "component.footer.copyright_text"
+#~ msgstr "Copyright &copy&s Digital Mechanics. All rights reserved"
+
+#~ msgid "component.header.brains.label"
+#~ msgstr "Brains"
+
+#~ msgid "component.header.brains.text"
+#~ msgstr "Forum, FAQ, blog and more"
+
+#~ msgid "component-header.order.now.text"
+#~ msgstr "Order now"
+
+#~ msgid "component-header.login.text"
+#~ msgstr "Login"
+
+#~ msgid "component.icon.read.more"
+#~ msgstr "Read more"
+
+#~ msgid "admin.color.white"
+#~ msgstr "White"
+
+#~ msgid "admin.color.gray"
+#~ msgstr "Gray"
+
+#~ msgid "date-to"
+#~ msgstr "to"
+
+#~ msgid "admin.text.bg.color.dark.red"
+#~ msgstr "Dark red"
+
+#~ msgid "admin.text.bg.color.dark.gray"
+#~ msgstr "Dark gray"
+
+#~ msgid "admin.text.row.full.height"
+#~ msgstr "Full height"
+
+#~ msgid "admin.text.background.image.puff"
+#~ msgstr "Background image"
+
+#~ msgid "Primary"
+#~ msgstr "Primär"
+
+#~ msgid "component.name.cta.button"
+#~ msgstr "Call to Action button"
+
+#~ msgid "admin.desc.html"
+#~ msgstr "HTML that is displayed on the page"
+
+#~ msgid "component.name.teaser.cta"
+#~ msgstr "Teaster CTA"
+
+#~ msgid "admin.text.number"
+#~ msgstr "Number"
+
+#~ msgid "learn.more"
+#~ msgstr "Learn more"
+
+#~ msgid "testar"
+#~ msgstr "test"
+
+#~ msgid "contact.send.email"
+#~ msgstr "Send email"
+
+#~ msgid ""
+#~ "You are using an <strong>outdated</strong> browser. Please <a href="
+#~ "\"http://browsehappy.com/\">upgrade your browser</a> to improve your "
+#~ "experience."
+#~ msgstr ""
+#~ "You are using an <strong>outdated</strong> web browser. Please <a href="
+#~ "\"http://browsehappy.com/\">upgrade</a> to improve your experience."
+
+#~ msgid "component.name.app"
+#~ msgstr "App"
+
+#~ msgid "admin.text.theme.color"
+#~ msgstr "Color"
+
+#~ msgid "admin.text.theme.blue"
+#~ msgstr "Blue"
+
+#~ msgid "admin.text.theme.lightblue"
+#~ msgstr "Light blue"
+
+#~ msgid "admin.text.theme.mint"
+#~ msgstr "Mint"
+
+#~ msgid "admin.text.theme.green"
+#~ msgstr "Green"
+
+#~ msgid "admin.text.theme.yellow"
+#~ msgstr "Yellow"
+
+#~ msgid "admin.text.theme.orange"
+#~ msgstr "Orange"
+
+#~ msgid "admin.text.theme.lightgreen"
+#~ msgstr "Light green"
+
+#~ msgid "admin.text.theme.purple"
+#~ msgstr "Purple"
+
+#~ msgid "admin.text.theme.pink"
+#~ msgstr "Pink"
+
+#~ msgid "admin.text.theme.lightpink"
+#~ msgstr "Light pink"
+
+#~ msgid "admin.text.theme.red"
+#~ msgstr "Red"
+
+#~ msgid "admin.text.theme.beige"
+#~ msgstr "Beige"
+
+#~ msgid "admin.text.type"
+#~ msgstr "Type"
+
+#~ msgid "admin.text.modal-form"
+#~ msgstr "Modal form"
+
+#~ msgid "admin.text.form"
+#~ msgstr "Form"
+
+#~ msgid "post-type.dynamic_content.name"
+#~ msgstr "Dynamic content"
+
+#~ msgid "post-type.dynamic_content.name.singular"
+#~ msgstr "Dynamic content"
+
+#~ msgid "post-type.dynamic_content.add_new"
+#~ msgstr "Add new"
+
+#~ msgid "post-type.dynamic_content.add_new_item"
+#~ msgstr "Add new"
+
+#~ msgid "post-type.dynamic_content.all_items"
+#~ msgstr "All"
+
+#~ msgid "post-type.dynamic_content.dynamic_content_visible_for"
+#~ msgstr "Visible for"
+
+#~ msgid "post-type.dynamic_content.dynamic_content_type"
+#~ msgstr "Type"
+
+#~ msgid "post-type.dynamic_content.added_by"
+#~ msgstr "Added by"
+
+#~ msgid "about.faltcom.heading"
+#~ msgstr "About Fältcom"
+
+#~ msgid "about.faltcom"
+#~ msgstr ""
+#~ "Fältcom connects the world through the Internet of Things. With our MIIPS "
+#~ "platform and its apps, you can control, monitor, or analyze machines, "
+#~ "buildings, and systems over the Internet. For our customers, this means "
+#~ "lower costs, better information about usage, and in many cases brand new "
+#~ "functionality."
+
+#~ msgid "admin.text.show.hexagon"
+#~ msgstr "Show hexagon"
+
+#~ msgid "component.name.cta.image"
+#~ msgstr "Call to action image"
+
+#~ msgid "admin.text.align.high"
+#~ msgstr "High"
+
+#~ msgid "admin.text.align.thin"
+#~ msgstr "Thin"
+
+#~ msgid "admin.text.sub.headline"
+#~ msgstr "Sub headline"
+
+#~ msgid "admin.text.ingress"
+#~ msgstr "Lead"
+
+#~ msgid "component.name.listitem"
+#~ msgstr "List Item"
+
+#~ msgid "admin.text.listitem.number"
+#~ msgstr "Number"
+
+#~ msgid "OIT-blog"
+#~ msgstr "IoT Blog"
+
+#~ msgid "component.name.puff"
+#~ msgstr "Teaser"
+
+#~ msgid "component.name.cta.puff"
+#~ msgstr "Call to action teaser"
+
+#~ msgid "admin.text.headline.over"
+#~ msgstr "Headline over"
+
+#~ msgid "admin.text.column.color"
+#~ msgstr "Column color"
+
+#~ msgid "component.name.tabs"
+#~ msgstr "Tabs"
+
+#~ msgid "admin.desc.tabs"
+#~ msgstr "Tabbed content"
+
+#~ msgid "Primary Navigation"
+#~ msgstr "Main menu"
+
+#~ msgid "Secondary Navigation"
+#~ msgstr "Secondary menu"
+
+#~ msgid "Footer Navigation"
+#~ msgstr "Footer menu"
+
+#~ msgid "Extra Navigation"
+#~ msgstr "Extrameny"
+
+#~ msgid "Mobile Navigation"
+#~ msgstr "Mobile menu"
+
+#~ msgid "lean.more"
+#~ msgstr "Learn more"
+
+#~ msgid "By"
+#~ msgstr "Av"
+
+#~ msgid "text.language.in"
+#~ msgstr "In"
+
+#~ msgid "admin.text.size.std"
+#~ msgstr "Standard"
+
+#~ msgid "admin.text.theme.hexagon"
+#~ msgstr "Hexagon"
+
+#~ msgid "component.name.infobox"
+#~ msgstr "Faktaruta"
+
+#~ msgid "admin.text.heading"
+#~ msgstr "Rubrik"
+
+#~ msgid "admin.text.text.color"
+#~ msgstr "Text färg"
+
+#~ msgid "admin.text.padding.settings"
+#~ msgstr "Marginaler"
+
+#~ msgid "search.result.submit.button"
+#~ msgstr "Sök"
+
+#~ msgid "Latest Posts"
+#~ msgstr "Senaste posterna"
+
+#~ msgid "Search Results for %s"
+#~ msgstr "Inga sök resultat för %s"
+
+#~ msgid "Not Found"
+#~ msgstr "Hittade inget"
+
+#~ msgid "Comments are closed."
+#~ msgstr "Kommentarer är avstängda."
+
+#~ msgid "Pages:"
+#~ msgstr "Sidor:"
+
+#~ msgid "Search for:"
+#~ msgstr "Sök på:"
+
+#~ msgid "Search"
+#~ msgstr "Sök"
+
+#~ msgid "post.type.name.news"
+#~ msgstr "Nyheter"
+
+#~ msgid "post.type.name.news.singular"
+#~ msgstr "News"
+
+#~ msgid "taxonomy.label.news.category"
+#~ msgstr "News category"
+
+#~ msgid "post.puffview.button.readmore"
+#~ msgstr "Läs mer"
+
+#~ msgid "component.image.theme.standard"
+#~ msgstr "Standard"
+
+#~ msgid "component.image.theme.image.aside"
+#~ msgstr "Bild på sidan"
+
+#~ msgid "component.image.theme.image.below"
+#~ msgstr "Bild under"
+
+#~ msgid "component.image.theme.transparent"
+#~ msgstr "Transparent"
+
+#~ msgid "admin.text.image.position"
+#~ msgstr "Bildposition"
+
+#~ msgid "admin.text.background.color"
+#~ msgstr "Bakgrundsfärg"
+
+#~ msgid "admin.text.none"
+#~ msgstr "Ingen"
+
+#~ msgid "color.light.gray"
+#~ msgstr "Ljusgrå"
+
+#~ msgid "admin.text.section.type.container.almost.fluid"
+#~ msgstr "Innehål nästan ut till kanterna"
+
+#~ msgid "Sorry, no results were found."
+#~ msgstr "Ledsen, hittade inga resultat"
+
+#~ msgid "post.single.button.to.archive.link"
+#~ msgstr "Till arkivet"
+
+#~ msgid "admin.text.blue"
+#~ msgstr "Blågrå"
+
+#~ msgid "admin.text.dark.blue"
+#~ msgstr "Mörkblå"
+
+#~ msgid "component.name.related.links.and.files"
+#~ msgstr "Relaterade länkar och filer"
+
+#~ msgid "admin.text.icon.related.files"
+#~ msgstr "Relaterade filer"
+
+#~ msgid "admin.text.icon.related.links"
+#~ msgstr "Relaterade länkar"
+
+#~ msgid "admin.text.theme.light"
+#~ msgstr "Ljus"
+
+#~ msgid "admin.text.theme.dark"
+#~ msgstr "Mörk"
+
+#~ msgid "admin.text.heading.size"
+#~ msgstr "Storlek"
+
+#~ msgid "admin.text.theme.no.margin"
+#~ msgstr "Inga marginaler"
+
+#~ msgid "post.listview.button.readmore"
+#~ msgstr "Läs mer"
+
+#~ msgid "admin.text.banner"
+#~ msgstr "Banner"
+
+#~ msgid "component.name.contact.form"
+#~ msgstr "Kontaktformulär"
+
+#~ msgid "social.media.links.headline.footer"
+#~ msgstr "Social media"
+
+#~ msgid "find.us.on.facebook"
+#~ msgstr "Facebook"
+
+#~ msgid "find.us.on.linked.in"
+#~ msgstr "LinkedIn"
+
+#~ msgid "find.us.on.mynewsdesk"
+#~ msgstr "MyNewsDesk"
+
+#~ msgid "slider.prev"
+#~ msgstr "Föregående"
+
+#~ msgid "slider.next"
+#~ msgstr "Nästa"
+
+#~ msgid "color.white"
+#~ msgstr "Vit"
+
+#~ msgid "color.dark.blue"
+#~ msgstr "Mörkblå"
+
+#~ msgid "color.blue"
+#~ msgstr "Blå"
+
+#~ msgid "color.gray"
+#~ msgstr "Grå"
+
+#~ msgid "admin.text.go.to.next.section.button"
+#~ msgstr "Gå till nästa sektion"
+
+#~ msgid "admin.text.show.button"
+#~ msgstr "Visa knapp"
+
+#~ msgid "post.type.name.slider"
+#~ msgstr "Slider"
+
+#~ msgid "post.type.name.slider.singular"
+#~ msgstr "Slider"
+
+#~ msgid "component.name.testimonials"
+#~ msgstr "Case"
+
+#~ msgid "post.type.testimonials.label"
+#~ msgstr "Case"
+
+#~ msgid "post.type.testimonial.label.singular"
+#~ msgstr "Case"
+
+#~ msgid "admin.text.content"
+#~ msgstr "Innehåll"
+
+#~ msgid "component.button.theme.standard"
+#~ msgstr "Standard"
+
+#~ msgid "component.button.theme.center.light"
+#~ msgstr "Centrerad - Ljus"
+
+#~ msgid "component.button.theme.center.dark"
+#~ msgstr "Centrerad - Mörk"

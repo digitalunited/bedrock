@@ -1,0 +1,132 @@
+.component-contactlist {
+
+  .component-submenu > .container {
+    padding: 0;
+  }
+
+  hr {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .contact-list {
+    @extend %clearfix;
+    margin-top: $margin * 2;
+    @include make-row();
+
+    .mix {
+      @include make-xs-column(12);
+      @include make-sm-column(6);
+      display: none;
+      float: left;
+      margin-bottom: 1.5%;
+    }
+
+    .component-contactsingle {
+      @extend %clearfix;
+      background-color: $white;
+    }
+
+    .component-contactsingle ul {
+      margin-bottom: 0;
+    }
+
+    .image {
+      border: 1px solid $gray;
+      margin-bottom: 0;
+      width: 100%;
+      float: left;
+      height: 270px;
+    }
+
+    .text-content.full {
+      width: 100%;
+      border: 1px solid $gray !important;
+    }
+
+    .text-content {
+      padding: 20px;
+      float: left;
+      height: 270px;
+      border: 1px solid $gray;
+      border-top: 0;
+      width: 100%;
+
+      .label {
+        color: $brand-primary;
+        font-weight: 500;
+        font-size: $font-size-extra-small;
+        margin: 0;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        margin-top: 5px;
+        margin-bottom: 15px;
+        @include font-size($h3-font-sizes);
+        white-space: nowrap;
+
+        @media (max-width: $screen-xs-max) {
+          font-size: $font-size-h4;
+        }
+      }
+
+      li {
+        margin-bottom: 5px;
+      }
+
+      a {
+        font-weight: 200;
+      }
+
+      .icon-mail {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .component-submenu {
+    .nav-item .active {
+      border-bottom: 4px solid $brand-primary;
+    }
+  }
+
+  #filters {
+    padding: 10px 0;
+    background-color: $brand-primary-dark;
+    text-align: center;
+
+    .btn {
+      cursor: pointer;
+      margin-bottom: 0;
+    }
+
+    .btn.active {
+      background-color: $white;
+      color: $text-color;
+    }
+  }
+}
+
+.col-sm-12 .component-contactlist {
+  .image {
+    width: 30%;
+
+    @media (max-width: $screen-xs-max) {
+      width: 100%;
+    }
+  }
+
+  .text-content {
+    width: 70%;
+    border-top: 1px solid $gray;
+    border: 1px solid $gray;
+    border-left: 0;
+
+    @media (max-width: $screen-xs-max) {
+      width: 100%;
+      border-top: 0;
+      border-left: 1px solid $gray;
+    }
+  }
+}

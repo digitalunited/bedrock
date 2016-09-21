@@ -1,0 +1,18 @@
+.component-postlist {
+  .component-post {
+    margin-bottom: 20px;
+  }
+
+  .ajax__buttons {
+    text-align: center;
+    .nav-wrapper {
+      padding: 0 $grid-gutter-width / 2;
+      display: inline-block;
+    }
+    .btn {
+      min-width: 200px;
+    }
+
+  }
+}
+

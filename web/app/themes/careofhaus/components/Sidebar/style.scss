@@ -1,0 +1,48 @@
+.component-sidebar {
+  list-style: none;
+
+  @media (max-width: $screen-sm-max) {
+    margin-bottom: $margin;
+  }
+
+  h4 {
+    text-transform: uppercase;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid $gray;
+    position: relative;
+
+    &:after {
+      content: "";
+      display: block;
+      width: 35px;
+      height: 2px;
+      background: $brand-primary;
+      position: absolute;
+      bottom: -2px;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 15px;
+  }
+
+  li {
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    font-weight: $font-weight-base;
+    @include font-size($ingress-font-sizes);
+    text-transform: capitalize;
+
+  }
+}

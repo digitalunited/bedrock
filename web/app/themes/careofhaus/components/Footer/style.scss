@@ -1,0 +1,85 @@
+.component-footer {
+  overflow: hidden;
+  background-color: $gray;
+
+  @media (max-width: $screen-sm-max) {
+    padding-bottom: 75px;
+  }
+
+  @media (max-width: $screen-xs-max) {
+    padding-bottom: 60px;
+  }
+}
+
+.component-footer__top {
+  background-color: $gray;
+  padding: 50px 0;
+}
+
+.component-footer__meta {
+  h3 {
+    font-weight: $font-weight-medium;
+    font-size: $font-size-base;
+    text-transform: uppercase;
+    margin-bottom: $margin / 2;
+  }
+
+  p {
+    max-width: 560px;
+    margin-bottom: 0;
+  }
+}
+
+.component-footer__bottom {
+  background-color: $gray-dark;
+  padding: 25px 0;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+
+  span {
+    text-transform: uppercase;
+    font-size: $font-size-small;
+    color: $brand-primary;
+
+    i {
+      margin-right: 10px;
+      font-size: $font-size-base;
+    }
+  }
+}
+
+.navigation--footer {
+  width: 100%;
+
+  li a {
+    margin-right: 25px;
+  }
+
+  li:last-of-type a {
+    margin-right: 0;
+  }
+
+  @media (max-width: $screen-xs-max) {
+    li {
+      width: 100%;
+    }
+
+    li a {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.site-logo--left {
+  float: left;
+}
+
+.site-logo--right {
+  float: right;
+}
+
+.site-logo--blue path {
+  fill: $brand-primary;
+}

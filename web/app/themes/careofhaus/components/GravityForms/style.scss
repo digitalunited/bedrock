@@ -1,0 +1,99 @@
+.gform_wrapper ul {
+  @extend .list-unstyled;
+}
+
+.gform_wrapper li {
+  margin-bottom: $margin;
+}
+
+.gform_wrapper form {
+  margin-bottom: 0;
+}
+
+.gform_wrapper label {
+  text-transform: uppercase;
+  font-size: $font-size-small;
+  color: $brand-primary;
+  font-weight: $font-weight-medium;
+}
+
+.gform_wrapper .gfield_required {
+  padding-left: 1px;
+  color: $state-danger-text;
+}
+
+.ginput_container {
+  overflow: hidden;
+}
+
+.ginput_container input:not([type="radio"]):not([type="checkbox"]),
+.ginput_container select,
+.ginput_container textarea {
+  @extend .form-control;
+  box-shadow: none;
+  border-width: 2px;
+
+  &:focus {
+    box-shadow: none;
+    border-color: $link-color;
+  }
+}
+
+.ginput_container textarea {
+  height: auto;
+}
+
+.gform_button {
+  @extend .btn;
+}
+
+.gform_wrapper .gfield_error {
+  .gfield_label {
+    color: $state-danger-text;
+  }
+
+  input,
+  select,
+  textarea {
+    border-color: $brand-danger !important;
+  }
+}
+
+.validation_error {
+  @extend .alert;
+  @extend .alert-danger;
+}
+
+.gfield_description.validation_message {
+  display: none;
+}
+
+.gforms_confirmation_message {
+  @extend .alert;
+  @extend .alert-success;
+}
+
+.gfield_radio, .gfield_checkbox {
+  input {
+    margin-right: $margin / 2;
+    margin-left: 1px;
+  }
+
+  li {
+    margin-bottom: $margin / 2;
+  }
+
+  li label {
+    font-weight: $font-weight-base;
+    text-transform: inherit;
+  }
+}
+
+.gform_footer {
+  border-top: 1px solid $gray-dark;
+  padding-top: 25px;
+}
+
+.gform_ajax_spinner {
+  margin-left: 25px;
+}

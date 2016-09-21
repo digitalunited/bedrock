@@ -1,0 +1,63 @@
+.component-icon {
+  margin-bottom: $margin;
+  overflow: hidden;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  > span,
+  > a > span {
+    font-size: 32px;
+  }
+
+  small {
+    font-weight: 500;
+    display: block;
+  }
+
+  &.align-right {
+    text-align: right;
+  }
+
+  &.align-center {
+    text-align: center;
+  }
+
+  &.align-left {
+    text-align: left;
+  }
+
+  .color--white {
+    color: $white;
+  }
+
+  .color--gray {
+    color: $color-one;
+  }
+
+  .color--brand {
+    color: $brand-primary;
+  }
+
+  .color--brand-primary-darker {
+    color: $brand-primary-dark;
+  }
+
+  &.medium {
+    > span, > a > span {
+      font-size: 64px;
+    }
+  }
+
+  &.large {
+    > span, > a > span {
+      font-size: 128px;
+
+      @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        font-size: 64px;
+      }
+    }
+  }
+}
+

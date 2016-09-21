@@ -1,0 +1,121 @@
+$breakpoints: (
+  small: 480px,
+  medium: 768px,
+  large: 1024px
+);
+
+$h1-extra-large-font-sizes: (
+  null: 45px,
+  small: 55px,
+  medium: 70px,
+  large : 100px,
+);
+
+$h1-large-font-sizes: (
+  null: 44px,
+  small: 44px,
+  medium: 48px,
+  large : 54px,
+);
+
+$h1-font-sizes: (
+  null: 34px,
+  small: 34px,
+  medium: 38px,
+  large : 42px,
+);
+
+$h2-font-sizes: (
+  null: 26px,
+  small: 28px,
+  medium: 30px,
+  large : 34px,
+);
+
+$h3-font-sizes: (
+  null : 22px,
+  small : 22px,
+  medium: 24px,
+  large : 26px,
+);
+
+$h4-font-sizes: (
+  null : 20px,
+  small : 20px,
+  medium: 22px,
+  large : 24px,
+);
+
+$h5-font-sizes: (
+  null : 18px,
+  small : 18px,
+  medium: 20px,
+  large : 22px,
+);
+
+$h6-font-sizes: (
+  null : 14px,
+  small : 14px,
+  medium: 14px,
+  large : 16px,
+);
+
+$ingress-font-sizes: (
+  null : (16px, 26px),
+  small : (16px, 26px),
+  medium: (18px, 28px),
+  large : (18px, 28px),
+);
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  color: $headings-color;
+  margin-bottom: $margin;
+}
+
+h1 {
+  @include font-size($h1-font-sizes);
+}
+
+h2 {
+  @include font-size($h2-font-sizes);
+}
+
+h3 {
+  @include font-size($h3-font-sizes);
+}
+
+h4 {
+  @include font-size($h4-font-sizes);
+}
+
+h5 {
+  @include font-size($h5-font-sizes);
+}
+
+h6 {
+  @include font-size($h6-font-sizes);
+}
+
+body {
+  font-weight: $font-weight-base;
+}
+
+a {
+  font-weight: $font-weight-medium;
+}
+
+hr {
+  border-color: $gray-dark;
+  margin-top: $margin;
+  margin-bottom: $margin;
+}
+
+p {
+  margin-bottom: $margin-bottom;
+  line-height: 26px;
+}
+
+strong {
+  font-weight: $font-weight-medium;
+}

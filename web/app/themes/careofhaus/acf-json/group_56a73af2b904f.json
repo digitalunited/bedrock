@@ -1,0 +1,330 @@
+{
+    "key": "group_56a73af2b904f",
+    "title": "Sidinst\u00e4llningar",
+    "fields": [
+        {
+            "key": "field_56b88ebf1eee4",
+            "label": "Slider",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_56a7591656182",
+            "label": "Show an Slider before the content",
+            "name": "show_slider_in_header",
+            "type": "true_false",
+            "instructions": "You can build slides under the link Slides in WordPress",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Yes",
+            "default_value": 0
+        },
+        {
+            "key": "field_56a73e8f2eb23",
+            "label": "Choose an Slider",
+            "name": "slider_category_id",
+            "type": "taxonomy",
+            "instructions": "Choose which Slider you want to show.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_56a7591656182",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": 33,
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "slider_category",
+            "field_type": "select",
+            "allow_null": 1,
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
+            "key": "field_56a77ea236ab5",
+            "label": "Show navigation dots",
+            "name": "show_dots",
+            "type": "true_false",
+            "instructions": "Show navigation dots on the slider",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_56a7591656182",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": 33,
+                "class": "",
+                "id": ""
+            },
+            "message": "Yes",
+            "default_value": 0
+        },
+        {
+            "key": "field_56a77ec336ab6",
+            "label": "Show navigation arrows",
+            "name": "show_arrows",
+            "type": "true_false",
+            "instructions": "Show navigation arrows",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_56a7591656182",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": 33,
+                "class": "",
+                "id": ""
+            },
+            "message": "Yes",
+            "default_value": 0
+        },
+        {
+            "key": "field_56b88edd1e4ce",
+            "label": "Menus",
+            "name": "menus",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_56b88eed1e4cf",
+            "label": "Submenu",
+            "name": "submenu",
+            "type": "radio",
+            "instructions": "Choose if submenu should inherit from parent (standard), from a custom menu or no menu at all..",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": [],
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "inherit",
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_56b89e1c4ab90",
+            "label": "Submenu Page parent",
+            "name": "submenu_parent",
+            "type": "post_object",
+            "instructions": "Choose which page childs that should be shown in the submenu. If left empty it will use current page",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_56b88eed1e4cf",
+                        "operator": "==",
+                        "value": "page_structure"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_56b88f6fe6a2d",
+            "label": "Choose Submenu",
+            "name": "submenu_select",
+            "type": "nav_menu",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_56b88eed1e4cf",
+                        "operator": "==",
+                        "value": "select"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "save_format": "id",
+            "container": "nav",
+            "allow_null": 0
+        },
+        {
+            "key": "field_56b88fb552ecd",
+            "label": "Sidebar menu",
+            "name": "sidebar_menu",
+            "type": "radio",
+            "instructions": "Choose if Sidebar menu should inherit from parent (standard), from a custom menu or no menu at all.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": [],
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "none",
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_56b8903849ac1",
+            "label": "Sidebar Page parent",
+            "name": "sidebar_parent",
+            "type": "post_object",
+            "instructions": "Choose which page childs that should be shown in the submenu. If left empty it will use current page",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_56b88fb552ecd",
+                        "operator": "==",
+                        "value": "page_structure"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_56b8912163ea7",
+            "label": "Choose Sidebar menu",
+            "name": "sidebar_select",
+            "type": "nav_menu",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_56b88fb552ecd",
+                        "operator": "==",
+                        "value": "select"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "save_format": "id",
+            "container": "nav",
+            "allow_null": 0
+        },
+        {
+            "key": "field_56baeda53bc42",
+            "label": "Social media sharing",
+            "name": "socai",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_56baedba3bc43",
+            "label": "Enable Social media sharing buttons on bottom of this page",
+            "name": "sharing_enabled",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1455201317
+}
