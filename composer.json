@@ -69,6 +69,7 @@
     "wpackagist-plugin/disable-comments": "*",
     "wpackagist-plugin/google-analytics-for-wordpress": "*",
     "wpackagist-plugin/post-duplicator": "*",
+    "wpackagist-plugin/nginx-helper": "*",
     "digitalunited/components": "*",
     "digitalunited/vc-clean-up": "*",
     "digitalunited/wordpress-clean-up": "*",
