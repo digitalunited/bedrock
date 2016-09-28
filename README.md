@@ -16,13 +16,13 @@ Push uploads to staging `bundle exec cap staging wpcli:uploads:rsync:push`
 
 Push uploads to production `bundle exec cap production wpcli:uploads:rsync:push`
 
-Pull database from staging `bundle exec cap staging wpcli:db:pull`
+Pull database from staging `Run db-pull-staging.sh located in the project root`
 
-Pull database from production `bundle exec cap production wpcli:db:pull`
+Pull database from production `Run db-pull-production.sh located in the project root`
 
-Push database to staging `bundle exec cap staging wpcli:db:push`
+Push database to staging `Run db-push-staging.sh located in the project root`
 
-Push database to production `bundle exec cap production wpcli:db:push`
+Push database to production `Run db-push-production.sh located in the project root`
 
 ## Installation/Usage
 
