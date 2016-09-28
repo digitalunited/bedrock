@@ -4,19 +4,22 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b9a34dc15cc7993bd3836f1ffbe225ef",
-    "content-hash": "446e7d00c5efa83ab2b58d548e148bc3",
+    "hash": "2c0fa446cf497446c1e8a115b99a0226",
+    "content-hash": "cb241ab186842ad8c52516437dc927f0",
     "packages": [
         {
             "name": "careofhaus/advanced-custom-fields-pro",
-            "version": "dev-master",
+            "version": "v5.4.5",
             "source": {
                 "type": "git",
-                "url": "git@bitbucket.org:careofhaus/advanced-custom-fields-pro.git",
-                "reference": "master"
+                "url": "git@githubcareofhaus:careofhaus/advanced-custom-fields-pro.git",
+                "reference": "f059fffc13437c157d406744015678336ce4c38d"
+            },
+            "require": {
+                "composer/installers": "*"
             },
             "type": "wordpress-plugin",
-            "time": "2015-11-19 07:47:42"
+            "time": "2016-09-27 11:23:37"
         },
         {
             "name": "careofhaus/coh-responsive-images",
@@ -49,25 +52,31 @@
         },
         {
             "name": "careofhaus/gravityforms",
-            "version": "dev-master",
+            "version": "v2.0.7.6",
             "source": {
                 "type": "git",
-                "url": "git@bitbucket.org:careofhaus/gravityforms.git",
-                "reference": "master"
+                "url": "git@githubcareofhaus:careofhaus/gravityforms.git",
+                "reference": "3520804254abb113f91b2de6a70e8bac82c096c6"
+            },
+            "require": {
+                "composer/installers": "*"
             },
             "type": "wordpress-plugin",
-            "time": "2015-11-19 07:49:27"
+            "time": "2016-09-27 11:32:46"
         },
         {
-            "name": "careofhaus/visual-composer",
-            "version": "dev-master",
+            "name": "careofhaus/js_composer",
+            "version": "v4.12.1",
             "source": {
                 "type": "git",
-                "url": "git@bitbucket.org:careofhaus/visual-composer.git",
-                "reference": "master"
+                "url": "git@githubcareofhaus:careofhaus/js_composer.git",
+                "reference": "a2350b2cc26abf252e9a1986bf0cbf6d97e0df12"
+            },
+            "require": {
+                "composer/installers": "*"
             },
             "type": "wordpress-plugin",
-            "time": "2016-06-13 06:26:40"
+            "time": "2016-09-27 11:12:37"
         },
         {
             "name": "composer/installers",
@@ -155,16 +164,16 @@
         },
         {
             "name": "digitalunited/components",
-            "version": "0.1.24",
+            "version": "0.1.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitalunited/components.git",
-                "reference": "210271f9c49794ccb27733e61fbbed194b7beb84"
+                "reference": "958f922829b5132c5f026b15d2ab44dad4216bfc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitalunited/components/zipball/210271f9c49794ccb27733e61fbbed194b7beb84",
-                "reference": "210271f9c49794ccb27733e61fbbed194b7beb84",
+                "url": "https://api.github.com/repos/digitalunited/components/zipball/958f922829b5132c5f026b15d2ab44dad4216bfc",
+                "reference": "958f922829b5132c5f026b15d2ab44dad4216bfc",
                 "shasum": ""
             },
             "require": {
@@ -194,7 +203,7 @@
                 "plugin",
                 "wordpress"
             ],
-            "time": "2016-05-02 11:00:10"
+            "time": "2016-09-28 07:10:00"
         },
         {
             "name": "digitalunited/vc-clean-up",
@@ -371,24 +380,21 @@
         },
         {
             "name": "roots/soil",
-            "version": "3.7.1",
+            "version": "3.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/soil.git",
-                "reference": "5b9b9d8a878b295f44b35cba826c462b20cc1d9c"
+                "reference": "085fd3c9b16df5b72dce4fba09de0207937ef721"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/soil/zipball/5b9b9d8a878b295f44b35cba826c462b20cc1d9c",
-                "reference": "5b9b9d8a878b295f44b35cba826c462b20cc1d9c",
+                "url": "https://api.github.com/repos/roots/soil/zipball/085fd3c9b16df5b72dce4fba09de0207937ef721",
+                "reference": "085fd3c9b16df5b72dce4fba09de0207937ef721",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "~1.0",
                 "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "squizlabs/php_codesniffer": "^2.5.1"
             },
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
@@ -412,7 +418,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2016-08-30 18:15:45"
+            "time": "2016-03-07 19:49:21"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -546,6 +552,26 @@
             "homepage": "https://wordpress.org/plugins/google-analytics-for-wordpress/"
         },
         {
+            "name": "wpackagist-plugin/nginx-helper",
+            "version": "1.9.8",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/nginx-helper/",
+                "reference": "tags/1.9.8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/nginx-helper.1.9.8.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/nginx-helper/"
+        },
+        {
             "name": "wpackagist-plugin/post-duplicator",
             "version": "2.17",
             "source": {
@@ -587,15 +613,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "3.5",
+            "version": "3.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/3.5"
+                "reference": "tags/3.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -610,9 +636,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "careofhaus/advanced-custom-fields-pro": 20,
-        "careofhaus/visual-composer": 20,
-        "careofhaus/gravityforms": 20,
         "careofhaus/coh-responsive-images": 20
     },
     "prefer-stable": false,

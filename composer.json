@@ -42,15 +42,15 @@
     },
     {
       "type": "git",
-      "url": "git@bitbucket.org:careofhaus/advanced-custom-fields-pro.git"
+      "url": "git@githubcareofhaus:careofhaus/js_composer.git"
     },
     {
       "type": "git",
-      "url": "git@bitbucket.org:careofhaus/visual-composer.git"
+      "url": "git@githubcareofhaus:careofhaus/advanced-custom-fields-pro.git"
     },
     {
       "type": "git",
-      "url": "git@bitbucket.org:careofhaus/gravityforms.git"
+      "url": "git@githubcareofhaus:careofhaus/gravityforms.git"
     },
     {
       "type": "git",
@@ -73,10 +73,10 @@
     "digitalunited/components": "*",
     "digitalunited/vc-clean-up": "*",
     "digitalunited/wordpress-clean-up": "*",
-    "roots/soil": "*",
-    "careofhaus/advanced-custom-fields-pro": "dev-master",
-    "careofhaus/visual-composer": "dev-master",
-    "careofhaus/gravityforms": "dev-master",
+    "roots/soil": "3.7.0",
+    "careofhaus/advanced-custom-fields-pro": "*",
+    "careofhaus/js_composer": "*",
+    "careofhaus/gravityforms": "*",
     "careofhaus/coh-responsive-images": "dev-master"
   },
   "extra": {
