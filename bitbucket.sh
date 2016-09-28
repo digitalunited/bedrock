@@ -11,6 +11,7 @@ curl --user $bitbucketUser https://api.bitbucket.org/1.0/repositories/ \
 echo "Skapar repo"
 echo ""
 
+rm -rf .git
 git init
 git remote add origin git@bitbucket.org:careofhaus/$bitbucketRepo.git
 git add .
