@@ -9,17 +9,17 @@
     "packages": [
         {
             "name": "careofhaus/advanced-custom-fields-pro",
-            "version": "v5.4.5",
+            "version": "5.4.8",
             "source": {
                 "type": "git",
                 "url": "git@githubcareofhaus:careofhaus/advanced-custom-fields-pro.git",
-                "reference": "f059fffc13437c157d406744015678336ce4c38d"
+                "reference": "55ad5c647e46f794d73826f9ef28e818bfee584e"
             },
             "require": {
                 "composer/installers": "*"
             },
             "type": "wordpress-plugin",
-            "time": "2016-09-27 11:23:37"
+            "time": "2016-10-17 08:01:20"
         },
         {
             "name": "careofhaus/coh-responsive-images",
@@ -164,16 +164,16 @@
         },
         {
             "name": "digitalunited/components",
-            "version": "0.1.25",
+            "version": "0.1.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitalunited/components.git",
-                "reference": "958f922829b5132c5f026b15d2ab44dad4216bfc"
+                "reference": "c56e2bc55949cdfc51bfa88338ae60b66a6e92b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitalunited/components/zipball/958f922829b5132c5f026b15d2ab44dad4216bfc",
-                "reference": "958f922829b5132c5f026b15d2ab44dad4216bfc",
+                "url": "https://api.github.com/repos/digitalunited/components/zipball/c56e2bc55949cdfc51bfa88338ae60b66a6e92b0",
+                "reference": "c56e2bc55949cdfc51bfa88338ae60b66a6e92b0",
                 "shasum": ""
             },
             "require": {
@@ -203,7 +203,7 @@
                 "plugin",
                 "wordpress"
             ],
-            "time": "2016-09-28 07:10:00"
+            "time": "2016-10-20 13:51:35"
         },
         {
             "name": "digitalunited/vc-clean-up",
@@ -251,16 +251,16 @@
         },
         {
             "name": "digitalunited/wordpress-clean-up",
-            "version": "0.0.4",
+            "version": "0.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitalunited/wordpress-clean-up.git",
-                "reference": "de34b93d20c1addf6fa7d7af6f12272a9aeb3d53"
+                "reference": "205fffe4d836a085d82c3261e4b22c3c8302e61d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitalunited/wordpress-clean-up/zipball/de34b93d20c1addf6fa7d7af6f12272a9aeb3d53",
-                "reference": "de34b93d20c1addf6fa7d7af6f12272a9aeb3d53",
+                "url": "https://api.github.com/repos/digitalunited/wordpress-clean-up/zipball/205fffe4d836a085d82c3261e4b22c3c8302e61d",
+                "reference": "205fffe4d836a085d82c3261e4b22c3c8302e61d",
                 "shasum": ""
             },
             "require": {
@@ -291,7 +291,7 @@
                 "plugin",
                 "wordpress"
             ],
-            "time": "2015-12-10 08:31:25"
+            "time": "2016-10-05 09:23:33"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -513,15 +513,15 @@
         },
         {
             "name": "wpackagist-plugin/filenames-to-latin",
-            "version": "2.2",
+            "version": "2.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/filenames-to-latin/",
-                "reference": "tags/2.2"
+                "reference": "tags/2.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/filenames-to-latin.2.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/filenames-to-latin.2.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -533,15 +533,15 @@
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
-            "version": "5.5.2",
+            "version": "5.5.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
-                "reference": "tags/5.5.2"
+                "reference": "tags/5.5.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.5.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.5.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -613,15 +613,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "3.6",
+            "version": "3.7.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/3.6"
+                "reference": "tags/3.7.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.7.1.zip",
                 "reference": null,
                 "shasum": null
             },
