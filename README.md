@@ -2,6 +2,7 @@
 
 1. Run `composer create-project digitalunited/hausrock <path>` to just get a new copy of Hausrock locally.
 2. Run `setup.sh` located in the root of the project and follow the instructions.
+3. Edit `deploy.rb` located in the config folder of the project.
 
 ## Deploy
 
