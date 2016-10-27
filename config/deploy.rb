@@ -1,8 +1,20 @@
-set :application, 'folder.se'
+set :application, fetch(:local_folder)
 set :repo_url, 'git@example.com:me/my_repo.git'
-set :theme_name, 'careofhaus'
 
-set :wpcli_local_url, 'hausrock.se.dev'
+set :local_url, 'careofhaus.se.dev'
+set :local_folder, 'careofhaus.se'
+
+set :staging_url, 'careofhaus.se.haus.se'
+set :staging_plugins, 'nginx-helper redirection wordpress-seo google-analytics-for-wordpress'
+set :staging_server, 'careofhaus.se.haus.se'
+set :staging_folder, 'docroot_stage'
+
+set :production_url, 'careofhaus.se'
+set :production_plugins, 'nginx-helper redirection wordpress-seo google-analytics-for-wordpress'
+set :production_server, 'careofhaus.se'
+set :production_folder, 'docroot'
+
+set :wpcli_local_url, fetch(:local_url)
 
 #set :wpcli_args, "--network" # For multisites
 
@@ -69,7 +81,7 @@ after 'deploy:publishing', 'deploy:update_option_paths'
 namespace :deploy do
 
   # Theme path
-  set :theme_path, Pathname.new('web/app/themes').join(fetch(:theme_name))
+  set :theme_path, Pathname.new('web/app/themes').join('careofhaus')
 
   # Local Paths
   set :local_theme_path, Pathname.new(File.dirname(__FILE__)).join('../').join(fetch(:theme_path))
@@ -98,7 +110,7 @@ namespace :deploy do
       set :remote_dist_path, -> { release_path.join(fetch(:theme_path)).join('dist') }
 
       info " Your local distribution path: #{fetch(:local_dist_path)} "
-      info " Boom!!! Your remote distribution path: #{fetch(:remote_dist_path)} "
+      info " Boom! Your remote distribution path: #{fetch(:remote_dist_path)} "
       info " Uploading files to remote "
       upload! fetch(:local_dist_path).to_s, fetch(:remote_dist_path), recursive: true
     end
