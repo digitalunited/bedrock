@@ -40,3 +40,4 @@ bin
 # IDE stuff
 .idea
 tags
+config/backup
