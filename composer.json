@@ -67,7 +67,7 @@
     "wpackagist-plugin/cms-tree-page-view": "*",
     "wpackagist-plugin/redirection": "*",
     "wpackagist-plugin/disable-comments": "*",
-    "wpackagist-plugin/google-analytics-for-wordpress": "*",
+    "wpackagist-plugin/duracelltomi-google-tag-manager": "*",
     "wpackagist-plugin/post-duplicator": "*",
     "wpackagist-plugin/nginx-helper": "*",
     "digitalunited/components": "*",

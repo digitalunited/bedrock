@@ -5,12 +5,12 @@ set :local_url, 'careofhaus.se.dev'
 set :local_folder, 'careofhaus.se'
 
 set :staging_url, 'careofhaus.se.haus.se'
-set :staging_plugins, 'nginx-helper redirection wordpress-seo google-analytics-for-wordpress'
+set :staging_plugins, 'nginx-helper redirection wordpress-seo duracelltomi-google-tag-manager'
 set :staging_server, 'careofhaus.se.haus.se'
 set :staging_folder, 'docroot_stage'
 
 set :production_url, 'careofhaus.se'
-set :production_plugins, 'nginx-helper redirection wordpress-seo google-analytics-for-wordpress'
+set :production_plugins, 'nginx-helper redirection wordpress-seo duracelltomi-google-tag-manager'
 set :production_server, 'careofhaus.se'
 set :production_folder, 'docroot'
 
