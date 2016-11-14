@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a069b50b9805168919483c955edad538",
-    "content-hash": "49451c298fa1002662b6356a038e1b33",
+    "hash": "ba0b8adad26ee84476805e05f2b80aa9",
+    "content-hash": "033921cfe75e76cc530d9eb858f22964",
     "packages": [
         {
             "name": "careofhaus/advanced-custom-fields-pro",
@@ -610,6 +610,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/redirection/"
+        },
+        {
+            "name": "wpackagist-plugin/usersnap",
+            "version": "4.4",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/usersnap/",
+                "reference": "tags/4.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/usersnap.4.4.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/usersnap/"
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",

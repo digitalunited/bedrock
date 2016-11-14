@@ -70,6 +70,7 @@
     "wpackagist-plugin/duracelltomi-google-tag-manager": "*",
     "wpackagist-plugin/post-duplicator": "*",
     "wpackagist-plugin/nginx-helper": "*",
+    "wpackagist-plugin/usersnap": "*",
     "digitalunited/components": "*",
     "digitalunited/vc-clean-up": "*",
     "digitalunited/wordpress-clean-up": "*",
