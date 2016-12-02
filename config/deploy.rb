@@ -1,5 +1,5 @@
 set :application, fetch(:local_folder)
-set :repo_url, 'git@example.com:me/my_repo.git'
+set :repo_url, 'git@bitbucket.org:careofhaus/repo.se.git'
 
 set :local_url, 'careofhaus.se.dev'
 set :local_folder, 'careofhaus.se'
