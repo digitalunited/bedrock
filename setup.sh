@@ -36,7 +36,7 @@ echo "Ange ditt användarnamn för Bitbucket"
 read bitbucketUser
 
 curl --user $bitbucketUser https://api.bitbucket.org/1.0/repositories/ \
---data name=$bitbucketRepo --data owner=careofhaus
+--data name=$bitbucketRepo --data owner=careofhaus --data is_private=true
 
 echo "Skapar repo"
 echo ""
