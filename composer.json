@@ -79,7 +79,7 @@
     "careofhaus/js_composer": "*",
     "careofhaus/gravityforms": "*",
     "careofhaus/coh-responsive-images": "dev-master",
-    "roots/wp-stage-switcher": "*",
+    "roots/wp-stage-switcher": "*"
   },
   "extra": {
     "installer-paths": {
