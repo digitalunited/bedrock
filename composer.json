@@ -70,6 +70,7 @@
     "wpackagist-plugin/duracelltomi-google-tag-manager": "*",
     "wpackagist-plugin/advanced-custom-fields-nav-menu-field": "*",
     "wpackagist-plugin/post-duplicator": "*",
+    "wpackagist-plugin/user-role-editor": "*",
     "wpackagist-plugin/nginx-helper": "*",
     "wpackagist-plugin/usersnap": "*",
     "digitalunited/components": "*",
