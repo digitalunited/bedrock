@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c9cf103f98023ede042d3dcf20207b4a",
+    "content-hash": "6c5ad4061d75fbd1bb5effe1cd2a916d",
     "packages": [
         {
             "name": "careofhaus/advanced-custom-fields-pro",
@@ -511,21 +511,24 @@
         },
         {
             "name": "roots/soil",
-            "version": "3.7.0",
+            "version": "3.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/soil.git",
-                "reference": "085fd3c9b16df5b72dce4fba09de0207937ef721"
+                "reference": "5b9b9d8a878b295f44b35cba826c462b20cc1d9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/soil/zipball/085fd3c9b16df5b72dce4fba09de0207937ef721",
-                "reference": "085fd3c9b16df5b72dce4fba09de0207937ef721",
+                "url": "https://api.github.com/repos/roots/soil/zipball/5b9b9d8a878b295f44b35cba826c462b20cc1d9c",
+                "reference": "5b9b9d8a878b295f44b35cba826c462b20cc1d9c",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "~1.0",
                 "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "^2.5.1"
             },
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
@@ -549,7 +552,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2016-03-07T19:49:21+00:00"
+            "time": "2016-08-30T18:15:45+00:00"
         },
         {
             "name": "roots/wp-stage-switcher",
@@ -644,6 +647,26 @@
                 "environment"
             ],
             "time": "2014-10-16T14:50:21+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/advanced-custom-fields-nav-menu-field",
+            "version": "2.0.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/advanced-custom-fields-nav-menu-field/",
+                "reference": "tags/2.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields-nav-menu-field.2.0.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/advanced-custom-fields-nav-menu-field/"
         },
         {
             "name": "wpackagist-plugin/cms-tree-page-view",
