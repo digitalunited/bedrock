@@ -2,14 +2,14 @@
 echo "Ange URL:en för development miljön (exempel: hausrock.se.dev)"
 read envURL
 sed -i '' "s/hausrock.se.dev/$envURL/g" .env.example
-echo "Ange databasnamn för development miljön (exempel: hausrock_se)"
-read dbname
+dbname=$(sed -e 's/\.\.*/_/' -e 's/.dev//' <<< $envURL)
 sed -i '' "s/database_name/$dbname/g" .env.example
 cp .env.example .env
 
-echo "Creating new WordPress database..."
+echo ""
+echo "Skapar en ny databas..."
 mysql -uroot -e "CREATE DATABASE ${dbname} /*\!40100 DEFAULT CHARACTER SET utf8 */;"
-echo "Database successfully created!"
+echo "Databas skapad! Namn: ${dbname}"
 echo ""
 echo "Nu öppnas development miljön var god att installera WordPress"
 open http://$envURL
