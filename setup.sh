@@ -16,7 +16,7 @@ open http://$envURL
 read -p "Klicka på [Enter] när WordPress är installerat (du behöver inte logga in)"
 
 wp theme activate careofhaus
-wp plugin activate soil advanced-custom-fields-pro advanced-custom-fields-nav-menu-field cms-tree-page-view disable-comments filenames-to-latin post-duplicator vc-clean-up wordpress-clean-up js_composer
+wp plugin activate soil advanced-custom-fields-pro advanced-custom-fields-nav-menu-field cms-tree-page-view disable-comments filenames-to-latin post-duplicator vc-clean-up wordpress-clean-up js_composer gravityforms wp-stage-switcher
 wp rewrite structure '/%postname%/' --hard
 wp post create --post_type=page --post_title='Startsida' --post_status=publish
 wp post delete 2 --force
