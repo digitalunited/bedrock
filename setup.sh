@@ -27,6 +27,8 @@ wp option update show_on_front page
 wp option update blogdescription ''
 wp cache flush
 
+rm -rf web/app/themes/twentysixteen
+
 echo "Dags att skapa repo"
 echo ""
 echo "Ange namn för repository på Bitbucket"
