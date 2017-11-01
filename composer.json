@@ -55,6 +55,10 @@
     {
       "type": "git",
       "url": "git@bitbucket.org:careofhaus/coh-responsive-images.git"
+    },
+    {
+      "type": "git",
+      "url": "git@bitbucket.org:careofhaus/advanced-custom-fields-haus-icomoon-icon-picker.git"
     }
   ],
   "require": {
@@ -81,7 +85,8 @@
     "careofhaus/js_composer": "*",
     "careofhaus/gravityforms": "*",
     "careofhaus/coh-responsive-images": "dev-master",
-    "roots/wp-stage-switcher": "*"
+    "roots/wp-stage-switcher": "*",
+    "careofhaus/advanced-custom-fields-haus-icomoon-icon-picker": "dev-master"
   },
   "extra": {
     "installer-paths": {
