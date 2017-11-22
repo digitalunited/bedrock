@@ -121,3 +121,31 @@ namespace :deploy do
 end
 
 after 'deploy:updated', 'deploy:assets', 'deploy:compile_local'
+
+##
+# Deactivate plugins on pull
+##
+
+namespace :plugin do
+    desc 'Enable/disabe plugins on pull'
+    task :db_pull do
+        run_locally do
+            execute :wp, :plugin, :deactivate, fetch(:plugins)
+        end
+    end
+end
+
+##
+# Activate plugins on push
+##
+
+namespace :plugin do
+    desc 'Enable/disabe plugins on push'
+    task :db_push do
+        on roles(:app) do
+            within release_path do
+                execute :wp, :plugin, :activate, fetch(:plugins)
+            end
+        end
+    end
+end
