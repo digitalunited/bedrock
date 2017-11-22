@@ -43,6 +43,7 @@ namespace :deploy do
     on roles(:app), in: :sequence, wait: 5 do
       # Clear nginx cache
       execute 'sudo /home/git/post-deploy.d/git-post-hook-nginx.sh'
+      execute 'sudo /home/git/post-deploy.d/git-post-hook-php-fpm.sh'
     end
   end
 end
