@@ -15,6 +15,10 @@ echo "Nu öppnas development miljön var god att installera WordPress"
 open http://$envURL
 read -p "Klicka på [Enter] när WordPress är installerat (du behöver inte logga in)"
 
+echo "Running composer update"
+composer update
+
+echo "Configuration WP"
 wp theme activate careofhaus
 wp plugin activate soil advanced-custom-fields-pro advanced-custom-fields-nav-menu-field cms-tree-page-view disable-comments filenames-to-latin post-duplicator vc-clean-up wordpress-clean-up js_composer gravityforms wp-stage-switcher
 wp rewrite structure '/%postname%/' --hard
