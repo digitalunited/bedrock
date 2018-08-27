@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Ange URL:en för development miljön (exempel: hausrock.se.test)"
 read envURL
-sed -i '' "s/hausrock.se./$envURL/g" .env.example
+sed -i '' "s/hausrock.se.test/$envURL/g" .env.example
 dbname=$(sed -e 's/\.\.*/_/' -e 's/.test//' <<< $envURL)
 sed -i '' "s/database_name/$dbname/g" .env.example
 cp .env.example .env
