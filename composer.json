@@ -86,7 +86,8 @@
     "careofhaus/gravityforms": "*",
     "careofhaus/coh-responsive-images": "dev-master",
     "roots/wp-stage-switcher": "*",
-    "careofhaus/advanced-custom-fields-haus-icomoon-icon-picker": "dev-master"
+    "careofhaus/advanced-custom-fields-haus-icomoon-icon-picker": "dev-master",
+    "wpackagist-plugin/sendgrid-email-delivery-simplified": "*"
   },
   "extra": {
     "installer-paths": {
