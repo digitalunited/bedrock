@@ -19,3 +19,4 @@ define('DISALLOW_FILE_MODS', true); // this disables all file modifications incl
 define('FS_METHOD', 'direct');
 
 define( 'WP_POST_REVISIONS', 10 );
+define('WP_MEMORY_LIMIT', '256M');
