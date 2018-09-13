@@ -87,7 +87,8 @@
     "careofhaus/coh-responsive-images": "dev-master",
     "roots/wp-stage-switcher": "*",
     "careofhaus/advanced-custom-fields-haus-icomoon-icon-picker": "dev-master",
-    "wpackagist-plugin/sendgrid-email-delivery-simplified": "*"
+    "wpackagist-plugin/sendgrid-email-delivery-simplified": "*",
+    "stoutlogic/acf-builder": "^1.7"
   },
   "extra": {
     "installer-paths": {
