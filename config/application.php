@@ -56,6 +56,16 @@ define('AUTOMATIC_UPDATER_DISABLED', true);
 define('WP_AUTO_UPDATE_CORE', false );
 define('DISABLE_WP_CRON', true);
 define('DISALLOW_FILE_EDIT', true);
+define( 'WP_POST_REVISIONS', 10 );
+define('WP_MEMORY_LIMIT', '256M');
+
+/**
+ * Mail Trap Settings
+ */
+define('MAILTRAP', getenv('MAILTRAP'));
+define('MAILTRAP_USERNAME', getenv('MAILTRAP_USERNAME'));
+define('MAILTRAP_PASSWORD', getenv('MAILTRAP_PASSWORD'));
+
 
 /**
  * Bootstrap WordPress
